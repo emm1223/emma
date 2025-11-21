@@ -1,9 +1,4 @@
 # 🔴 EMMA — Code Laboratory
-
-<div align="center">
-  <img src="./assets/skull.jpg" alt="skull" width="800" height="auto">
-</div>
-
 ```
 ███████╗███╗   ███╗███╗   ███╗ █████╗ 
 ██╔════╝████╗ ████║████╗ ████║██╔══██╗
