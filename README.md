@@ -1,11 +1,11 @@
 <div align="center">
 
-# 🔥 EMMA — Code Laboratory 🔥
+#  EMMA — Code Laboratory 
 ## *Where Code Breaks, Legends Rise* 🚀
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
-║                    ⚡ PREMIUM EDITION ⚡                          ║
+║                      PREMIUM EDITION                            ║
 ║════════════════════════════════════════════════════════════════════║
 ║                                                                    ║
 ║   ███████╗███╗   ███╗███╗   ███╗ █████╗  ██╗      ██╗ ██╗██╗    ║
@@ -304,12 +304,12 @@
 [![Email](https://img.shields.io/badge/Email-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:emmanuelmunayar@gmail.com)
 
 ### 💬 **Talk to Me About:**
-- 💻 Code architecture & design excellence
-- 🚀 Building products that scale
-- 🧪 Experimental technologies
-- 🎓 Learning & growth strategies
-- 🤝 Collaboration opportunities
-- ☕ Tech discussions over coffee
+ 💻 Code architecture & design excellence
+ 🚀 Building products that scale
+ 🧪 Experimental technologies
+ 🎓 Learning & growth strategies
+  🤝 Collaboration opportunities
+  ☕ Tech discussions over coffee
 
 ### ✅ **Always Open To:**
 ✔️ Code reviews & constructive feedback  
