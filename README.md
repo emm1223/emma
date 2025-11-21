@@ -1,207 +1,135 @@
-# 🕳️ Emma — Research & Cyber Development Lab
+# 🔴 EMMA — Code Laboratory
 
 ```
- ███████╗███╗      ███╗███╗      ███╗  █████╗ 
- ██╔════╝████╗  ████║████╗  ████║██╔══██╗
- █████╗    ██╔████╔██║██╔████╔██║███████║
- ██╔══╝    ██║╚██╔╝██║██║╚██╔╝██║██╔══██║
- ███████╗██║  ╚═╝  ██║██║  ╚═╝  ██║██║    ██║
- ╚══════╝╚═╝          ╚═╝╚═╝          ╚═╝╚═╝    ╚═╝
+███████╗███╗   ███╗███╗   ███╗ █████╗ 
+██╔════╝████╗ ████║████╗ ████║██╔══██╗
+█████╗  ██╔████╔██║██╔████╔██║███████║
+██╔══╝  ██║╚██╔╝██║██║╚██╔╝██║██╔══██║
+███████╗██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║
+╚══════╝╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝
+
+     👿 Emmanuel Munayar 👿
+  Full-Stack Developer | Builder | Experimenter
 ```
 
-Este repositorio no es un portafolio ni una carpeta bonita para mostrar.  
-Es mi laboratorio de desarrollo, donde construyo, rompo, analizo y evoluciono herramientas, exploits, automatizaciones, sistemas web y prototipos que forman mi base técnica.
+---
 
-**Nada aquí es casual.** Todo tiene una razón: aprender, romper límites y escribir código que haga algo real.
+## 🎯 ¿Qué es esto?
 
-> ⚠️ **No es un repositorio para gente que busca proyectos "terminados".**  
-> Es un entorno vivo de experimentación, investigación y desarrollo continuo.
-> 
-> Aquí fallo, aprendo y avanzo. Todos los días.
+Este es **mi laboratorio de código**: un portafolio de experimentos, herramientas y proyectos reales donde documento mi evolución técnica.
+
+**No aquí no hay:**
+- ❌ Proyectos "terminados" y perfectos
+- ❌ Código decorativo sin propósito
+- ❌ Tutoriales copiados de internet
+- ❌ Soluciones genéricas
+
+**Aquí hay:**
+- ✅ Experimentos que aprenden algo
+- ✅ Código funcional con propósito real
+- ✅ Herramientas que uso en serio
+- ✅ Documentación de errores y lecciones
+- ✅ Evolución constante y sin filtros
 
 ---
 
-## 🦂 Filosofía del proyecto
+## 💡 Mi filosofía
 
-Trabajo bajo la idea de que el conocimiento práctico nace de experimentar y fallar rápido:
+Creo que el verdadero aprendizaje nace de experimentar y fallar rápido. No leo documentación esperando—construyo y rompo cosas hasta que funcionen.
 
-- **Probar, romper, optimizar.**
-- **Construir herramientas internas que otros no tienen.**
-- **Documentar mis avances como activo propio.**
-- **Crear software con enfoque táctico, no decorativo.**
+Este repositorio es la prueba viviente de eso: cada línea de código es un paso en mi evolución, cada proyecto es una lección, cada error es un aprendizaje.
 
-Este repositorio es un ecosistema vivo, no un producto final.
+**No tengo un único camino.** Web, sistemas, automatización, ciberseguridad—voy donde la curiosidad me lleva.
 
 ---
 
-## 🧩 ¿Qué contiene exactamente?
+## 🔧 Tech Stack
 
-Cada carpeta representa un módulo, experimento o proyecto. Algunos son prototipos crudos, otros componentes listos para reutilizar y otros investigaciones que pueden convertirse en herramientas más grandes.
+**Frontend:**
+- React, Vue, HTML5, CSS3, JavaScript/TypeScript
+- Tailwind CSS, diseño responsivo
+- Animaciones y UX interactiva
 
-Tipos de contenido que encontrarás:
+**Backend:**
+- Node.js, Express
+- Arquitectura modular y escalable
 
-- **Aplicaciones web y servicios internos (Node, JS, HTML, Tailwind)**
-- **Scripts para automatizar tareas**
-- **Bases para bots, scrapers y sistemas de análisis**
-- **Herramientas conceptuales para desarrollo y pruebas**
-- **Recursos visuales, presentaciones y prototipos**
-- **Proyectos personales que evolucionan con mi aprendizaje**
+**Automatización & Scripting:**
+- Python, Bash
+- Herramientas internas y utilidades
 
-Nada aquí sobra. Si está en este repo, sirve para algo.
-
----
-
-## 🗂️ Mapa del repositorio
-
-### 📦 **margarita.installer/**
-Proyecto web profesional con arquitectura modular.
-- React + Tailwind CSS + PostCSS
-- Sistema de instalación/configuración visual
-- Build optimizado con assets estáticos
-- Responsive design lista para producción
-
-**Estado:** En desarrollo activo  
-**Tech stack:** Node.js, React, Tailwind CSS
+**Herramientas:**
+- VS Code, Git, GitHub
+- Docker (ocasional)
+- Visual Studio
 
 ---
 
-### 💌 **minoviabella/**
-Proyecto personal y experimental.
-- **cartas/carta1/** — Carta digital interactiva para mi novia con diseño premium
-  - Animaciones suaves y responsivas
-  - HTML5 + CSS3 avanzado + JavaScript vanilla
-  - Efectos visuales personalizados
-  - Sin dependencias externas
-- **Carta2/** — En exploración
+## 📊 Enfoque por áreas
 
-**Estado:** Crecimiento continuo  
-**Propósito:** Personal, experimentación con UX/animaciones
+### Web Development
+Construyo aplicaciones modernas, responsivas y funcionales. Me enfoco en arquitectura limpia y experiencia de usuario.
 
----
+### Automatización
+Creo scripts y herramientas para optimizar tareas repetitivas. Python es mi aliado aquí.
 
-### 🎨 **presentacion/**
-Recursos visuales y prototipos para demos.
-- **opcion1/** — Prototipo HTML/CSS alternativo
-- **opcion2/** — Otra versión experimental
+### Experimentación
+Prototipos rápidos, pruebas de concepto, ideas que explotan en código. Sin miedo a romper.
 
-**Estado:** Pruebas de concepto  
-**Uso:** Testing de diseños antes de implementarlos
+### Sistemas & DevOps
+Entiendo cómo funcionan las cosas por debajo. Configuración, deployment, optimización.
 
 ---
 
-### 🐍 **python/**
-Laboratorio de scripts y automatización Python.
-- **Visual Studio 2022/** — Snippets de código, plantillas y configuraciones
-  - Code Snippets (JavaScript, Python, SQL, TypeScript, etc.)
-  - Item Templates y Project Templates
-  - Configuración personal de VS
+## 🚀 Cómo trabajo
 
-**Estado:** Base de datos de utilidades  
-**Propósito:** Reutilización y referencia
+1. **Idea** → Surge de la curiosidad o necesidad real
+2. **Prototipo rápido** → Itero sin miedo a romper
+3. **Validación** → ¿Funciona? ¿Qué aprendí?
+4. **Mejora** → Refino si vale la pena
+5. **Documentación** → Dejo registro para futuro yo
 
 ---
 
-### 🌐 **sariluventa1/**
-Proyecto web educativo / pruebas frontend.
-- **paginawebqueesunsistema/** — Sistema web experimental
-  - HTML puro como punto de partida
-  - Exploración de arquitectura frontend
+## 🎓 Habilidades
 
-**Estado:** Prototipo  
-**Tech stack:** HTML, CSS, JavaScript
-
----
-
-## 🚀 Flujo de trabajo
-
-1. **Idea → Prototipo** — Creo una rama o carpeta experimental
-2. **Desarrollo rápido** — Itero sin miedo a romper
-3. **Validación** — Si funciona, lo refinó; si no, aprendo por qué
-4. **Integración** — Los componentes útiles se reutilizan en otros proyectos
-5. **Documentación** — Cada proyecto tiene su README si es necesario
-
----
-
-## 🔧 Tecnologías principales
-
-- **Frontend:** React, HTML5, CSS3, JavaScript vanilla, Tailwind CSS
-- **Backend:** Node.js
-- **Automatización:** Python
-- **Herramientas:** VS Code, Git, Visual Studio
-- **Diseño:** Figma mentality, Responsive-first
-
----
-
-## 📝 Cómo navegar este repo
-
-- Cada carpeta es un mundo independiente
-- Lee el README de cada proyecto si quieres entender detalles
-- El código puede estar incompleto, eso es normal
-- Si algo te sirve, úsalo; si no, ignoralo
-
----
-
-## ⚡ Proyectos activos
-
-- ✅ **margarita.installer** — Desarrollo web profesional
-- 💌 **minoviabella** — Proyectos personales (crecimiento constante)
-- 🎨 **presentacion** — Experimentación de diseños
-- 🐍 **python** — Base de utilidades y scripts
-
----
-
-## 🎯 Qué NO encontrarás aquí
-
-- Tutoriales copiados de internet ❌
-- Código "bonito" sin propósito ❌
-- Proyectos 100% documentados (ese no es mi estilo) ❌
-- Soluciones genéricas para problemas genéricos ❌
-- Proyectos abandonados sin explicación ❌
-
-Lo que SÍ encontrarás:
-
-- Código real, funcional, con propósito ✅
-- Experimentos que enseñan algo ✅
-- Herramientas que uso en serio ✅
-- Errores documentados y lecciones aprendidas ✅
-- Evolución constante ✅
-
----
-
-## 💭 Un poco sobre mí
-
-Soy alguien que aprende haciendo. No espero, no leo documentación interminable—construyo y rompo cosas hasta que funcionen. 
-
-Mi nombre es **Emmanuel Munayar**, tengo 25 años y vivo en Argentina. Soy desarrollador, experimentador y obsesionado con entender cómo funcionan las cosas en profundidad.
-
-Este repositorio es la prueba viviente de eso: cada línea de código es un paso en mi evolución técnica, cada proyecto un aprendizaje, cada error una lección.
-
-**No tengo un único camino.** Voy por donde la curiosidad me lleva: web, sistemas, automatización, ciberseguridad, lo que sea. Todo es relevante.
+- **Lenguajes:** JavaScript, Python, TypeScript, HTML/CSS, Bash
+- **Frameworks:** React, Node.js, Express
+- **Bases de datos:** SQL, NoSQL concepts
+- **Versionado:** Git, GitHub
+- **Otros:** Debugging, performance optimization, API design
 
 ---
 
 ## 🌐 Conecta conmigo
 
-Si quieres seguir mi evolución, hablar sobre código o simplemente tomar un café virtual:
+Si quieres hablar sobre código, proyectos o simplemente tomar un café virtual:
 
-- **GitHub:** [@emm1223](https://github.com/emm1223) — Aquí está todo
-- **Instagram:** [@emm_exe.sys](https://www.instagram.com/emm_exe.sys/) — Momentos del laboratorio
-- **TikTok:** [@munayar22](https://www.tiktok.com/@munayar22) — Tips y clips rápidos
-- **Discord:** xxemmanuell — Comunidad y colaboración
-- **Email:** emmanuelmunayar@gmail.com — Proyectos serios
+- **GitHub:** [@emm1223](https://github.com/emm1223)
+- **Instagram:** [@emm_exe.sys](https://www.instagram.com/emm_exe.sys/)
+- **TikTok:** [@munayar22](https://www.tiktok.com/@munayar22)
+- **Discord:** xxemmanuell
+- **Email:** emmanuelmunayar@gmail.com
 
 ---
 
-## 📞 Notas finales
+## 📌 Notas importantes
 
-Este repositorio crece constantemente. Las cosas cambian, evolucionan, se integran o se archivan.
+- Este repo **crece constantemente**—las cosas cambian, evolucionan, se integran
+- Cada carpeta es independiente; explora sin miedo
+- El código puede estar incompleto; eso es normal
+- Si algo te sirve, úsalo. Si tienes feedback, perfecto
 
-Si ves algo que te interesa, explora. Si tienes feedback, excelente. Si solo curiosidad, también está bien.
+---
 
-**Bienvenido al laboratorio. Que te diviertas rompiendo cosas.**
+## 🔥 Último mensaje
+
+Este no es un portafolio bonito. Es mi laboratorio vivo donde fallo, aprendo y avanzo cada día.
+
+**Bienvenido. Que disfrutes rompiendo cosas.**
 
 ---
 
 *Última actualización: 21 de noviembre de 2025*  
-*Desarrollado con café, curiosidad y sin miedo a fallar.*  
-*Mantenido por: [Emmanuel Munayar](https://github.com/emm1223)*
+*Desarrollado con café, curiosidad y sin filtros.*  
+*— Emmanuel Munayar*
