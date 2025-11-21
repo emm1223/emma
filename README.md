@@ -1,6 +1,8 @@
 # 🔴 EMMA — Code Laboratory
 
-![skull](./assets/skull.HEIC)
+<div align="center">
+  <img src="./assets/skull.HEIC" alt="EMMA Devil Mode" width="500" style="border-radius: 15px; margin: 30px 0;">
+</div>
 
 ```
 ███████╗███╗   ███╗███╗   ███╗ █████╗ 
