@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Una carta sincera y elegante para Tatiana — diseño accesible, responsivo y con pequeñas interacciones." />
+  <title>Carta para Tatiana</title>
+  <!-- Mejor performance: preconnect a Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#071028;
+      --bg2:#132636;
+      --accent:#ff3366;
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.02);
+      --text:#f8fafc;
+      --muted: rgba(248,250,252,0.78);
+      --card-radius:18px;
+      --max-width:880px;
+      --measure: 62ch; /* ancho de lectura óptimo */
+      --btn-on-accent: #fff; /* color del texto sobre botones accent */
+      --border: rgba(255,255,255,0.06);
+    }
+
+    /* Reset sencillito */
+    html,body{height:100%;margin:0;font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:var(--text);overflow-x:hidden;background:linear-gradient(135deg,var(--bg1),var(--bg2));}
+  /* tipografía fluida: escala mínima, preferencia de legibilidad */
+  html{font-size:clamp(14px, 1.2vw + 12px, 18px)}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:48px}
+
+    /* Card */
+    .card{
+      width:min(var(--max-width),94vw);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border-radius:var(--card-radius);padding:36px;backdrop-filter: blur(6px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.55), inset 0 1px 0 var(--glass);
+  position:relative;overflow:visible;border:1px solid var(--border);
+      transform: translateY(12px);opacity:0;animation:cardIn .7s ease-out forwards .12s;
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    @keyframes cardIn{to{transform:none;opacity:1}}
+
+    /* Background floaters: SVG hearts for crisp rendering */
+  .floaters{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .floater{position:absolute;opacity:.85;animation:float 6s ease-in-out infinite;will-change:transform,opacity}
+    @keyframes float{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-18px) rotate(6deg)}100%{transform:translateY(0) rotate(0)}}
+
+  /* Card hover micro-interaction */
+  .card:hover{transform:translateY(0) scale(1.01);box-shadow:0 18px 50px rgba(0,0,0,0.6);will-change:transform,box-shadow}
+
+    header{display:flex;gap:18px;align-items:center}
+    .stamp{width:72px;height:72px;border-radius:50%;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display';font-size:26px;color:var(--accent);box-shadow:0 6px 18px rgba(7,16,36,0.6);}
+
+    h1{font-family:'Playfair Display';font-weight:700;margin:0;font-size:28px;line-height:1.15}
+    p.lead{margin:8px 0 18px;color:var(--muted);font-size:15px}
+
+    .controls{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:10px;font-size:13px;cursor:pointer}
+    .btn:focus{outline:3px solid rgba(255,51,102,0.18);outline-offset:3px}
+  .btn.primary{background:linear-gradient(90deg,var(--accent),#ff7aa2);border:none;color:var(--btn-on-accent)}
+  .btn.ghost{background:transparent;border:1px dashed var(--border)}
+
+    /* Letter area */
+    .letter{
+  background: linear-gradient(180deg,var(--glass),var(--glass-2));padding:28px;border-radius:12px;border:1px solid var(--border);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.45);
+      line-height:1.7;font-size:clamp(16px, 1.1vw + 12px, 20px);color:var(--text);
+      animation:fadeIn .55s ease-out forwards .3s;opacity:0;transform:translateY(6px);
+      max-width:var(--measure);
+    }
+    /* usar variable para el color del texto de la carta (para soportar temas) */
+    .letter{ color: var(--text); }
+    @keyframes fadeIn{to{opacity:1;transform:none}}
+
+  .phrase{font-family:'Playfair Display';font-size:clamp(18px, 1.4vw + 12px, 24px);margin:0 0 12px;color:var(--text);will-change:transform,opacity}
+    .para{margin:0 0 16px}
+
+    .signature{display:flex;align-items:center;gap:12px;margin-top:22px}
+  .sig-name{font-family:'Great Vibes';font-size:clamp(28px, 2.6vw + 10px, 48px);line-height:1;margin:0;color:var(--accent);letter-spacing:0.6px;display:inline-block;will-change:letter-spacing,transform}
+
+  /* Drawn underline (SVG) container */
+  .sig-underline{display:block;margin-top:6px;height:26px;width:150px}
+  /* el path usará la variable --accent via CSS (más fácil de ajustar por tema) */
+  #underlinePath{stroke:var(--accent)}
+
+  /* sugerencia de rendimiento: hint al navegador */
+  .para, .phrase, .sig-name, .floater, .card{will-change:transform,opacity}
+
+
+    .underline{height:4px;width:120px;border-radius:30px;background:linear-gradient(90deg, transparent, var(--accent), transparent);margin-top:8px;transform:scaleX(0);transform-origin:left;animation:reveal 0.9s ease forwards 1.2s}
+    @keyframes reveal{to{transform:scaleX(1)}}
+
+    /* hint and small print */
+  .hint{margin-top:16px;font-size:13px;color:var(--muted)}
+
+    /* Responsividad */
+    @media (max-width:640px){
+      .card{padding:20px}
+      .sig-name{font-size:30px}
+      .letter{font-size:17px}
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .floater,.card,.letter,.sig-name{animation:none!important;transition:none!important}
+    }
+
+    /* Mobile / small screens: reduce heavy effects */
+    @media (max-width:640px){
+      .wrap::before{filter:blur(8px);animation:none;opacity:0.6}
+      .floater{display:none}
+      .card{padding:18px}
+      .letter{padding:18px}
+    }
+
+    /* Animated subtle background layer */
+    .wrap::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(800px 400px at 15% 20%, rgba(255,51,102,0.06), transparent), radial-gradient(700px 350px at 85% 80%, rgba(255,120,170,0.03), transparent);opacity:0.9;filter:blur(40px);transform:translateZ(0);animation:bgShift 12s linear infinite}
+    @keyframes bgShift{0%{background-position:0% 0%,100% 100%}50%{background-position:10% 5%,90% 95%}100%{background-position:0% 0%,100% 100%}}
+
+    /* Print-friendly */
+    @media print{
+      body{background:white;color:#000}
+      .card{box-shadow:none;border:none;background:transparent;padding:0}
+      .controls{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <article class="card" role="article" aria-labelledby="title">
+      <div class="floaters" aria-hidden="true">
+        <!-- Emoji hearts floating -->
+        <div class="floater" style="left:8%;top:14%;font-size:44px;animation-duration:8s;opacity:0.9">❤️‍🔥</div>
+        <div class="floater" style="left:72%;top:62%;font-size:38px;animation-duration:10s;opacity:0.75">❤️‍🔥</div>
+      </div>
+
+      <header>
+        <div class="stamp" aria-hidden="true">❤️‍🔥</div>
+        <div>
+          <h1 id="title">Tatis mi deseo hecho palabra mi amor</h1>
+          <p class="lead">Una carta para ti que no pretende ser perfecta, solo sincera. Tú inspiras cada línea mi amor lindo, hermoso, divino.</p>
+        </div>
+
+        <div class="controls" role="toolbar" aria-label="Controles de la carta">
+          <button class="btn" id="printBtn" title="Imprimir carta">Imprimir</button>
+          <button class="btn" id="copyBtn" title="Copiar texto">Copiar</button>
+          <button class="btn" id="sendBtn" title="Enviar corazón" aria-pressed="false">Enviar</button>
+          <button class="btn" id="themeBtn" title="Alternar tema">Tema</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="letter" id="letter" aria-label="Carta para Tatiana">
+          <p class="phrase"></p>
+
+          <p class="para">No sé si lo notas, pero desde que apareciste, todo cambió. Tu forma de mirar no solo me gusta —me encanta. Y no es solo amor lo que siento, es ese tipo de deseo que te quita el sueño, el que no pide permiso ni disculpas.</p>
+
+          <p class="para">Cuando hablas, cada palabra tuya da muchas vueltas en mi cabeza. Cuando te acercas, el mundo entero se paraliza, como si se detuviera. Hay algo en ti que me quema, una forma de provocarme sin tocarme, de hacerme tuyo solo con una sonrisa.</p>
+
+          <p class="para">No quiero ni voy a fingir nada: me encantas, me prendes, y me inspiras. Quiero que sepas que me dan ganas de perderme en tu voz, de dibujar con mis dedos las cosas que hacemos y que dejamos cuando nos quedamos sin palabras. Todo en ti me incita a quedarme un poco más cerca.</p>
+
+          <p class="para">Y si el destino existe, espero que entiendas que contigo no busco algo perfecto, sino algo que dure toda la vida, no una historia perfecta, sino una que duela bonito y se viva con ganas. Tú eres mi niña pequeña, y no pienso esconderlo.</p>
+
+          <div class="signature" aria-hidden="false">
+            <div>
+              <p class="sig-name" id="sig">Emmanuel</p>
+              <div class="sig-underline" aria-hidden="true">
+                <svg viewBox="0 0 180 28" preserveAspectRatio="xMinYMid meet" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                  <path id="underlinePath" d="M6 18 C40 28, 90 -6, 170 12" stroke="#ff7aa2" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <p class="hint">(Guarda esta carta en tu corazón. Es más que HTML: es mi manera de decirte que te amo en todos los lenguajes.)</p>
+        </section>
+      </main>
+    </article>
+  </div>
+
+  <script>
+    // Respetar prefers-reduced-motion
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      // Phrase reveal (word-level) - skip if reduced motion
+      const phrase = document.querySelector('.phrase');
+      const text = phrase.textContent.trim();
+      phrase.textContent='';
+      const words = text.split(/(\s+)/).filter(Boolean);
+      if(!reduceMotion){
+        words.forEach((w,i)=>{
+          const span = document.createElement('span');
+          span.textContent = w;
+          span.style.opacity = 0;
+          span.style.display='inline-block';
+          span.style.transform='translateY(6px)';
+          span.style.transition = 'opacity .34s ease, transform .45s cubic-bezier(.2,.9,.2,1)';
+          setTimeout(()=>{span.style.opacity=1;span.style.transform='none'}, 100*i + 80);
+          phrase.appendChild(span);
+        });
+      } else {
+        phrase.textContent = text;
+      }
+
+      // Firma: letter-spacing relax
+      const sig = document.querySelector('#sig');
+      if(!reduceMotion && sig){
+        sig.style.letterSpacing='18px';
+        sig.style.opacity=1;
+        setTimeout(()=>{sig.style.transition='letter-spacing .9s cubic-bezier(.2,.9,.2,1)'; sig.style.letterSpacing='0.6px'}, 700);
+      }
+
+      // Animate the SVG underline drawing
+      const path = document.getElementById('underlinePath');
+      if(path && !reduceMotion){
+        const len = path.getTotalLength();
+        path.style.strokeDasharray = len;
+        path.style.strokeDashoffset = len;
+        path.style.transition = 'stroke-dashoffset 1s cubic-bezier(.2,.9,.2,1) .9s';
+    requestAnimationFrame(()=>{ path.style.strokeDashoffset = '0'; });
+      }
+
+      // Stagger reveal paragraphs when in viewport
+      const paras = Array.from(document.querySelectorAll('.para'));
+      if(!reduceMotion && 'IntersectionObserver' in window){
+        const io = new IntersectionObserver((entries, obs)=>{
+          entries.forEach(entry=>{
+            if(entry.isIntersecting){
+              const el = entry.target;
+              el.style.opacity = 0;
+              el.style.transform = 'translateY(10px)';
+              el.style.transition = 'opacity .6s ease, transform .6s cubic-bezier(.2,.9,.2,1)';
+              setTimeout(()=>{ el.style.opacity=1; el.style.transform='none'; }, (paras.indexOf(el))*120);
+              obs.unobserve(el);
+            }
+          });
+        },{threshold:0.15});
+        paras.forEach(p=>io.observe(p));
+      } else {
+        // fallback: reveal immediately
+        paras.forEach(p=>{p.style.opacity=1;p.style.transform='none';});
+      }
+
+  // Button actions
+      document.getElementById('printBtn').addEventListener('click',()=>window.print());
+
+      document.getElementById('copyBtn').addEventListener('click', async ()=>{
+        const text = document.getElementById('letter').innerText;
+        try{
+          await navigator.clipboard.writeText(text);
+          flashMessage('Copiado al portapapeles');
+          popHearts(Math.min(8, particleLimit()));
+        }catch(e){
+          flashMessage('No se pudo copiar amor');
+        }
+      });
+
+      document.getElementById('sendBtn').addEventListener('click', ()=>{
+        // Larger confetti explosion (respect viewport)
+        confettiHearts(Math.min(40, Math.max(8, particleLimit()*5)));
+        // pulse the stamp briefly
+        const stamp = document.querySelector('.stamp');
+        if(stamp){ stamp.animate([{transform:'scale(1)'},{transform:'scale(1.18)'},{transform:'scale(1)'}],{duration:520, easing:'cubic-bezier(.2,.9,.2,1)'}); }
+        flashMessage('Enviado con cariño a Emmanuel ❤️');
+  });
+
+      // Theme toggle
+      const themeBtn = document.getElementById('themeBtn');
+      themeBtn.addEventListener('click',()=>{
+        document.documentElement.classList.toggle('light-theme');
+        themeBtn.textContent = document.documentElement.classList.contains('light-theme') ? 'Tema osc' : 'Tema'
+      });
+
+      // Helpers
+      function flashMessage(msg){
+        const el = document.createElement('div');
+        el.textContent = msg;
+        el.style.position='fixed';el.style.right='18px';el.style.bottom='18px';el.style.padding='10px 14px';el.style.background='rgba(0,0,0,0.6)';el.style.color='#fff';el.style.borderRadius='10px';el.style.zIndex=9999;el.style.fontSize='13px';
+        document.body.appendChild(el);
+        requestAnimationFrame(()=> el.style.opacity='1');
+        setTimeout(()=>el.style.opacity='0',1200);
+        setTimeout(()=>el.remove(),1800);
+      }
+
+      // Simple hearts pop (small)
+      function popHearts(count){
+        if(reduceMotion) return;
+        const limit = Math.min(count, particleLimit());
+        for(let i=0;i<limit;i++){
+          const h = document.createElement('div');
+          h.innerHTML='❤';
+          h.style.position='fixed';
+          h.style.left=(50+Math.random()*20-10)+'%';
+          h.style.bottom='22px';
+          h.style.fontSize=(12+Math.random()*18)+'px';
+          h.style.opacity='1';
+          h.style.transform='translateY(0) scale(1)';
+          h.style.color = i%2? '#ff3366':'#ff7aa2';
+          h.style.zIndex=99999;
+          h.style.pointerEvents='none';
+          h.style.transition='transform 900ms cubic-bezier(.2,.9,.2,1), opacity 900ms ease-out';
+          document.body.appendChild(h);
+          requestAnimationFrame(()=>{
+            h.style.transform = `translateY(-${120+Math.random()*80}px) scale(${0.8+Math.random()*0.6})`;
+            h.style.opacity='0';
+          });
+          setTimeout(()=>h.remove(),1100);
+        }
+      }
+
+      // Confetti-like hearts (bigger, with rotation)
+      function confettiHearts(count){
+        if(reduceMotion) return;
+        const limit = Math.min(count, Math.max(6, particleLimit()*6));
+        for(let i=0;i<limit;i++){
+          const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+          svg.setAttribute('width','28');svg.setAttribute('height','28');svg.setAttribute('viewBox','0 0 24 24');
+          svg.style.position='fixed';
+          // spread across viewport
+          const leftPerc = 20 + Math.random()*60;
+          svg.style.left=(leftPerc)+'%';
+          svg.style.bottom=(10 + Math.random()*30)+'px';
+          svg.style.opacity='1';
+          svg.style.transformOrigin='center';
+          svg.style.zIndex=99999;svg.style.pointerEvents='none';
+          const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+          path.setAttribute('d','M12 21s-7.5-4.736-10-8.5C-1 6.5 5.5 2 8.5 4 10 5.2 11 6.6 12 8c1-1.4 2-2.8 3.5-4C18.5 2 24 6.5 22 12.5 19.5 16.764 12 21 12 21z');
+          path.setAttribute('fill', Math.random()>0.5? '#ff3366':'#ff7aa2');
+          svg.appendChild(path);
+          document.body.appendChild(svg);
+          const dx = (Math.random()*2-1)*120; // horizontal drift
+          const dy = - (160 + Math.random()*120);
+          const rot = (Math.random()*720-360);
+          svg.animate([
+            { transform: 'translateY(0) rotate(0deg)', opacity:1 },
+            { transform: `translate(${dx}px,${dy}px) rotate(${rot}deg)`, opacity:0 }
+          ],{ duration:700 + Math.random()*700, easing:'cubic-bezier(.2,.9,.2,1)' });
+          setTimeout(()=>svg.remove(),1500);
+        }
+      }
+
+      // Limit particle emission based on viewport size (simple heuristic)
+      function particleLimit(){
+        const w = window.innerWidth || document.documentElement.clientWidth;
+        if(w < 480) return 2;
+        if(w < 768) return 4;
+        if(w < 1024) return 8;
+        return 12;
+      }
+    });
+
+    // Tema ligero: ajustar variables CSS en :root cuando se añade la clase
+    const style = document.createElement('style');
+  style.textContent = `:root.light-theme{ --bg1: #f6f8fb; --bg2: #e9eef6; --text:#071124; --glass: rgba(7,17,36,0.03); --glass-2: rgba(7,17,36,0.01); --muted: rgba(7,17,36,0.68); --btn-on-accent: #071124; --border: rgba(7,17,36,0.06); }`;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EM — Portfolio Premium</title>
+  <meta name="description" content="Portfolio de Emmanuel Munayar">
+
+  <!-- TIPOGRAFÍA PREMIUM -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --card:#111;
+      --text:#f4f4f4;
+      --muted:#8d8d8d;
+      --border:rgba(255,255,255,0.08);
+      --accent:#C4A76A;
+      --shadow:0 4px 12px rgba(0,0,0,0.18);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Inter',sans-serif;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    /* NAV MÁS PREMIUM */
+    nav{
+      position:fixed;top:0;left:0;right:0;height:80px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 50px;
+      background:rgba(10,10,10,0.6);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border);
+      z-index:999;
+    }
+    .brand{
+      font-size:1.1rem;font-weight:700;letter-spacing:-0.03em;
+    }
+
+    .nav-links{display:flex;gap:40px;font-weight:500;color:var(--muted)}
+    .nav-links a{
+      position:relative;padding-bottom:4px;
+      transition:color .3s ease;
+    }
+    .nav-links a::after{
+      content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
+      background:var(--accent);transition:width .3s ease;
+    }
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a:hover::after{width:100%}
+
+    /* HERO MINIMALISTA DE LUJO */
+    .hero{
+      min-height:90vh;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;padding:0 24px;
+    }
+    .hero h1{
+      font-size:4rem;font-weight:800;letter-spacing:-0.04em;
+      margin-bottom:20px;
+    }
+    .hero p{
+      max-width:700px;font-size:1.25rem;color:var(--muted);
+      margin-bottom:40px;font-weight:400;
+    }
+    .cta{display:flex;gap:16px;margin-top:20px}
+
+    .btn{
+      padding:14px 34px;border-radius:50px;font-weight:600;
+      background:var(--card);border:1px solid var(--border);
+      transition:all .35s cubic-bezier(.16,1,.3,1);
+    }
+    .btn:hover{transform:translateY(-4px);border-color:var(--accent);color:var(--accent)}
+
+    .btn-primary{
+      background:var(--accent);color:#000;border:none;
+    }
+    .btn-primary:hover{transform:translateY(-4px) scale(1.02)}
+
+    .container{max-width:1100px;margin:0 auto;padding:100px 24px}
+
+    /* TITULARES */
+    h2{
+      font-size:2.6rem;font-weight:800;margin-bottom:12px;letter-spacing:-0.025em;
+    }
+    .section-desc{color:var(--muted);font-size:1.05rem;margin-bottom:50px}
+
+    /* CARDS PREMIUM */
+    .cards{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:32px;margin-top:30px;
+    }
+    .card{
+      background:var(--card);padding:40px;border-radius:18px;
+      border:1px solid var(--border);
+      transition:all .35s cubic-bezier(.16,1,.3,1);
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:var(--accent);
+    }
+    .card h3{font-size:1.4rem;margin-bottom:10px;font-weight:700}
+    .card p{margin-top:12px;color:var(--muted)}
+
+    /* FOOTER */
+    footer{
+      text-align:center;padding:40px 0;margin-top:120px;
+      font-size:0.85rem;color:var(--muted);
+      border-top:1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="brand">Emmanuel Munayar</div>
+    <div class="nav-links">
+      <a href="#bio">Bio</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Construyo Software & Seguridad</h1>
+    <p>Programador, ciberseguridad ética y creación de herramientas enfocadas en educación, análisis y desarrollo moderno.</p>
+    <div class="cta">
+      <a href="#proyectos" class="btn-primary btn">Ver proyectos</a>
+      <a href="#contacto" class="btn">Contactar</a>
+    </div>
+  </section>
+
+  <div class="container" id="bio">
+    <h2>Biografía</h2>
+    <p class="section-desc">Un enfoque directo, técnico y limpio sobre quién soy y lo que construyo.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Formación</h3>
+        <p>Experiencia en desarrollo web, Python, análisis de redes y creación de herramientas de ciberseguridad educativa.</p>
+      </div>
+      <div class="card">
+        <h3>Especialidad</h3>
+        <p>Hacking ético, automatización, sistemas defensivos y análisis técnico con enfoque responsable.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="proyectos">
+    <h2>Proyectos</h2>
+    <p class="section-desc">Selección precisa de herramientas, sistemas y desarrollos propios.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>🔐 Scanner de Seguridad</h3>
+        <p>Python • Flask • Redes</p>
+        <p>Scanner de puertos, dispositivos y análisis básico de vulnerabilidades.</p>
+      </div>
+      <div class="card">
+        <h3>📊 Dashboard de Datos</h3>
+        <p>React • Node.js</p>
+        <p>Visualización en tiempo real con filtros avanzados y reportes.</p>
+      </div>
+      <div class="card">
+        <h3>🎨 Generador UI</h3>
+        <p>HTML • CSS • JS</p>
+        <p>Paletas profesionales y componentes estilizados automáticos.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="contacto">
+    <h2>Contacto</h2>
+    <p class="section-desc">Conexiones directas y sin vueltas.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>📧 Email</h3>
+        <p>emmanuelmunayar@gmail.com</p>
+      </div>
+      <div class="card">
+        <h3>💬 WhatsApp</h3>
+        <p>Disponible para consultas rápidas.</p>
+      </div>
+      <div class="card">
+        <h3>🐙 GitHub</h3>
+        <p>@emmanuelmunayar</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 EM — Portfolio Premium</footer>
+
+</body>
+</html>
