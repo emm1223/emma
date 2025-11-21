@@ -352,13 +352,13 @@
 
 ### 💪 **My Commitments to You**
 
-- ✅ Everything here has real purpose
-- ✅ Errors are documented & valued
-- ✅ Code evolves with my learning
-- ✅ Honesty over appearances, always
-- ✅ Never "done" — always improving
-- ✅ Real projects > toy examples
-- ✅ Transparency > polish
+  ✅ Everything here has real purpose
+  ✅ Errors are documented & valued
+  ✅ Code evolves with my learning
+  ✅ Honesty over appearances, always
+  ✅ Never "done" — always improving
+  ✅ Real projects > toy examples
+  ✅ Transparency > polish
 
 
 ---
