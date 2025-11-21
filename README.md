@@ -360,43 +360,6 @@
 - ✅ Real projects > toy examples
 - ✅ Transparency > polish
 
----
-
-## 🔥 **THE REAL MESSAGE**
-
-<div align="center">
-
-```
-╔════════════════════════════════════════════════════════════╗
-║                                                            ║
-║  THIS IS NOT A PRETTY PORTFOLIO.                         ║
-║  THIS IS NOT SHOWCASE CODE.                              ║
-║  THIS IS NOT "BEST PRACTICES ONLY."                      ║
-║  THIS IS NOT FINISHED OR POLISHED.                       ║
-║                                                            ║
-║  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ║
-║                                                            ║
-║  THIS IS MY LAB.                                          ║
-║  THIS IS WHERE I FAIL.                                   ║
-║  THIS IS WHERE I LEARN.                                  ║
-║  THIS IS WHERE I GROW.                                   ║
-║  THIS IS PROOF OF CONSTANT EVOLUTION.                    ║
-║                                                            ║
-║  EVERY PROJECT HERE IS A VERSION OF ME.                  ║
-║                                                            ║
-║  Not perfect, but REAL.                                  ║
-║  Not finished, but EVOLVING.                             ║
-║  Not polished, but HONEST.                               ║
-║  Not static, but ALIVE.                                  ║
-║                                                            ║
-║  If you find something interesting: STEAL IT.            ║
-║  If you have feedback: I'M LISTENING.                    ║
-║  If you want to build: LET'S GO.                         ║
-║                                                            ║
-╚════════════════════════════════════════════════════════════╝
-```
-
-</div>
 
 ---
 
@@ -443,8 +406,8 @@ Whatever you do: keep experimenting, keep breaking, keep learning.
 
 ###  **EMMANUEL MUNAYAR** 
 
-**Repository Status:** 🟢 **ACTIVE & GROWING**  
-**Energy Level:** ⚡⚡⚡⚡⚡ **MAXIMUM**  
+**Repository Status:**  **ACTIVE & GROWING**  
+**Energy Level:** **MAXIMUM**  
 **Last Updated:** 21 November 2025  
 **Next Update:** Any moment (can't stop, won't stop)
 
