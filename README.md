@@ -1,131 +1,177 @@
-# 🔴 EMMA — Code Laboratory
+# 🚀 EMMA — Code Laboratory
+
+> *Donde fallo rápido, aprendo siempre y el código evoluciona sin filtros*
+
 ```
-███████╗███╗   ███╗███╗   ███╗ █████╗ 
-██╔════╝████╗ ████║████╗ ████║██╔══██╗
-█████╗  ██╔████╔██║██╔████╔██║███████║
-██╔══╝  ██║╚██╔╝██║██║╚██╔╝██║██╔══██║
-███████╗██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║
-╚══════╝╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝
+╔════════════════════════════════════════════════════════════╗
+║                                                            ║
+║    ███████╗███╗   ███╗███╗   ███╗ █████╗              ║
+║    ██╔════╝████╗ ████║████╗ ████║██╔══██╗             ║
+║    █████╗  ██╔████╔██║██╔████╔██║███████║             ║
+║    ██╔══╝  ██║╚██╔╝██║██║╚██╔╝██║██╔══██║             ║
+║    ███████╗██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║             ║
+║    ╚══════╝╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝             ║
+║                                                            ║
+║          Mi laboratorio vivo de experimentación           ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
 ```
 
 ---
 
-## 🎯 ¿Qué es esto?
+## 💎 ¿Qué es EMMA?
 
-Este es **mi laboratorio de código**: un portafolio de experimentos, herramientas y proyectos reales donde documento mi evolución técnica.
+Un **laboratorio activo de código** donde combino curiosidad, experimentación y pragmatismo. No es un portafolio pulido—es mi evolución técnica en tiempo real.
 
-**No aquí no hay:**
-- ❌ Proyectos "terminados" y perfectos
-- ❌ Código decorativo sin propósito
-- ❌ Tutoriales copiados de internet
-- ❌ Soluciones genéricas
-
-**Aquí hay:**
-- ✅ Experimentos que aprenden algo
-- ✅ Código funcional con propósito real
-- ✅ Herramientas que uso en serio
-- ✅ Documentación de errores y lecciones
-- ✅ Evolución constante y sin filtros
+| Aspecto | Realidad |
+|---------|----------|
+| 🎯 **Propósito** | Aprender rompiendo cosas, no construir perfección |
+| 📚 **Contenido** | Experimentos reales, herramientas que uso, proyectos con propósito |
+| ⚡ **Enfoque** | Prototipado rápido, iteración sin miedo, documentación de errores |
+| 🔄 **Estado** | En constante evolución—nada está "terminado" |
 
 ---
 
-## 💡 Mi filosofía
+## 🧠 Mi Filosofía
 
-Creo que el verdadero aprendizaje nace de experimentar y fallar rápido. No leo documentación esperando—construyo y rompo cosas hasta que funcionen.
+```
+Experimentar → Fallar rápido → Aprender → Mejorar → Repetir
+```
 
-Este repositorio es la prueba viviente de eso: cada línea de código es un paso en mi evolución, cada proyecto es una lección, cada error es un aprendizaje.
+No espero a tener todo perfecto. **Construyo, valido, ajusto.** Cada línea de código es evidencia de un aprendizaje, cada error es un escalón.
 
-**No tengo un único camino.** Web, sistemas, automatización, ciberseguridad—voy donde la curiosidad me lleva.
+> **No tengo un camino lineal.** Web, backend, automatización, ciberseguridad—donde la curiosidad me lleva, ahí voy.
 
 ---
 
-## 🔧 Tech Stack
+## 🛠️ Tech Stack
 
-**Frontend:**
-- React, Vue, HTML5, CSS3, JavaScript/TypeScript
-- Tailwind CSS, diseño responsivo
-- Animaciones y UX interactiva
+<table>
+<tr>
+<td width="50%">
 
-**Backend:**
+### 🎨 Frontend
+- React, Vue, HTML5/CSS3
+- JavaScript/TypeScript
+- Tailwind CSS
+- Animaciones & UX interactiva
+
+</td>
+<td width="50%">
+
+### ⚙️ Backend
 - Node.js, Express
-- Arquitectura modular y escalable
+- Arquitectura modular
+- Escalabilidad
 
-**Automatización & Scripting:**
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🤖 Automatización
 - Python, Bash
-- Herramientas internas y utilidades
+- Scripts utilitarios
+- Herramientas internas
 
-**Herramientas:**
-- VS Code, Git, GitHub
-- Docker (ocasional)
-- Visual Studio
+</td>
+<td width="50%">
+
+### 🔧 DevOps
+- Git, GitHub
+- Docker
+- Visual Studio Code
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 📊 Enfoque por áreas
+## 🎯 Áreas de Exploración
 
-### Web Development
-Construyo aplicaciones modernas, responsivas y funcionales. Me enfoco en arquitectura limpia y experiencia de usuario.
+### 🌐 **Web Development**
+Aplicaciones modernas, responsivas y funcionales con arquitectura limpia.
 
-### Automatización
-Creo scripts y herramientas para optimizar tareas repetitivas. Python es mi aliado aquí.
+### 🔄 **Automatización**
+Scripts que optimizan tareas repetitivas. Python es mi lenguaje favrito aquí.
 
-### Experimentación
-Prototipos rápidos, pruebas de concepto, ideas que explotan en código. Sin miedo a romper.
+### 💥 **Experimentación**
+Prototipos rápidos, pruebas de concepto, ideas que explotan en código. **Sin miedo a romper.**
 
-### Sistemas & DevOps
+### 🖥️ **Sistemas & DevOps**
 Entiendo cómo funcionan las cosas por debajo. Configuración, deployment, optimización.
 
 ---
 
-## 🚀 Cómo trabajo
+## 🚀 Mi Metodología
 
-1. **Idea** → Surge de la curiosidad o necesidad real
-2. **Prototipo rápido** → Itero sin miedo a romper
-3. **Validación** → ¿Funciona? ¿Qué aprendí?
-4. **Mejora** → Refino si vale la pena
-5. **Documentación** → Dejo registro para futuro yo
-
----
-
-## 🎓 Habilidades
-
-- **Lenguajes:** JavaScript, Python, TypeScript, HTML/CSS, Bash
-- **Frameworks:** React, Node.js, Express
-- **Bases de datos:** SQL, NoSQL concepts
-- **Versionado:** Git, GitHub
-- **Otros:** Debugging, performance optimization, API design
+```
+1️⃣  IDEA         → Surge de curiosidad o necesidad real
+2️⃣  PROTOTIPO    → Itero rápidamente sin miedo
+3️⃣  VALIDACIÓN   → ¿Funciona? ¿Qué aprendí?
+4️⃣  MEJORA       → Refino si vale la pena
+5️⃣  DOCUMENTACIÓN→ Registro para futuro yo
+```
 
 ---
 
-## 🌐 Conecta conmigo
+## 🎓 Competencias
 
-Si quieres hablar sobre código, proyectos o simplemente tomar un café virtual:
-
-- **GitHub:** [@emm1223](https://github.com/emm1223)
-- **Instagram:** [@emm_exe.sys](https://www.instagram.com/emm_exe.sys/)
-- **TikTok:** [@munayar22](https://www.tiktok.com/@munayar22)
-- **Discord:** xxemmanuell
-- **Email:** emmanuelmunayar@gmail.com
-
----
-
-## 📌 Notas importantes
-
-- Este repo **crece constantemente**—las cosas cambian, evolucionan, se integran
-- Cada carpeta es independiente; explora sin miedo
-- El código puede estar incompleto; eso es normal
-- Si algo te sirve, úsalo. Si tienes feedback, perfecto
+| Categoría | Detalles |
+|-----------|----------|
+| **Lenguajes** | JavaScript, Python, TypeScript, HTML/CSS, Bash |
+| **Frameworks** | React, Node.js, Express, Vue |
+| **BD** | SQL, NoSQL concepts |
+| **Herramientas** | Git, GitHub, VS Code, Visual Studio |
+| **Especialidades** | Debugging, Performance, API Design |
 
 ---
 
-## 🔥 Último mensaje
+## 🌍 Conecta Conmigo
 
-Este no es un portafolio bonito. Es mi laboratorio vivo donde fallo, aprendo y avanzo cada día.
+<div align="center">
+
+| Plataforma | Contacto |
+|-----------|----------|
+| 🐙 **GitHub** | [@emm1223](https://github.com/emm1223) |
+| 📷 **Instagram** | [@emm_exe.sys](https://www.instagram.com/emm_exe.sys/) |
+| 🎵 **TikTok** | [@munayar22](https://www.tiktok.com/@munayar22) |
+| 💬 **Discord** | `xxemmanuell` |
+| 📧 **Email** | `emmanuelmunayar@gmail.com` |
+
+</div>
+
+---
+
+## ⚠️ Importante
+
+- 📈 Este repo **crece y cambia constantemente**
+- 🧩 Cada carpeta es independiente—explora libremente
+- ⏳ El código puede estar incompleto—eso es normal
+- 🔗 Si algo te sirve, úsalo; si tienes feedback, adelante
+
+---
+
+## 🔥 El Mensaje Final
+
+> **Este no es un portafolio bonito. Es mi laboratorio vivo.**
+>
+> Donde fallo, donde aprendo, donde avanzo cada día.
+>
+> No aquí no hay perfección—hay evolución.
 
 **Bienvenido. Que disfrutes rompiendo cosas.**
 
 ---
 
-*Última actualización: 21 de noviembre de 2025*  
-*Desarrollado con café, curiosidad y sin filtros.*  
-*— Emmanuel Munayar*
+<div align="center">
+
+⭐ *Si algo te interesa, dale una estrella*  
+🔗 *Conecta, colabora, experimenta*  
+📝 *Última actualización: 21 de noviembre de 2025*
+
+**Hecho con ☕ curiosidad y sin filtros**  
+**— Emmanuel Munayar**
+
+</div>
