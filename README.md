@@ -289,25 +289,6 @@ This IS where I grow.
 
 ---
 
-<div align="center">
-
-## 🎆 Join the Chaos
-
-### ⭐ If you find value here, throw a star
-### 🔗 Collaborate, experiment, break things together
-### 📝 Share ideas, build cool stuff, never stop learning
-
----
-
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; margin: 20px 0;">
-
-### 🚀 **Let's Build Something Extraordinary**
-
-*This is more than code—it's a journey.*
-
-**Made with ☕ Coffee, 🧠 Curiosity, and 🔥 Zero Filters**
-
----
 
 **Emmanuel Munayar** • Last Updated: 21 November 2025  
 *"The only way to predict the future is to invent it."*
