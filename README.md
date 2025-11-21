@@ -1,12 +1,23 @@
 # 🕳️ Emma — Research & Cyber Development Lab
 
+```
+██████╗ ███████╗ █████╗ ██╗     ███████╗██╗      █████╗ ██████╗ 
+██╔════╝ ██╔════╝██╔══██╗██║     ██╔════╝██║     ██╔══██╗██╔══██╗
+█████╗  █████╗  ███████║██║     █████╗  ██║     ███████║██████╔╝
+██╔══╝  ██╔══╝  ██╔══██║██║     ██╔══╝  ██║     ██╔══██║██╔══██╗
+███████╗███████╗██║  ██║███████╗███████╗███████╗██║  ██║██████╔╝
+╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═════╝ 
+```
+
 Este repositorio no es un portafolio ni una carpeta bonita para mostrar.  
 Es mi laboratorio de desarrollo, donde construyo, rompo, analizo y evoluciono herramientas, exploits, automatizaciones, sistemas web y prototipos que forman mi base técnica.
 
-Nada aquí es casual. Todo tiene una razón: aprender, romper límites y escribir código que haga algo real.
+**Nada aquí es casual.** Todo tiene una razón: aprender, romper límites y escribir código que haga algo real.
 
-> ⚠️ No es un repositorio para gente que busca proyectos "terminados".  
-> Es un entorno de experimentación, investigación y desarrollo continuo.
+> ⚠️ **No es un repositorio para gente que busca proyectos "terminados".**  
+> Es un entorno vivo de experimentación, investigación y desarrollo continuo.
+> 
+> Aquí fallo, aprendo y avanzo. Todos los días.
 
 ---
 
@@ -141,18 +152,43 @@ Proyecto web educativo / pruebas frontend.
 
 ## 🎯 Qué NO encontrarás aquí
 
-- Tutoriales copiados de internet
-- Código "bonito" sin propósito
-- Proyectos 100% documentados (ese no es mi estilo)
-- Soluciones genéricas para problemas genéricos
+- Tutoriales copiados de internet ❌
+- Código "bonito" sin propósito ❌
+- Proyectos 100% documentados (ese no es mi estilo) ❌
+- Soluciones genéricas para problemas genéricos ❌
+- Proyectos abandonados sin explicación ❌
+
+Lo que SÍ encontrarás:
+
+- Código real, funcional, con propósito ✅
+- Experimentos que enseñan algo ✅
+- Herramientas que uso en serio ✅
+- Errores documentados y lecciones aprendidas ✅
+- Evolución constante ✅
 
 ---
 
 ## 💭 Un poco sobre mí
 
-Soy alguien que aprende haciendo. No leo documentación y espero, construyo y rompo cosas hasta que funcionen. Este repositorio es la prueba viviente de eso.
+Soy alguien que aprende haciendo. No espero, no leo documentación interminable—construyo y rompo cosas hasta que funcionen. 
 
-Cada línea de código acá es un paso en mi evolución técnica.
+Mi nombre es **Emmanuel Munayar**, tengo 25 años y vivo en Argentina. Soy desarrollador, experimentador y obsesionado con entender cómo funcionan las cosas en profundidad.
+
+Este repositorio es la prueba viviente de eso: cada línea de código es un paso en mi evolución técnica, cada proyecto un aprendizaje, cada error una lección.
+
+**No tengo un único camino.** Voy por donde la curiosidad me lleva: web, sistemas, automatización, ciberseguridad, lo que sea. Todo es relevante.
+
+---
+
+## 🌐 Conecta conmigo
+
+Si quieres seguir mi evolución, hablar sobre código o simplemente tomar un café virtual:
+
+- **GitHub:** [@emm1223](https://github.com/emm1223) — Aquí está todo
+- **Instagram:** [@emm_exe.sys](https://www.instagram.com/emm_exe.sys/) — Momentos del laboratorio
+- **TikTok:** [@munayar22](https://www.tiktok.com/@munayar22) — Tips y clips rápidos
+- **Discord:** xxemmanuell — Comunidad y colaboración
+- **Email:** emmanuelmunayar@gmail.com — Proyectos serios
 
 ---
 
@@ -162,9 +198,10 @@ Este repositorio crece constantemente. Las cosas cambian, evolucionan, se integr
 
 Si ves algo que te interesa, explora. Si tienes feedback, excelente. Si solo curiosidad, también está bien.
 
-**Bienvenido al laboratorio.**
+**Bienvenido al laboratorio. Que te diviertas rompiendo cosas.**
 
 ---
 
 *Última actualización: 21 de noviembre de 2025*  
-*Mantenido por: [emm1223](https://github.com/emm1223)*
+*Desarrollado con café, curiosidad y sin miedo a fallar.*  
+*Mantenido por: [Emmanuel Munayar](https://github.com/emm1223)*
