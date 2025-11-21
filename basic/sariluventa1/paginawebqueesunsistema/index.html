@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sistemas Informáticos - Plataforma Educativa Profesional</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%236366f1;stop-opacity:1'/><stop offset='100%' style='stop-color:%234f46e5;stop-opacity:1'/></linearGradient></defs><rect width='200' height='200' fill='url(%23grad)' rx='20'/><circle cx='100' cy='100' r='95' fill='none' stroke='%23818cf8' stroke-width='2' opacity='0.4'/><text x='100' y='135' font-size='120' font-weight='900' text-anchor='middle' fill='%23ffffff' font-family='Arial, sans-serif' letter-spacing='3'>EM</text></svg>" />
+<style>
+/* ========== VARIABLES Y ANIMACIONES GLOBALES ========== */
+:root {
+  --bg: #f8f9fc;
+  --bg-secondary: #f0f2f8;
+  --text: #1a202c;
+  --text-secondary: #4a5568;
+  --muted: #a0aec0;
+  --card: #ffffff;
+  --nav: rgba(15, 27, 64, 0.95);
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --primary-light: #818cf8;
+  --accent: #10b981;
+  --accent-alt: #f59e0b;
+  --glass: rgba(255,255,255,0.08);
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 12px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+body.dark {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --text: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --muted: #94a3b8;
+  --card: #1e293b;
+  --nav: rgba(2, 6, 23, 0.85);
+  --primary: #818cf8;
+  --primary-dark: #6366f1;
+  --primary-light: #a5b4fc;
+  --accent: #10b981;
+  --accent-alt: #f59e0b;
+  --glass: rgba(255,255,255,0.05);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.6); }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  scroll-behavior: smooth;
+  transition: background 0.4s ease, color 0.4s ease;
+  line-height: 1.6;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: var(--nav);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1200;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 0.6s ease;
+}
+
+.logo {
+  color: #fff;
+  font-weight: 800;
+  font-size: 24px;
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent));
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: calc(100% - 32px);
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.theme-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1) rotate(20deg);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1300;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 26px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: var(--shadow-lg);
+  z-index: 1100;
+  animation: slideInRight 0.4s ease;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: var(--primary);
+  transform: translateX(8px);
+}
+
+/* ========== HERO ========== */
+.hero {
+  margin-top: 70px;
+  min-height: 85vh;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%);
+  animation: gradient-shift 15s ease infinite;
+  z-index: 0;
+}
+
+.hero-content {
+  width: min(1100px, 94%);
+  margin: auto;
+  text-align: center;
+  z-index: 1;
+  animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+  font-size: clamp(32px, 8vw, 56px);
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -2px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 40px;
+  animation: fadeInUp 1.2s ease;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1.4s ease;
+}
+
+.btn {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ========== GENERAL SECTION ========== */
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section h2 {
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+
+.section-desc {
+  font-size: 16px;
+  color: var(--text);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* ========== CARDS ========== */
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.card {
+  background: var(--card);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  z-index: 0;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.card p {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+/* ========== GRID ========== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.grid-item {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 32px 20px;
+  text-align: center;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.2);
+  cursor: pointer;
+}
+
+.grid-item::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.grid-item:hover::before {
+  opacity: 1;
+  top: -50%;
+  left: -50%;
+}
+
+.grid-item:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.4);
+}
+
+.grid-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+/* ========== INFO BOX ========== */
+.info-box {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(16, 185, 129, 0.08) 100%);
+  border-left: 4px solid var(--primary);
+  padding: 24px;
+  border-radius: 12px;
+  margin: 24px 0;
+  animation: slideInLeft 0.6s ease;
+}
+
+.info-box h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.info-box p {
+  color: var(--text);
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.info-box ul li {
+  margin: 8px 0;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ========== TIMELINE ========== */
+.timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  position: relative;
+}
+
+.timeline-item:nth-child(even) {
+  direction: rtl;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  direction: ltr;
+}
+
+.timeline-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  z-index: 10;
+}
+
+.timeline-content {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.timeline-content h4 {
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.timeline-content p {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ========== FLOW DIAGRAM ========== */
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  animation: fadeInUp 0.8s ease;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 140px;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+
+.flow-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5);
+}
+
+.flow-number {
+  background: rgba(255, 255, 255, 0.3);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  margin: 0 auto 10px;
+}
+
+.flow-step p {
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.flow-arrow {
+  font-size: 24px;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* ========== TABS ========== */
+.tabs-container {
+  margin: 40px 0;
+}
+
+.tab-content {
+  animation: fadeInUp 0.6s ease;
+}
+
+/* ========== RESPONSIVE TIMELINE ========== */
+@media (max-width: 900px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-marker {
+    left: 20px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-left: 100px;
+  }
+
+  .timeline-item:nth-child(even) {
+    direction: ltr;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    direction: ltr;
+  }
+
+  .flow-diagram {
+    gap: 12px;
+  }
+
+  .flow-arrow {
+    display: none;
+  }
+
+  .flow-step {
+    min-width: 100px;
+    padding: 16px 12px;
+    font-size: 12px;
+  }
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 50px 0 30px;
+  text-align: center;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer .container {
+  animation: fadeInUp 0.8s ease;
+}
+
+.footer h4 {
+  font-size: 14px;
+}
+
+.footer p {
+  font-size: 14px;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 50px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item {
+    padding: 24px 16px;
+  }
+}
+
+/* ========== FAQ STYLES ========== */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--card);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(16, 185, 129, 0.02));
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.05));
+}
+
+.faq-question h4 {
+  margin: 0;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.faq-toggle {
+  font-size: 24px;
+  color: var(--primary);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #f9f9f9;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+}
+
+.faq-answer p {
+  padding: 0 20px;
+  color: #000000;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.faq-answer p:last-child {
+  padding-bottom: 20px;
+}
+
+/* ========== QUIZ STYLES ========== */
+.quiz-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.quiz-progress {
+  width: 100%;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width 0.3s ease;
+}
+
+.quiz-content {
+  animation: fadeInUp 0.6s ease;
+}
+
+.quiz-question {
+  margin-bottom: 30px;
+}
+
+.quiz-question h4 {
+  color: #000000;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quiz-option {
+  background: #f5f5f5;
+  border: 2px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #000000;
+  font-weight: 500;
+}
+
+.quiz-option:hover {
+  background: #efefef;
+  border-color: var(--primary);
+}
+
+.quiz-option.selected {
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  color: white;
+  border-color: var(--primary);
+}
+
+.quiz-option.correct {
+  background: #d4edda;
+  border-color: #28a745;
+  color: #155724;
+}
+
+.quiz-option.incorrect {
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.quiz-result {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1));
+  border-radius: 12px;
+  animation: scaleIn 0.5s ease;
+}
+
+.quiz-result h3 {
+  color: #000000;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.result-score {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.quiz-result p {
+  color: #000000;
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* ========== CASOS DE USO STYLES ========== */
+.casos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.caso-card {
+  background: var(--card);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.caso-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.caso-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.caso-card h3 {
+  color: #000000;
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.caso-card p {
+  color: #000000;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.caso-card p strong {
+  color: var(--primary);
+}
+
+/* ========== CONTACTO STYLES ========== */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.contacto-card {
+  background: var(--card);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contacto-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-lg);
+}
+
+.contacto-card.whatsapp-card {
+  border-color: #25d366;
+}
+
+.contacto-card.whatsapp-card:hover {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(37, 211, 102, 0.05));
+  border-color: #25d366;
+}
+
+.contacto-card.instagram-card {
+  border-color: #e1306c;
+}
+
+.contacto-card.instagram-card:hover {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.1), rgba(225, 48, 108, 0.05));
+  border-color: #e1306c;
+}
+
+.contacto-card.email-card {
+  border-color: var(--primary);
+}
+
+.contacto-card.email-card:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
+  border-color: var(--primary);
+}
+
+.contacto-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.contacto-card h3 {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.contacto-card p {
+  color: #000000;
+  font-size: 13px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.contacto-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contacto-card:hover .contacto-btn {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+}
+
+/* ========== SCROLL TOP BUTTON ========== */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.5);
+}
+
+.scroll-top-btn:active {
+  transform: scale(0.95);
+}
+
+/* ========== ESTADÍSTICAS ANIMADAS ========== */
+.stats-section {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(16, 185, 129, 0.05));
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 14px;
+  padding: 32px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  font-family: 'Courier New', monospace;
+}
+
+.stat-label {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .hero {
+    margin-top: 60px;
+    min-height: 70vh;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+  <div class="logo">🚀 Sistemas</div>
+  <div class="nav-links">
+    <a href="#inicio">Inicio</a>
+    <a href="#que-son">¿Qué son?</a>
+    <a href="#componentes">Componentes</a>
+    <a href="#lugares">Dónde están</a>
+    <a href="#ciclo">Ciclo de vida</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <button class="theme-btn" id="themeBtn" title="Cambiar tema">🌙</button>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#inicio">Inicio</a>
+  <a href="#que-son">¿Qué son?</a>
+  <a href="#componentes">Componentes</a>
+  <a href="#lugares">Dónde están</a>
+  <a href="#ciclo">Ciclo de vida</a>
+  <a href="#faq">FAQ</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#casos">Casos Reales</a>
+  <a href="#contacto">Contacto</a>
+</div>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <h1 class="hero-title">🖥️ Sistemas: La base del mundo digital</h1>
+    <p class="hero-subtitle">Comprende cómo funcionan los sistemas que usamos todos los días. Desde un simple botón hasta complejas redes empresariales, todo sigue los mismos principios fundamentales.</p>
+    <div class="cta-buttons">
+      <a href="#que-son" class="btn btn-primary">Empezar a aprender</a>
+      <a href="#componentes" class="btn btn-secondary">Ver detalles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ¿QUÉ SON? ========== -->
+<section class="section" id="que-son">
+  <div class="container">
+    <div class="section-header">
+      <h2>¿Qué son los sistemas?</h2>
+      <p class="section-desc">Un sistema es un conjunto de elementos interdependientes que trabajan coordinadamente para lograr un objetivo común. En la vida cotidiana, vemos sistemas en todas partes.</p>
+    </div>
+    
+    <!-- DEFINICIÓN SIMPLE -->
+    <div class="info-box">
+      <h3>📚 Definición simple:</h3>
+      <p>Un <strong>sistema</strong> es cualquier cosa que tiene partes que funcionan juntas. Imagine un reloj: tiene ruedas, resortes y agujas. Cada pieza tiene un propósito, pero todas juntas muestran la hora. Si quitamos una pieza, el reloj no funciona.</p>
+    </div>
+
+    <!-- CARACTERÍSTICAS PRINCIPALES -->
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <h3>Componentes</h3>
+        <p>Cada sistema está formado por partes o elementos. En un coche: motor, ruedas, volante, etc. En una escuela: estudiantes, maestros, edificio.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h3>Interconexión</h3>
+        <p>Las partes NO funcionan independientes. Están conectadas y se comunican. Si el motor del coche falla, aunque las ruedas estén bien, el coche no sirve.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Propósito</h3>
+        <p>Todo sistema existe para cumplir una función. El coche existe para transportar. La escuela existe para enseñar. Sin propósito, no es un sistema.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔄</div>
+        <h3>Interdependencia</h3>
+        <p>Las partes dependen unas de otras. Si falla una parte importante, todo el sistema puede colapsar. Por eso el mantenimiento es crucial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMPONENTES ========== -->
+<section class="section" id="componentes">
+  <div class="container">
+    <div class="section-header">
+      <h2>¿De qué se componen los sistemas?</h2>
+      <p class="section-desc">Los sistemas informáticos (computadoras, aplicaciones, internet) tienen cuatro componentes esenciales que trabajan juntos.</p>
+    </div>
+    
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3>Hardware</h3>
+        <p><strong>La parte física</strong> que puedes tocar. Incluye: procesador, memoria RAM, disco duro, monitor, teclado, mouse, tarjeta de red. Es como el "cuerpo" de la computadora.</p>
+        <hr style="border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 12px 0;">
+        <small><strong>Ejemplo:</strong> Tu laptop tiene un procesador Intel, 8GB de RAM, y un SSD de 256GB.</small>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>Software</h3>
+        <p><strong>Los programas que se ejecutan</strong> en el hardware. Incluye: sistema operativo (Windows, macOS), aplicaciones (Chrome, Word), juegos, antivirus. Es la "mente" de la computadora.</p>
+        <hr style="border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 12px 0;">
+        <small><strong>Ejemplo:</strong> Windows 11 es software. YouTube, Excel, Discord son software.</small>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Datos</h3>
+        <p><strong>La información que procesa el sistema</strong>. Son los números, textos, imágenes que guardas y usas. Se almacenan en el disco duro o en la nube.</p>
+        <hr style="border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 12px 0;">
+        <small><strong>Ejemplo:</strong> Tus fotos en Instagram, documentos en Google Drive, mensajes en WhatsApp.</small>
+      </div>
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <h3>Usuarios</h3>
+        <p><strong>Las personas que usan el sistema</strong>. Tú, yo, tu familia. Interactuamos con el software para realizar tareas y obtener información.</p>
+        <hr style="border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 12px 0;">
+        <small><strong>Ejemplo:</strong> Cuando escribes un mensaje en WhatsApp, eres parte del sistema.</small>
+      </div>
+    </div>
+
+    <!-- SECCIÓN DE CÓMO TRABAJAN JUNTOS -->
+    <div style="margin-top: 60px;">
+      <h3 style="text-align: center; font-size: 24px; margin-bottom: 30px; color: var(--primary);">🔗 ¿Cómo trabajan juntos estos componentes?</h3>
+      <div class="flow-diagram">
+        <div class="flow-step">
+          <div class="flow-number">1</div>
+          <p><strong>Tú (Usuario)</strong> interactúas con el software</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-number">2</div>
+          <p><strong>Software</strong> procesa tu comando</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-number">3</div>
+          <p><strong>Hardware</strong> ejecuta las instrucciones</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-number">4</div>
+          <p><strong>Datos</strong> se guardan/procesan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top: 40px;">
+      <h3>💡 Analogía útil:</h3>
+      <p style="color: #000000;">Piensa en un videojuego como un sistema completo:</p>
+      <ul style="margin-left: 20px; margin-top: 10px; color: #000000;">
+        <li style="color: #000000;"><strong>Hardware:</strong> Tu consola PS5 o computadora</li>
+        <li style="color: #000000;"><strong>Software:</strong> El juego instalado (Fortnite, FIFA, etc.)</li>
+        <li style="color: #000000;"><strong>Datos:</strong> Tu perfil, puntuación, progreso guardado</li>
+        <li style="color: #000000;"><strong>Usuario:</strong> Tú jugando</li>
+      </ul>
+      <p style="margin-top: 15px; color: #000000;">Sin uno de estos componentes, el sistema no funciona. Si se daña el hardware, no puedes jugar. Si el software tiene un bug, el juego falla.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DÓNDE SE ENCUENTRAN ========== -->
+<section class="section" id="lugares">
+  <div class="container">
+    <div class="section-header">
+      <h2>¿Dónde encontramos sistemas?</h2>
+      <p class="section-desc">Los sistemas están en todas partes. A continuación, ejemplos concretos que usas o ves todos los días.</p>
+    </div>
+    
+    <div class="grid">
+      <div class="grid-item">
+        <div class="grid-icon">📱</div>
+        <strong>Celulares</strong>
+        <small>Android, iOS con apps</small>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🏢</div>
+        <strong>Empresas</strong>
+        <small>Sistemas de recursos humanos</small>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🚗</div>
+        <strong>Transporte</strong>
+        <small>GPS, frenos electrónicos</small>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🏥</div>
+        <strong>Hospitales</strong>
+        <small>Historiales médicos digitales</small>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🌐</div>
+        <strong>Internet</strong>
+        <small>Servidores web conectados</small>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🎓</div>
+        <strong>Educación</strong>
+        <small>Plataformas como Google Classroom</small>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🏦</div>
+        <strong>Bancos</strong>
+        <small>Transacciones seguras</small>
+      </div>
+      <div class="grid-item">
+        <div class="grid-icon">🛒</div>
+        <strong>Tiendas Online</strong>
+        <small>Amazon, MercadoLibre, Shopify</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ESTADÍSTICAS CON NÚMEROS ANIMADOS ========== -->
+<section class="section stats-section" id="estadisticas">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" data-target="2000000000">0</div>
+        <div class="stat-label">Usuarios de Sistemas</div>
+        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">Personas conectadas globalmente</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number" data-target="1000">0</div>
+        <div class="stat-label">Componentes de Hardware</div>
+        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">Diferentes tipos inventados</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number" data-target="99.9">0</div>
+        <div class="stat-label">% Uptime Promedio</div>
+        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">Disponibilidad de servidores</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number" data-target="50">0</div>
+        <div class="stat-label">Años de Evolución</div>
+        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">Desde las primeras computadoras</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ciclo">
+  <div class="container">
+    <div class="section-header">
+      <h2>🔄 Ciclo de vida de un sistema</h2>
+      <p class="section-desc">Todo sistema pasa por fases. Entender esto es importante para saber cómo funcionan las cosas.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">1</div>
+        <div class="timeline-content">
+          <h4>Análisis</h4>
+          <p>Se define qué se necesita. ¿Cuál es el problema? ¿Qué queremos lograr? Ejemplo: "Necesitamos una app para reservar clases"</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">2</div>
+        <div class="timeline-content">
+          <h4>Diseño</h4>
+          <p>Se planifica cómo funcionará. Se crean los planos. Ejemplo: "Tendrá un botón para reservar, una base de datos con disponibilidad"</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">3</div>
+        <div class="timeline-content">
+          <h4>Desarrollo</h4>
+          <p>Se construye/programa el sistema. Los programadores escriben el código. Se ensamblan los componentes. Ejemplo: Los ingenieros programan la app</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">4</div>
+        <div class="timeline-content">
+          <h4>Pruebas</h4>
+          <p>Se verifica que todo funcione bien. Se buscan errores. Ejemplo: "¿La app no deja reservar dos horas iguales? Hay un bug"</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">5</div>
+        <div class="timeline-content">
+          <h4>Implementación</h4>
+          <p>Se pone en funcionamiento real. Los usuarios comienzan a usarlo. Ejemplo: "La app está en Google Play, todos pueden descargarla"</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">6</div>
+        <div class="timeline-content">
+          <h4>Mantenimiento</h4>
+          <p>Se arreglan problemas, se mejora. Es continuo. Ejemplo: "Los usuarios reportan un bug, lo solucionamos. Agregamos nuevas características"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TIPOS DE SISTEMAS ========== -->
+<section class="section" id="tipos">
+  <div class="container">
+    <div class="section-header">
+      <h2>📋 Tipos de sistemas</h2>
+      <p class="section-desc">Existen diferentes clasificaciones de sistemas según diversos criterios.</p>
+    </div>
+
+    <div class="tabs-container">
+      <div class="tab-content active" id="tab-tecnologia">
+        <h3 style="margin-bottom: 20px; color: var(--primary);">Según su tecnología:</h3>
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">🔧</div>
+            <h4>Sistemas Mecánicos</h4>
+            <p>Usan piezas que se mueven físicamente. Ejemplo: un reloj, un coche, una bicicleta.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <h4>Sistemas Eléctricos</h4>
+            <p>Usan electricidad. Ejemplo: un televisor, una lámpara, un refrigerador.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">💻</div>
+            <h4>Sistemas Informáticos</h4>
+            <p>Usan computadoras y datos digitales. Ejemplo: redes sociales, videojuegos, apps.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🔀</div>
+            <h4>Sistemas Híbridos</h4>
+            <p>Combinan varios tipos. Ejemplo: un coche eléctrico (mecánico + eléctrico + informático).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top: 40px;">
+      <h3>🏭 Ejemplos en la vida real:</h3>
+      <ul style="margin-left: 20px; margin-top: 10px; color: var(--text-secondary);">
+        <li><strong>Tu escuela:</strong> Sistema administrativo (profesores, estudiantes, horarios, calificaciones)</li>
+        <li><strong>Un supermercado:</strong> Sistema de inventario, cajas registradoras, entregas de proveedores</li>
+        <li><strong>WhatsApp:</strong> Sistema de mensajería (servidores, encriptación, bases de datos)</li>
+        <li><strong>Tu cuerpo:</strong> Sistema digestivo, circulatorio, nervioso - ¡También son sistemas!</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== IMPORTANCIA DE LOS SISTEMAS ========== -->
+<section class="section" id="importancia">
+  <div class="container">
+    <div class="section-header">
+      <h2>⭐ ¿Por qué son importantes los sistemas?</h2>
+      <p class="section-desc">La comprensión de sistemas es fundamental para entender el mundo moderno.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Eficiencia</h3>
+        <p>Un buen sistema funciona rápido y sin desperdicio. Una mala organización pierde tiempo y recursos. Los sistemas bien diseñados ahorran dinero.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>Confiabilidad</h3>
+        <p>Los sistemas permiten que confiemos en los resultados. Un banco debe ser confiable con tu dinero. Un hospital debe ser confiable con tu salud.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>Escalabilidad</h3>
+        <p>Un sistema bien hecho crece sin problemas. WhatsApp empezó con 10 usuarios, hoy tiene 2 mil millones. El sistema aguanta.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛠️</div>
+        <h3>Mantenimiento</h3>
+        <p>Los sistemas son más fáciles de arreglar si están bien organizados. Es como saber dónde guardar tus cosas en casa vs tenerlo todo desordenado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ (PREGUNTAS FRECUENTES) ========== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2>❓ Preguntas Frecuentes (FAQ)</h2>
+      <p class="section-desc">Resolvemos las dudas más comunes que tienen los estudiantes sobre sistemas.</p>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>¿Qué es un servidor?</h4>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Un servidor es una computadora potente conectada a internet 24/7 que almacena información y la envía a otros dispositivos (clientes) cuando la solicitan. Por ejemplo, cuando ves un video en YouTube, estás pidiendo información a los servidores de YouTube.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>¿Por qué se ralentiza mi PC?</h4>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>La ralentización ocurre cuando: 1) La RAM está llena (muchas aplicaciones abiertas), 2) El disco duro/SSD está casi lleno, 3) Tienes virus o malware, 4) El procesador está sobrecargado. La solución: cierra aplicaciones, limpia archivos innecesarios, o aumenta la RAM.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>¿Qué es la RAM y para qué sirve?</h4>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>La RAM (Memoria de Acceso Aleatorio) es la memoria temporal y rápida de tu computadora. Guarda información de los programas que están abiertos AHORA. Cuanta más RAM tengas, más programas puedes abrir sin que se ralentice. Se borra cuando apagas la PC.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>¿Cuál es la diferencia entre SSD y HDD?</h4>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>SSD (unidad de estado sólido) es más rápido, sin piezas móviles, y durará más. HDD (disco duro) es más lento porque tiene un motor giratorio, pero es más barato. Hoy en día, la mayoría elige SSD porque es mucho más rápido.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>¿Qué es la GPU (Tarjeta Gráfica)?</h4>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>La GPU es un procesador especializado en gráficos. Procesa imágenes, videos y juegos. Cualquier PC tiene GPU (integrada en el procesador), pero para videojuegos o edición de video necesitas una GPU dedicada (Nvidia, AMD) más potente.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>¿Es importante tener antivirus?</h4>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>¡Sí, muy importante! El antivirus protege tu PC de malware, virus y ransomware. Windows 10/11 tiene Defender integrado (gratis y bueno), pero también hay opciones como Avast o Norton. Siempre ten uno activo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== QUIZ INTERACTIVO ========== -->
+<section class="section" id="quiz">
+  <div class="container">
+    <div class="section-header">
+      <h2>🎯 Quiz: ¿Cuánto sabes de sistemas?</h2>
+      <p class="section-desc">Pon a prueba tu conocimiento con este cuestionario interactivo. ¡Descubre tu puntuación!</p>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-progress">
+        <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+      </div>
+
+      <div id="quizContent" class="quiz-content">
+        <!-- Las preguntas se mostrarán aquí -->
+      </div>
+
+      <div id="quizResult" class="quiz-result" style="display: none;">
+        <h3>🏆 ¡Resultado Final!</h3>
+        <div class="result-score" id="resultScore"></div>
+        <p id="resultMessage"></p>
+        <button class="btn btn-primary" onclick="resetQuiz()">Intentar de nuevo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CASOS DE USO REALES ========== -->
+<section class="section" id="casos">
+  <div class="container">
+    <div class="section-header">
+      <h2>🌍 Casos de Uso: Sistemas en la vida real</h2>
+      <p class="section-desc">Descubre cómo funcionan los sistemas detrás de las aplicaciones que usas todos los días.</p>
+    </div>
+
+    <div class="casos-grid">
+      <div class="caso-card">
+        <div class="caso-icon">📱</div>
+        <h3>Cómo funciona Instagram</h3>
+        <p><strong>Hardware:</strong> Servidores en centros de datos de Meta alrededor del mundo.</p>
+        <p><strong>Software:</strong> Aplicación móvil, servidor backend, base de datos.</p>
+        <p><strong>Datos:</strong> Tus fotos, videos, likes, comentarios, follows.</p>
+        <p><strong>Usuarios:</strong> 2 mil millones de personas.</p>
+        <p style="margin-top: 10px; color: #666;"><em>Cuando subes una foto: se procesa, comprime, almacena en servidores, se distribuye a tus seguidores.</em></p>
+      </div>
+
+      <div class="caso-card">
+        <div class="caso-icon">🏦</div>
+        <h3>Cómo funciona un Banco</h3>
+        <p><strong>Hardware:</strong> Servidores seguros con encriptación, computadoras en sucursales, cajeros automáticos.</p>
+        <p><strong>Software:</strong> Sistema de gestión bancaria, banca online, aplicaciones móviles.</p>
+        <p><strong>Datos:</strong> Tu dinero (números), transacciones, historial.</p>
+        <p><strong>Usuarios:</strong> Millones de clientes.</p>
+        <p style="margin-top: 10px; color: #666;"><em>Cuando haces una transferencia: se verifica tu identidad, se autoriza, se descuenta y se acredita en otra cuenta.</em></p>
+      </div>
+
+      <div class="caso-card">
+        <div class="caso-icon">🎬</div>
+        <h3>Cómo funciona Netflix</h3>
+        <p><strong>Hardware:</strong> Servidores con miles de películas en data centers globales.</p>
+        <p><strong>Software:</strong> App de streaming, algoritmo de recomendación, servidor de reproducción.</p>
+        <p><strong>Datos:</strong> Las películas, tu historial, tus preferencias.</p>
+        <p><strong>Usuarios:</strong> Más de 250 millones de suscriptores.</p>
+        <p style="margin-top: 10px; color: #666;"><em>Cuando ves una película: Netflix envía el video en fragmentos pequeños a tu dispositivo para evitar que se entrecorte.</em></p>
+      </div>
+
+      <div class="caso-card">
+        <div class="caso-icon">🔍</div>
+        <h3>Cómo funciona Google</h3>
+        <p><strong>Hardware:</strong> Millones de servidores distribuidos globalmente indexando la web.</p>
+        <p><strong>Software:</strong> Motor de búsqueda, algoritmos de ranking, servidor web.</p>
+        <p><strong>Datos:</strong> Toda la información de internet organizada y categor​izada.</p>
+        <p><strong>Usuarios:</strong> 6 mil millones de búsquedas diarias.</p>
+        <p style="margin-top: 10px; color: #666;"><em>Cuando buscas algo: Google busca en su índice gigante y devuelve los resultados más relevantes en milisegundos.</em></p>
+      </div>
+
+      <div class="caso-card">
+        <div class="caso-icon">🛒</div>
+        <h3>Cómo funciona Amazon</h3>
+        <p><strong>Hardware:</strong> Almacenes automatizados, servidores, computadoras de cobro.</p>
+        <p><strong>Software:</strong> Tienda online, carrito de compras, sistema de pagos, seguimiento de envíos.</p>
+        <p><strong>Datos:</strong> Productos, precios, opiniones, pedidos, dirección de envío.</p>
+        <p><strong>Usuarios:</strong> Cientos de millones de compradores.</p>
+        <p style="margin-top: 10px; color: #666;"><em>Cuando compras: se procesa el pago, se confirma el pedido, se empaca en el almacén y se envía a tu domicilio.</em></p>
+      </div>
+
+      <div class="caso-card">
+        <div class="caso-icon">💬</div>
+        <h3>Cómo funciona WhatsApp</h3>
+        <p><strong>Hardware:</strong> Servidores de mensajería con encriptación end-to-end.</p>
+        <p><strong>Software:</strong> Aplicación móvil, servidor de routing de mensajes.</p>
+        <p><strong>Datos:</strong> Tus mensajes, contactos, grupos, estados.</p>
+        <p><strong>Usuarios:</strong> Más de 2 mil millones de usuarios activos.</p>
+        <p style="margin-top: 10px; color: #666;"><em>Cuando envías un mensaje: se encripta, se envía al servidor, se entrega al destinatario encriptado.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECCIÓN DE CONTACTO ========== -->
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="section-header">
+      <h2>📞 ¿Tienes dudas? Contacta conmigo</h2>
+      <p class="section-desc">Si tienes preguntas sobre los sistemas, sugerencias o quieres hablar conmigo, aquí están mis canales de contacto.</p>
+    </div>
+
+    <div class="contacto-grid">
+      <!-- Tarjeta WhatsApp -->
+      <a href="https://wa.me/573174743252?text=Hola%20Emmanuel,%20tengo%20dudas%20sobre%20la%20página%20de%20sistemas" target="_blank" class="contacto-card whatsapp-card">
+        <div class="contacto-icon">💬</div>
+        <h3>WhatsApp</h3>
+        <p>Envíame un mensaje directo</p>
+        <div class="contacto-btn">Abrir WhatsApp</div>
+        <small style="margin-top: 10px; opacity: 0.8;">+57 317-4743252</small>
+      </a>
+
+      <!-- Tarjeta Instagram -->
+      <a href="https://www.instagram.com/emm_exe.sys/" target="_blank" class="contacto-card instagram-card">
+        <div class="contacto-icon">📸</div>
+        <h3>Instagram</h3>
+        <p>Sígueme en mis redes</p>
+        <div class="contacto-btn">Ir a Instagram</div>
+        <small style="margin-top: 10px; opacity: 0.8;">@emm_exe.sys</small>
+      </a>
+
+      <!-- Tarjeta Email -->
+      <a href="mailto:emmanuelmunayar@gmail.com" class="contacto-card email-card">
+        <div class="contacto-icon">📧</div>
+        <h3>Email</h3>
+        <p>Envíame un correo</p>
+        <div class="contacto-btn">Enviar Email</div>
+        <small style="margin-top: 10px; opacity: 0.8;">emmanuelmunayar@gmail.com</small>
+      </a>
+    </div>
+
+    <!-- Información adicional -->
+    <div class="info-box" style="margin-top: 40px; text-align: center;">
+      <h3>⏱️ Tiempo de respuesta</h3>
+      <p style="color: #000000;">Intento responder todos los mensajes en el menor tiempo posible. <strong>WhatsApp es el canal más rápido</strong> para dudas urgentes. ¡Estoy aquí para ayudarte!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BOTÓN FLOTANTE VOLVER AL INICIO ========== -->
+<button id="scrollTopBtn" class="scroll-top-btn" title="Volver al inicio">
+  ⬆️
+</button>
+
+<footer class="footer">
+  <div class="container">
+    <!-- Sección de Recursos -->
+    <div style="margin-bottom: 20px;">
+      <h4 style="color: var(--primary-light); margin-bottom: 8px;">📚 Recursos adicionales para aprender</h4>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.7);">Este es material educativo para estudiantes. Si quieres aprender más sobre sistemas informáticos, consulta con tu profesor o busca tutoriales en YouTube.</p>
+    </div>
+
+    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+
+    <!-- Sección de Créditos y Derechos de Autor - Mejorada -->
+    <div style="margin-bottom: 30px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+        
+        <!-- Tarjeta del Desarrollador -->
+        <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(99, 102, 241, 0.05)); border-left: 4px solid #818cf8; padding: 20px; border-radius: 10px;">
+          <h4 style="color: #818cf8; margin-bottom: 15px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">👨‍💻 Desarrollador & Diseñador</h4>
+          
+          <div style="margin-bottom: 16px;">
+            <p style="color: #ffffff; font-size: 18px; font-weight: 800; margin-bottom: 8px;">Emmanuel Munayar</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-style: italic;">Web Developer & UI/UX Designer</p>
+          </div>
+
+          <div style="gap: 12px;">
+            <p style="margin-bottom: 10px; color: rgba(255,255,255,0.9);">
+              <span style="color: #818cf8; font-weight: 700;">📧</span> 
+              <a href="mailto:emmanuelmunayar@gmail.com" style="color: #818cf8; text-decoration: none; font-size: 13px;">emmanuelmunayar@gmail.com</a>
+            </p>
+            <p style="margin-bottom: 10px; color: rgba(255,255,255,0.9);">
+              <span style="color: #818cf8; font-weight: 700;">📱</span> 
+              <a href="tel:+573174743252" style="color: #818cf8; text-decoration: none; font-size: 13px;">+57 317-4743252</a>
+            </p>
+            <p style="margin-bottom: 10px; color: rgba(255,255,255,0.9);">
+              <span style="color: #818cf8; font-weight: 700;">📸</span> 
+              <a href="https://instagram.com/emm_exe.sys" target="_blank" style="color: #818cf8; text-decoration: none; font-size: 13px;">@emm_exe.sys</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta del Propietario -->
+        <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05)); border-left: 4px solid #10b981; padding: 20px; border-radius: 10px;">
+          <h4 style="color: #10b981; margin-bottom: 15px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">🏢 Propietario & Dueño</h4>
+          
+          <div style="margin-bottom: 16px;">
+            <p style="color: #ffffff; font-size: 18px; font-weight: 800; margin-bottom: 8px;">Santiago Pachon</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-style: italic;">Dueño de la plataforma</p>
+          </div>
+
+          <div style="background: rgba(16, 185, 129, 0.2); padding: 12px; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.3);">
+            <p style="color: rgba(255,255,255,0.9); font-size: 12px; line-height: 1.6; margin: 0;">
+              <span style="color: #10b981; font-weight: 700;">✓</span> Propietario oficial de esta plataforma educativa
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sección de Derechos de Autor -->
+      <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(16, 185, 129, 0.08)); border: 1px solid rgba(255,255,255,0.1); padding: 24px; border-radius: 12px; text-align: center;">
+        <p style="color: #818cf8; font-size: 13px; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
+          © 2025 SISTEMAS INFORMÁTICOS - TODOS LOS DERECHOS RESERVADOS
+        </p>
+        
+        <p style="color: rgba(255,255,255,0.85); font-size: 13px; line-height: 1.8; margin-bottom: 0;">
+          Esta plataforma educativa fue desarrollada con dedicación por <strong style="color: #818cf8;">Emmanuel Munayar</strong> y es propiedad intelectual de <strong style="color: #10b981;">Santiago Pachon</strong>. 
+          <br>
+          Está prohibido reproducir, distribuir o utilizar este contenido sin autorización explícita.
+        </p>
+      </div>
+    </div>
+
+    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+
+    <p style="font-size: 13px; text-align: center; color: rgba(255,255,255,0.8);">🚀 Página educativa profesional | Aprende cómo funcionan los sistemas informáticos</p>
+  </div>
+</footer>
+
+<!-- ========== SCRIPT JS AVANZADO ========== -->
+<script>
+// ========== TEMA OSCURO/CLARO ==========
+const themeBtn = document.getElementById("themeBtn");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+if (prefersDark) document.body.classList.add("dark");
+themeBtn.textContent = prefersDark ? "☀️" : "🌙";
+
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+});
+
+// Recuperar tema guardado
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") document.body.classList.add("dark");
+
+// ========== MENÚ MÓVIL ==========
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+  const isOpen = mobileMenu.style.display === "flex";
+  mobileMenu.style.display = isOpen ? "none" : "flex";
+});
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.style.display = "none";
+  });
+});
+
+// ========== SCROLL SUAVE Y ANIMACIONES ==========
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+});
+
+// ========== INTERSECTION OBSERVER PARA ANIMACIONES ==========
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -100px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = "fadeInUp 0.6s ease forwards";
+      entry.target.style.opacity = "0";
+      setTimeout(() => {
+        entry.target.style.opacity = "1";
+      }, 0);
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observar cards y grid items
+document.querySelectorAll(".card, .grid-item").forEach(el => {
+  observer.observe(el);
+});
+
+// ========== EFECTO PARALLAX SUAVE ==========
+window.addEventListener("scroll", () => {
+  const hero = document.querySelector(".hero");
+  const scrollPosition = window.scrollY;
+  hero.style.backgroundPosition = `0% ${scrollPosition * 0.5}px`;
+});
+
+// ========== INTERACTIVIDAD DE HOVER EN CARDS ==========
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("mouseenter", function() {
+    this.style.transform = "translateY(-8px) rotateX(5deg)";
+  });
+  
+  card.addEventListener("mouseleave", function() {
+    this.style.transform = "translateY(0) rotateX(0)";
+  });
+});
+
+// ========== NAVEGACIÓN ACTIVA ==========
+window.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-links a");
+  
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (scrollY >= (sectionTop - 200)) {
+      current = section.getAttribute("id");
+    }
+  });
+  
+  navLinks.forEach(link => {
+    link.style.color = link.getAttribute("href").includes(current) ? "white" : "rgba(255,255,255,0.85)";
+  });
+});
+
+// ========== CONTADOR SIMPLE AL SCROLL ==========
+let counterRunning = false;
+window.addEventListener("scroll", () => {
+  if (!counterRunning && window.scrollY > 500) {
+    counterRunning = true;
+    console.log("¡Página explorada! Sigue descubriendo...");
+  }
+});
+
+// ========== FEEDBACK VISUAL EN BOTONES ==========
+document.querySelectorAll(".btn").forEach(btn => {
+  btn.addEventListener("click", function() {
+    this.style.transform = "scale(0.95)";
+    setTimeout(() => {
+      this.style.transform = "scale(1)";
+    }, 100);
+  });
+});
+
+// ========== ANIMACIÓN AL PASAR EL RATÓN SOBRE GRID ITEMS ==========
+document.querySelectorAll(".grid-item, .timeline-content").forEach(item => {
+  item.addEventListener("mouseenter", function() {
+    this.style.animationPlayState = "running";
+  });
+});
+
+// ========== FAQ INTERACTIVO ==========
+document.querySelectorAll(".faq-question").forEach(question => {
+  question.addEventListener("click", function() {
+    const faqItem = this.parentElement;
+    faqItem.classList.toggle("active");
+  });
+});
+
+// ========== QUIZ INTERACTIVO ==========
+const quizData = [
+  {
+    question: "¿Cuál es la función principal de la RAM?",
+    options: ["Almacenar archivos permanentemente", "Guardar datos temporales del software en ejecución", "Procesar gráficos", "Conectar a internet"],
+    correct: 1
+  },
+  {
+    question: "¿Qué componente es considerado el 'cerebro' de la computadora?",
+    options: ["RAM", "Disco duro", "Procesador (CPU)", "Tarjeta gráfica"],
+    correct: 2
+  },
+  {
+    question: "¿Cuál es la diferencia principal entre SSD y HDD?",
+    options: ["El SSD es más barato", "El SSD es más rápido y sin piezas móviles", "El HDD es más moderno", "No hay diferencia"],
+    correct: 1
+  },
+  {
+    question: "¿Qué es un servidor?",
+    options: ["Un programa de juegos", "Una computadora que proporciona servicios a otros dispositivos 24/7", "Una aplicación móvil", "Un tipo de virus"],
+    correct: 1
+  },
+  {
+    question: "¿Cuál de estas es considerada parte del SOFTWARE?",
+    options: ["Monitor", "Procesador", "Sistema Operativo (Windows, macOS)", "Memoria RAM"],
+    correct: 2
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answers = [];
+
+function initQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  answers = [];
+  displayQuestion();
+}
+
+function displayQuestion() {
+  const quizContent = document.getElementById("quizContent");
+  const question = quizData[currentQuestion];
+  const progress = ((currentQuestion) / quizData.length) * 100;
+  document.getElementById("progressBar").style.width = progress + "%";
+
+  let optionsHTML = "";
+  question.options.forEach((option, index) => {
+    optionsHTML += `<div class="quiz-option" onclick="selectOption(${index})">${option}</div>`;
+  });
+
+  quizContent.innerHTML = `
+    <div class="quiz-question">
+      <h4>Pregunta ${currentQuestion + 1} de ${quizData.length}</h4>
+      <h5 style="color: #000; font-size: 16px; margin-bottom: 20px; font-weight: 600;">${question.question}</h5>
+      <div class="quiz-options">
+        ${optionsHTML}
+      </div>
+    </div>
+  `;
+}
+
+function selectOption(index) {
+  const question = quizData[currentQuestion];
+  answers.push(index);
+  
+  if (index === question.correct) {
+    score++;
+  }
+
+  currentQuestion++;
+
+  if (currentQuestion < quizData.length) {
+    setTimeout(displayQuestion, 500);
+  } else {
+    showQuizResult();
+  }
+}
+
+function showQuizResult() {
+  const quizContent = document.getElementById("quizContent");
+  const quizResult = document.getElementById("quizResult");
+  const percentage = (score / quizData.length) * 100;
+  
+  quizContent.style.display = "none";
+  
+  let message = "";
+  let emoji = "";
+  
+  if (percentage === 100) {
+    message = "¡Eres un experto en sistemas! 🌟 Puntuación perfecta.";
+    emoji = "🏆";
+  } else if (percentage >= 80) {
+    message = "¡Muy bien! Conoces muy bien el tema de sistemas.";
+    emoji = "⭐";
+  } else if (percentage >= 60) {
+    message = "¡Buen esfuerzo! Tienes buenos conocimientos pero hay áreas para mejorar.";
+    emoji = "👍";
+  } else {
+    message = "Sigue estudiando, volverás a intentar.";
+    emoji = "📚";
+  }
+
+  document.getElementById("resultScore").innerHTML = `${emoji} ${score}/${quizData.length} - ${Math.round(percentage)}%`;
+  document.getElementById("resultMessage").innerHTML = message;
+  
+  quizResult.style.display = "block";
+}
+
+function resetQuiz() {
+  document.getElementById("quizResult").style.display = "none";
+  document.getElementById("quizContent").style.display = "block";
+  initQuiz();
+}
+
+// Inicializar quiz cuando la página carga
+window.addEventListener("load", function() {
+  if (document.getElementById("quizContent")) {
+    initQuiz();
+  }
+});
+
+// ========== BOTÓN FLOTANTE VOLVER AL INICIO ==========
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.classList.add("show");
+  } else {
+    scrollTopBtn.classList.remove("show");
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+// ========== NÚMEROS ANIMADOS AL SCROLL ==========
+function animateCounter(element, target) {
+  const duration = 2000; // 2 segundos
+  const increment = target / (duration / 16);
+  let current = 0;
+
+  const interval = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      current = target;
+      clearInterval(interval);
+    }
+
+    if (target >= 1000000) {
+      element.textContent = Math.floor(current).toLocaleString();
+    } else if (target < 100) {
+      element.textContent = current.toFixed(1);
+    } else {
+      element.textContent = Math.floor(current).toLocaleString();
+    }
+  }, 16);
+}
+
+const observerStats = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const statNumber = entry.target.querySelector(".stat-number");
+      const target = parseInt(statNumber.getAttribute("data-target"));
+      animateCounter(statNumber, target);
+      observerStats.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll(".stat-card").forEach(card => {
+  observerStats.observe(card);
+});
+</script>
+
+</body>
+</html>
