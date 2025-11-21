@@ -438,22 +438,10 @@ Whatever you do: keep experimenting, keep breaking, keep learning.
 
 <br>
 
-```
-💪 MADE WITH:
-
-☕ Coffee                (lots of it)
-🧠 Curiosity            (endless)
-🔥 Zero Filters         (always)
-💯 Determination        (constant)
-🎯 Real Purpose         (every project)
-⚡ Maximum Effort       (always on)
-```
-
-<br>
 
 ---
 
-### 🔴 **EMMANUEL MUNAYAR** 🔴
+###  **EMMANUEL MUNAYAR** 
 
 **Repository Status:** 🟢 **ACTIVE & GROWING**  
 **Energy Level:** ⚡⚡⚡⚡⚡ **MAXIMUM**  
