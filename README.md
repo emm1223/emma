@@ -105,11 +105,3 @@ La landing visual está en `docs/` — abre `docs/index.html` o activa GitHub Pa
 [![Repo Size](https://img.shields.io/github/repo-size/emm1223/emma?style=for-the-badge)](https://github.com/emm1223/emma)
 
 ---
-
-## 📬 ¿Qué quieres que haga ahora?
-
-- `Portada` — genero una portada SVG personalizada (tu nombre, paleta, tipografía) y la incluyo en `assets/hero.svg`.
-- `Publicar` — activo GitHub Pages (configuro `docs/` como fuente y creo branch si es necesario) y publico la landing.
-- `Más visual` — agrego mini capturas en `assets/` y las muestro en la galería del README.
-
-Responde con la opción y la hago de inmediato.
