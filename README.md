@@ -1,16 +1,15 @@
-<div align="center">
 
-![EMMA Hero](./assets/hero-personal.svg)
-
-## EMMA — Laboratorio de Código
-### Prototipos · Producción ligera · Innovación continua
-
-[![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/emm1223)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emm1223)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-%2300C851?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/573174743252)
-
-[![CI](https://img.shields.io/github/actions/workflow/status/emm1223/emma/ci.yml?branch=main&label=ci&style=for-the-badge)](https://github.com/emm1223/emma/actions/workflows/ci.yml)
-
+<div style="display:flex;align-items:center;gap:20px;max-width:980px;margin:0 auto;padding:18px;border-radius:10px;">
+	<img src="./assets/hero-personal.svg" alt="Emmanuel Munayar" width="140" style="border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6);" />
+	<div>
+		<h1 style="margin:0 0 6px 0">Emmanuel Munayar — EMMA</h1>
+		<p style="margin:0 0 10px;color:#6b7280">Frontend developer · Prototyping · UI / UX · Deploys ligeros</p>
+		<p style="margin:0">
+			<a href="https://github.com/emm1223"><img src="https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+			<a href="https://www.linkedin.com/in/emm1223"><img src="https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+			<a href="mailto:emmanuelmunayar@gmail.com"><img src="https://img.shields.io/badge/Email-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+		</p>
+	</div>
 </div>
 
 ---
