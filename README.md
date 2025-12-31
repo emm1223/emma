@@ -12,13 +12,23 @@
 	</div>
 </div>
  
-	<!-- Redes sociales como botones -->
-	<div align="center" style="margin-top:10px">
-		<a href="https://github.com/emm1223"><img src="https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-		<a href="https://www.linkedin.com/in/emm1223" style="margin-left:8px"><img src="https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-		<a href="https://wa.me/573174743252" style="margin-left:8px"><img src="https://img.shields.io/badge/WhatsApp-%2300C851?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"/></a>
-		<a href="https://www.instagram.com/emm_exe.sys/" style="margin-left:8px"><img src="https://img.shields.io/badge/Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"/></a>
-		<a href="mailto:emmanuelmunayar@gmail.com" style="margin-left:8px"><img src="https://img.shields.io/badge/Email-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+	<!-- Redes sociales como botones estilizados -->
+	<div align="center" style="margin-top:12px;">
+		<a href="https://github.com/emm1223" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;border-radius:10px;background:#24292e;color:#fff;text-decoration:none;font-weight:600;margin:6px;">
+			<img src="https://cdn.simpleicons.org/github/ffffff" width="18" style="vertical-align:middle;margin-right:8px" alt="GitHub"/> GitHub
+		</a>
+		<a href="https://www.linkedin.com/in/emm1223" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;border-radius:10px;background:#0A66C2;color:#fff;text-decoration:none;font-weight:600;margin:6px;">
+			<img src="https://cdn.simpleicons.org/linkedin/ffffff" width="18" style="vertical-align:middle;margin-right:8px" alt="LinkedIn"/> LinkedIn
+		</a>
+		<a href="https://wa.me/573174743252" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;border-radius:10px;background:#25D366;color:#061224;text-decoration:none;font-weight:600;margin:6px;">
+			<img src="https://cdn.simpleicons.org/whatsapp/ffffff" width="18" style="vertical-align:middle;margin-right:8px" alt="WhatsApp"/> WhatsApp
+		</a>
+		<a href="https://www.instagram.com/emm_exe.sys/" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;border-radius:10px;background:#E4405F;color:#fff;text-decoration:none;font-weight:600;margin:6px;">
+			<img src="https://cdn.simpleicons.org/instagram/ffffff" width="18" style="vertical-align:middle;margin-right:8px" alt="Instagram"/> Instagram
+		</a>
+		<a href="mailto:emmanuelmunayar@gmail.com" style="display:inline-block;padding:8px 12px;border-radius:10px;background:#EA4335;color:#fff;text-decoration:none;font-weight:600;margin:6px;">
+			<img src="https://cdn.simpleicons.org/gmail/ffffff" width="18" style="vertical-align:middle;margin-right:8px" alt="Email"/> Email
+		</a>
 	</div>
 
 ---
