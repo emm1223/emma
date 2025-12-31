@@ -1,6 +1,6 @@
 <div align="center">
 
-![EMMA Hero](./assets/hero.svg)
+![EMMA Hero](./assets/hero-personal.svg)
 
 ## EMMA — Laboratorio de Código
 ### Prototipos · Producción ligera · Innovación continua
