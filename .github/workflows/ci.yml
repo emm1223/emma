@@ -17,22 +17,3 @@ jobs:
           ls -la
       - name: Sanity echo
         run: echo "CI pipeline completed successfully"
-name: CI
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Check files
-        run: |
-          echo "Validating repository structure"
-          ls -la
-      - name: Sanity echo
-        run: echo "CI pipeline completed successfully"
