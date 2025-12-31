@@ -9,6 +9,9 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emm1223)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-%2300C851?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/573174743252)
 
+[![CI](https://img.shields.io/github/actions/workflow/status/emm1223/emma/ci.yml?branch=main&label=ci&style=for-the-badge)](https://github.com/emm1223/emma/actions/workflows/ci.yml)
+[![Pages](https://img.shields.io/github/actions/workflow/status/emm1223/emma/pages.yml?branch=main&label=pages&style=for-the-badge)](https://github.com/emm1223/emma/actions/workflows/pages.yml)
+
 </div>
 
 ---
