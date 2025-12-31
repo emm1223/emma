@@ -1,5 +1,56 @@
 <div align="center">
 
+# EMMA — Laboratorio de Código
+## Profesional · Portafolio en evolución · Contacto directo
+
+![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)
+![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)
+![Email](https://img.shields.io/badge/Email-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white)
+
+</div>
+
+---
+
+**EMMA — Code Laboratory** es un espacio profesional para experimentación, prototipos y proyectos reales. Aquí encontrarás trabajo en curso, demostraciones técnicas y muestras de crecimiento continuo.
+
+**Resumen profesional**
+- Perfil: Desarrollador/a full-stack con enfoque en frontend moderno, arquitecturas backend y automatización.
+- Tecnologías destacadas: JavaScript, TypeScript, React, Vue, Node.js, Python, Docker, CI/CD.
+
+**Educación**
+- Universidad El Bosque — Bogotá, Colombia
+
+---
+
+**Contacto**
+- **Email:** emmanuelmunayar@gmail.com
+- **Teléfono:** [+57 317 474 3252](tel:+573174743252)
+- **LinkedIn:** https://www.linkedin.com/in/emm1223 (actualiza si corresponde)
+
+**Redes Sociales**
+- GitHub: https://github.com/emm1223
+- Instagram: https://www.instagram.com/emm_exe.sys/
+- TikTok: https://www.tiktok.com/@munayar22
+
+---
+
+**Cómo usar este repositorio**
+- Cada carpeta es un proyecto o experimento independiente. Revisa las carpetas principales y el README local dentro de cada proyecto para instrucciones específicas.
+
+**Proyectos destacados (breve)**
+- `basic/` — experimentos frontend y plantillas (Tailwind, PostCSS).
+- `presentacion/` — ejercicios y demos de presentación.
+- `minoviabella/` — ejemplos de páginas y cartas.
+
+---
+
+Si deseas que deje el teléfono real, actualice los enlaces o agregue el perfil de LinkedIn exacto, dime el número y lo incorporo inmediatamente.
+
+---
+
+_Documento generado y estilizado para presentación profesional. Mantén este archivo actualizado con enlaces y datos de contacto reales._
+<div align="center">
+
 #  EMMA — Code Laboratory 
 ## *Where Code Breaks, Legends Rise* 🚀
 
