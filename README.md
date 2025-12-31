@@ -18,11 +18,11 @@
 
 Resumen
 
-EMMA es un laboratorio personal de desarrollo donde se construyen y documentan prototipos, demos y proyectos pequeños con enfoque en entrega rápida, calidad y aprendizaje continuo.
+EMMA es un laboratorio personal de desarrollo donde se construyen y documentan prototipos, demos y proyectos pequeños, con énfasis en entrega rápida, calidad y aprendizaje continuo.
 
 ---
 
-Contacto
+**Contacto**
 
 - Email: [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com)
 - WhatsApp: [+57 317 474 3252](https://wa.me/573174743252)
@@ -32,13 +32,13 @@ Contacto
 
 ---
 
-Educación
+**Educación**
 
 - Universidad El Bosque — Bogotá, Colombia
 
 ---
 
-Proyectos destacados
+**Proyectos destacados**
 
 - `basic/` — plantillas frontend, utilidades y experimentos.
 - `basic/presentacion/` — demos y páginas estáticas (opcion1, opcion2).
@@ -46,15 +46,15 @@ Proyectos destacados
 
 ---
 
-Manifesto breve
+**Manifiesto breve**
 
-> No espero a la perfección: construyo, rompo, aprendo y mejoro. Este repositorio es prueba de evolución continua.
+> No espero la perfección: construyo, rompo, aprendo y mejoro. Este repositorio es prueba de evolución continua.
 
 ---
 
-Docs y landing
+**Docs y landing**
 
-Hay una landing estática en `docs/` (lista para GitHub Pages). Abre `docs/index.html` para ver la presentación visual.
+La landing estática se encuentra en `docs/` (lista para GitHub Pages). Abre `docs/index.html` para ver la presentación visual.
 
 ---
 
@@ -71,13 +71,14 @@ docs/
 
 ---
 
-Si quieres ajustes de color, una portada SVG personalizada con tu nombre o activar GitHub Pages para `docs/`, lo hago ahora y lo publico.
+Si quieres ajustes de color, una portada SVG personalizada con tu nombre o activar GitHub Pages para `docs/`, lo puedo hacer y publicarlo.
 
 ---
 
-## ✨ Lo nuevo (visual)
+## ✨ Cambios recientes
 
-He eliminado contenido duplicado y limpiado la parte inferior del README. Aquí tienes secciones visuales para destacar proyectos y accesos rápidos.
+- Limpieza de contenido duplicado.
+- Mejoras en la estructura y redacción del README.
 
 <div align="center">
   <img src="./assets/hero.svg" alt="hero" style="max-width:900px;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.6)" />
@@ -85,17 +86,15 @@ He eliminado contenido duplicado y limpiado la parte inferior del README. Aquí 
 
 ### Proyectos destacados
 
-| Proyecto | Descripción | Demo |
-|---|---|---:|
-| `basic/margarita.installer` | Plantilla Tailwind + PostCSS | [Abrir](/basic/margarita.installer)
-| `basic/presentacion/opcion1` | Página de presentación (HTML) | [Abrir](/basic/presentacion/opcion1/index1.html)
-| `minoviabella/cartas/carta1` | Ejemplo de carta web | [Abrir](/minoviabella/cartas/carta1/index.html)
+- **basic/margarita.installer** — Plantilla Tailwind + PostCSS — [Abrir](basic/margarita.installer)
+- **basic/presentacion/opcion1** — Página de presentación (HTML) — [Abrir](basic/presentacion/opcion1/index1.html)
+- **minoviabella/cartas/carta1** — Ejemplo de carta web — [Abrir](minoviabella/cartas/carta1/index.html)
 
 ---
 
-## 📸 Galería & Landing
+## 📸 Galería y landing
 
-La landing visual está en `docs/` — abre `docs/index.html` o activa GitHub Pages para mostrarla públicamente.
+La landing visual está en `docs/`. Activa GitHub Pages para mostrarla públicamente o abre `docs/index.html` localmente.
 
 ---
 
@@ -105,3 +104,11 @@ La landing visual está en `docs/` — abre `docs/index.html` o activa GitHub Pa
 [![Repo Size](https://img.shields.io/github/repo-size/emm1223/emma?style=for-the-badge)](https://github.com/emm1223/emma)
 
 ---
+
+Si deseas, puedo:
+
+- Actualizar la portada SVG con tu nombre.
+- Ajustar colores y estilos de la landing en `docs/`.
+- Preparar un flujo de publicación a GitHub Pages.
+
+Dime cuáles quieres que haga y lo implemento.
