@@ -198,68 +198,68 @@ _Documento generado y estilizado para presentación profesional. Mantén este ar
 
 ### 🌐 **Web Development** ⭐⭐⭐⭐⭐
 *Production-grade applications*
-- React & advanced patterns
-- Vue.js & component architecture
-- Responsive CSS mastery
-- Performance optimization
-- UX that converts
+<div align="center">
 
-</td>
-<td width="50%">
+# EMMA — Laboratorio de Código
+## Portafolio profesional · Prototipos · Contacto
 
-### 🤖 **Automation & Scripting** ⭐⭐⭐⭐⭐
-*Task automation warrior*
-- Python scripting excellence
-- Bash automation
-- System utilities
-- Workflow optimization
-- CLI tool development
+![Badge](https://img.shields.io/badge/Status-Activo-%2300C853?style=for-the-badge&logo=appveyor)
 
-</td>
-</tr>
-<tr>
-<td width="50%">
+</div>
 
-### 💥 **Rapid Prototyping** ⭐⭐⭐⭐⭐
-*From zero to hero*
-- MVP development
-- Proof of concepts
-- Technology validation
-- Fast iteration cycles
-- Experiment-driven approach
+---
 
-</td>
-<td width="50%">
+**Descripción breve**
 
-### ⚙️ **Backend Systems** ⭐⭐⭐⭐☆
-*Scalable architectures*
-- Node.js & Express APIs
-- Database design (SQL & NoSQL)
-- Authentication & security
-- Microservices concepts
-- API optimization
+EMMA es un laboratorio personal de desarrollo donde se muestran prototipos, proyectos en curso y experimentos técnicos con foco en calidad de implementación y aprendizaje continuo.
 
-</td>
-</tr>
-<tr>
-<td width="50%">
+---
 
-### 🐳 **DevOps & Infrastructure** ⭐⭐⭐⭐☆
-*Production deployment*
-- Docker containerization
-- CI/CD pipelines
-- Server configuration
-- Monitoring & logging
-- Deployment strategies
+**Resumen profesional**
 
-</td>
-<td width="50%">
+- Perfil: Desarrollador Full‑Stack con experiencia en frontend moderno, arquitecturas backend y automatización de flujo de trabajo.
+- Tecnologías destacadas: JavaScript, TypeScript, React, Vue, Node.js, Python, Docker, Tailwind, CI/CD.
 
-### 🔐 **Emerging Frontiers** ⭐⭐⭐☆☆
-*Always expanding*
-- Cybersecurity concepts
-- Machine learning basics
-- Blockchain fundamentals
+---
+
+**Educación**
+
+- Universidad El Bosque — Bogotá, Colombia
+
+---
+
+**Contacto & Redes**
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/emm1223)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emm1223)
+[![Email](https://img.shields.io/badge/Email-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:emmanuelmunayar@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-%2300C851?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/573174743252)
+
+</div>
+
+- **Email:** [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com)
+- **Teléfono / WhatsApp:** [+57 317 474 3252](tel:+573174743252)
+- **LinkedIn:** https://www.linkedin.com/in/emm1223
+- **Instagram:** https://www.instagram.com/emm_exe.sys/
+- **TikTok:** https://www.tiktok.com/@munayar22
+
+---
+
+**Estructura del repositorio**
+
+- `basic/` — experimentos y plantillas frontend (Tailwind, PostCSS).
+- `presentacion/` — demos y páginas de presentación.
+- `minoviabella/` — ejemplos de páginas y cartas.
+
+Cada carpeta contiene su propia documentación local si aplica.
+
+---
+
+Si quieres que aplique un tema visual (colores, logo) uniforme a todos los READMEs de los subproyectos o que agregue un `docs/` con una página de presentación estática, puedo hacerlo — dime los colores y el texto principal.
+
+_Archivo actualizado con diseño profesional y contactos unificados._
 - Web3 exploration
 - System design patterns
 
