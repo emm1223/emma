@@ -44,53 +44,127 @@ EMMA es el laboratorio personal de Emmanuel Munayar para prototipos, demos y pro
 
 ---
 
-**Manifiesto**
+<div align="center">
 
-> No espero la perfección: construyo, rompo, aprendo y mejoro. Este repositorio es un registro de evolución y aprendizaje continuo.
+![EMMA Hero](./assets/hero-personal.svg)
+
+# EMMA — Laboratorio de Código
+
+Prototipos, demos y proyectos ligeros — enfoque en entrega rápida y aprendizaje técnico.
+
+[![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/emm1223)  
+[![CI](https://img.shields.io/badge/CI-%23007ACC?style=for-the-badge)](https://github.com/emm1223/emma/actions)
+
+</div>
 
 ---
 
-**Landing y vista previa**
+## Descripción técnica
 
-- Hay una landing estática en `docs/`. Para verla localmente puedes servirla con un servidor estático rápido:
+Repositorio de experimentos y plantillas orientadas a desarrollo frontend y despliegue ligero. Contiene ejemplos React (Create React App + Tailwind/PostCSS), páginas estáticas y utilidades para pruebas y debugging.
+
+Uso principal: prototipado rápido, demostraciones y referencia técnica.
+
+---
+
+## Tecnologías clave
+
+- Node.js / npm (Create React App) — `basic/margarita.installer`
+- Tailwind CSS + PostCSS (configuración en `basic/margarita.installer`)
+- Python 3 — utilidades y ejemplos (`basic/python/`)
+- Docker + nginx — despliegue estático (`Dockerfile`, `docker-compose.yml`, `run.sh`)
+
+---
+
+## Estructura del repositorio
+
+- `basic/` — plantillas y demos frontend
+  - `margarita.installer/` — proyecto CRA con Tailwind/PostCSS
+  - `presentacion/` — páginas estáticas de ejemplo
+- `minoviabella/` — ejemplos de páginas estáticas
+- `docs/` — landing estática (lista para servir o desplegar)
+- `assets/` — logos, hero SVG y recursos gráficos
+
+---
+
+## Desarrollo local
+
+1) Clona el repositorio:
+
+```bash
+git clone https://github.com/emm1223/emma.git
+cd emma
+```
+
+2) Servir la landing estática (rápido):
 
 ```bash
 python3 -m http.server --directory docs 8000
-# y luego abrir http://localhost:8000
+# Abrir http://localhost:8000
+```
+
+3) Correr el proyecto React de ejemplo (`basic/margarita.installer`):
+
+```bash
+cd basic/margarita.installer
+npm install
+npm start
+# Desarrollo en http://localhost:3000
+```
+
+4) Levantar sitio con Docker (producción local):
+
+```bash
+./run.sh
+# o
+docker-compose up --build
+# Sitio en http://localhost:8080
 ```
 
 ---
 
-**Estructura rápida**
+## Construcción y despliegue
 
+- `Dockerfile` copia `docs/` a un contenedor nginx listo para producción.
+- Para construir la imagen manualmente:
+
+```bash
+docker build -t emma-site .
+docker run -p 8080:80 emma-site
 ```
-basic/
-  ├─ margarita.installer/
-  ├─ presentacion/
-minoviabella/
-assets/
-docs/
-```
 
 ---
 
-**Contribuir**
+## Scripts relevantes
 
-- Si quieres sugerir mejoras o enviar un PR, abre una issue o haz un fork y crea una pull request.
-- Para cambios importantes, abre una issue primero para que podamos alinear el alcance.
-
----
-
-**Cambios recientes**
-
-- Mejora de redacción y organización del README.
+- `basic/margarita.installer/package.json` contiene scripts estándar de CRA: `start`, `build`, `test`.
+- `run.sh` y `docker-compose.yml` orquestan despliegue local con Docker.
 
 ---
 
-Si quieres, puedo:
+## Pruebas y ejemplos
 
-- Ajustar el diseño visual del `docs/` y la landing.
-- Actualizar la portada SVG con una versión alternativa.
-- Preparar la publicación automatizada en GitHub Pages.
+- Hay scripts de ejemplo para depuración en `basic/python/test_debug.py`.
+- Ejecuta `pytest` o scripts directos para verificar utilidades Python.
 
-Dime qué prefieres y lo implemento.
+---
+
+## Contribución técnica
+
+- Abre una issue para discutir cambios grandes antes de implementar.
+- Para contribuciones: fork → branch → PR. Incluye descripción técnica y pasos para reproducir.
+
+Checklist para PRs:
+- comportamiento documentado en `README.md` o en nuevos archivos `docs/`
+- archivos estáticos optimizados (SVG/PNG)
+- si agregas dependencias, incluye justificación y actualiza `package.json` o `requirements.txt`
+
+---
+
+## Contacto
+
+- Emmanuel Munayar — [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com)
+
+---
+
+Si quieres que amplíe secciones técnicas (CI, política de versiones, ejemplos de despliegue automatizado o plantillas de PR/ISSUE), dímelo y lo añado.
