@@ -9,16 +9,16 @@
 
 ---
 
-**Resumen**
+**Resumen breve**
 
-EMMA es un laboratorio personal de desarrollo donde se publican prototipos, proyectos en curso y experimentos técnicos. Este README unificado combina la presentación profesional con el manifiesto y la visión original.
+EMMA es un laboratorio de desarrollo donde se muestran prototipos, proyectos en curso y soluciones técnicas. Este README está pensado para presentar el trabajo con un diseño claro y profesional.
 
 ---
 
 **Contacto & Redes**
 
 - **Email:** [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com)
-- **Teléfono / WhatsApp:** [+57 317 474 3252](tel:+573174743252) — [Chat WhatsApp](https://wa.me/573174743252)
+- **Teléfono / WhatsApp:** [+57 317 474 3252](tel:+573174743252) — [Abrir chat](https://wa.me/573174743252)
 - **GitHub:** https://github.com/emm1223
 - **LinkedIn:** https://www.linkedin.com/in/emm1223
 - **Instagram:** https://www.instagram.com/emm_exe.sys/
@@ -32,142 +32,41 @@ EMMA es un laboratorio personal de desarrollo donde se publican prototipos, proy
 
 ---
 
-## Contenido original — Manifiesto y métricas (preservado)
+## Qué hay en este repositorio
 
-He incluido íntegramente el manifiesto y las secciones originales para conservar la voz y la visión del proyecto.
+- `basic/` — experimentos frontend y plantillas (Tailwind, PostCSS).
+- `presentacion/` — demos, páginas y recursos para presentaciones.
+- `minoviabella/` — ejemplos de páginas y cartas.
 
-<div align="center">
-
-#  EMMA — Code Laboratory 
-## *Where Code Breaks, Legends Rise* 🚀
-
-```
-╔════════════════════════════════════════════════════════════════════╗
-║                      PREMIUM EDITION                               ║
-║════════════════════════════════════════════════════════════════════║
-║                                                                    ║
-║   ███████╗███╗   ███╗███╗   ███╗ █████╗  ██╗      ██╗ ██╗██╗       ║
-║   ██╔════╝████╗ ████║████╗ ████║██╔══██╗██║      ██║ ██║██║        ║  
-║   █████╗  ██╔████╔██║██╔████╔██║███████║██║      ██║ ██║██║        ║
-║   ██╔══╝  ██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║      ██║ ██║██║        ║
-║   ███████╗██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║███████╗╚█████╔╝██║        ║
-║   ╚══════╝╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝ ╚════╝ ╚═╝        ║
-║                                                                    ║
-║════════════════════════════════════════════════════════════════════║
-║                                                                    ║
-║             🚀 Live Laboratory of Code Evolution 🚀               ║
-║        Breaking Things • Learning Fast • Growing Faster            ║
-║                  24/7 Experimentation in Motion                    ║
-║                                                                    ║
-║              ✨ No Portfolio Bonito — Pure Excellence ✨          ║
-║                    Raw. Honest. Constantly Evolving.               ║
-║                                                                    ║
-╚════════════════════════════════════════════════════════════════════╝
-```
-
-### 💎 This is NOT a Portfolio. This is PROOF OF CONSTANT EVOLUTION 💎
-
-> **Status:** 🟢 **ACTIVE & OPERATIONAL** | **Mode:** 🔥 **FULL POWER** | **Commitment:** 💯 **REAL WORK**
-
-</div>
+Cada subcarpeta puede contener su propio `README.md` con instrucciones específicas.
 
 ---
 
-## 📊 Live Metrics Dashboard
+## Habilidades clave
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                  EMMA PERFORMANCE STATS                 │
-├─────────────────────────────────────────────────────────┤
-│ Active Projects        │ ∞ (Always Building)            │
-│ Learning Mode          │ CONTINUOUS                     │
-│ System Status          │ 🟢 24/7 Operational            │
-│ Energy Level           │ ⚡⚡⚡⚡⚡ MAXIMUM           │
-│ Commitment to Quality  │ 100% Real. Zero Bullshit.      │
-│ Last Updated           │ 21 November 2025               │
-│ Next Evolution         │ Coming in the next commit...   │
-└─────────────────────────────────────────────────────────┘
-```
-
----
-
-## 🔥 THE EMMA MANIFESTO
-
-### 🎯 Core Philosophy
-
-> I don't wait for perfect. I build, I break, I learn, I dominate.
-
-Every line of code is proof of growth. Every error is a stepping stone to mastery. Every project is una lección en movimiento.
-
-```
-╔════════════════════════════════════════════════════════╗
-║  WHAT YOU WON'T FIND              WHAT YOU WILL FIND   ║
-╟────────────────────────────────────────────────────────╢
-║  ❌ Finished polish               ✅ Real experiments ║
-║  ❌ Decorative code               ✅ Purpose-driven   ║
-║  ❌ Tutorial copies               ✅ Original ideas   ║
-║  ❌ Generic solutions             ✅ Custom tooling   ║
-║  ❌ Perfection theater            ✅ Honest progress  ║
-║  ❌ "Best practices only"         ✅ Raw evolution    ║
-║  ❌ Abandoned projects            ✅ Living lab work  ║
-╚════════════════════════════════════════════════════════╝
-```
-
----
-
-## 🧬 Philosophy of Constant Growth
-
-```
-┌──────────────────────────────────────────────────────────┐
-│          THE INFINITE LEARNING CYCLE                     │
-│                                                          │
-│   🧠 IDEATE    →  💻 BUILD    →  💥 BREAK               │
-│      ↓                             ↓                      │
-│   💡 INSPIRED  ←  🎯 ACHIEVED   ←  📚 LEARNED          │
-│                                                          │
-│   ⏰ Repeat every day, improve every iteration          │
-│   🔄 No linear path — follow the interesting things     │
-│   🎢 Ups and downs are features, not bugs               │
-│                                                          │
-└──────────────────────────────────────────────────────────┘
-```
-
----
-
-## 💻 The Complete Arsenal
-
-### Frontend
-![React](https://img.shields.io/badge/React-%2361DAFB?style=for-the-badge&logo=react&logoColor=black) ![Vue.js](https://img.shields.io/badge/Vue.js-%234FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
-
-### Backend & Ops
-![Node.js](https://img.shields.io/badge/Node.js-%23339933?style=for-the-badge&logo=node.js&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white)
-
----
-
-## Áreas de Expertise
-
-- Web Development: React, Vue, TypeScript, Performance.
-- Automation & Scripting: Python, Bash, CLI tools.
-- Rapid Prototyping, Backend Systems, DevOps.
-
----
-
-## Estructura del repositorio
-
-- `basic/` — experimentos frontend y plantillas.
-- `presentacion/` — demos y presentaciones.
-- `minoviabella/` — ejemplos y páginas.
+- Frontend: React, Vue, TypeScript, HTML5, CSS3, Tailwind.
+- Backend: Node.js, Express, Python, REST APIs.
+- DevOps: Docker, CI/CD, despliegue y scripts de automatización.
 
 ---
 
 ## Cómo colaborar
 
-- Abre un issue para propuestas o bugs.
-- Haz PRs pequeñas y descriptivas.
+1. Abre un issue si tienes una idea o encuentras un bug.
+2. Crea una rama descriptiva para tu cambio: `feature/nombre-cambio`.
+3. Abre un PR con una descripción clara y pruebas si aplica.
 
 ---
 
-_Este README combina la presentación profesional con el manifiesto original. Si quieres que aplique el mismo estilo a los READMEs de subcarpetas, confirmame y lo hago._
+## Licencia y créditos
+
+Este repositorio es un laboratorio personal. Si quieres reutilizar código, abre un issue para coordinar licencia y atribución.
+
+---
+
+Si quieres, aplico este mismo formato y estilo a los `README.md` de `basic/`, `presentacion/` y `minoviabella/`.
+
+_Archivo actualizado y listo para publicar._
 
    → They're catalogued as lessons
 ```
