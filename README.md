@@ -1,101 +1,98 @@
 <div align="center">
 
-<img src="https://github.com/emm1223.png" alt="avatar" width="120" style="border-radius:50%" />
+<!-- Hero personalizado -->
+<img src="https://raw.githubusercontent.com/emm1223/emma/main/assets/hero-placeholder.png" alt="hero" width="100%" style="max-width:900px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.25)" />
 
-<h1>EMMA — Laboratorio de Código</h1>
-<p><em>Prototipos · Producción ligera · Innovación continua</em></p>
+<h1 style="margin-top:18px">EMMA — Laboratorio de Código</h1>
+<p style="font-size:16px; color:#555; margin-top:4px">Prototipos • Producción ligera • Innovación continua</p>
 
-<!-- Badges -->
-[![Status](https://img.shields.io/badge/Status-Activo-%2300C853?style=for-the-badge&logo=appveyor)](https://github.com/emm1223)
-[![Top Langs](https://img.shields.io/github/languages/top/emm1223/emma?style=for-the-badge)](https://github.com/emm1223)
-[![Followers](https://img.shields.io/github/followers/emm1223?style=social)](https://github.com/emm1223)
+<p>
+![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)
+![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)
+![WhatsApp](https://img.shields.io/badge/WhatsApp-%2300C851?style=for-the-badge&logo=whatsapp&logoColor=white)
+</p>
 
 </div>
 
 ---
 
-## 🎨 Hero — ¿Qué hago?
+## ✨ Diseño — visión visual
 
-- Diseño y desarrollo de interfaces modernas (React / Vue / TypeScript).
-- Backend ligero y APIs robustas (Node.js / Python).
-- Automatización, CI/CD y despliegues con Docker.
-- Prototipos rápidos para validar ideas.
+He diseñado este README con foco en claridad, impacto visual y acceso rápido a contactos y demos. Todo está optimizado para verse bien en GitHub: hero, badges, iconos y llamadas a la acción.
 
----
-
-## ✨ Estética & Diseño
-
-He limpiado y unificado el estilo del repositorio con una estética profesional: badges, avatar, llamadas a la acción y secciones claras que funcionan bien en GitHub.
-
-Si deseas un tema de color (p. ej. morado, cian, oscuro) lo aplico y genero un `style guide` (colores + tipografías + ejemplo de portada).
+Si quieres, puedo reemplazar la imagen del hero por una portada SVG totalmente personalizada con tu nombre y paleta de color.
 
 ---
 
-## 📁 Proyectos destacados
+## 🚀 Qué muestro aquí
 
-- `basic/` — Plantillas front-end, Tailwind y utilidades.
-- `presentacion/` — Páginas y assets para presentaciones.
-- `minoviabella/` — Ejemplos de páginas y cartas.
+- Prototipos interactivos y demos (carpeta `presentacion/`).
+- Plantillas y utilidades frontend (carpeta `basic/`).
+- Ejemplos web y contenidos (carpeta `minoviabella/`).
 
-Haz clic en las carpetas para explorar demos y recursos.
-
----
-
-## 🛠 Stack & Skills
-
-<p>
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![TypeScript](https://img.shields.io/badge/TypeScript-%233178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![React](https://img.shields.io/badge/React-%2361DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
-[![Vue.js](https://img.shields.io/badge/Vue-%234FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org)
-[![Node.js](https://img.shields.io/badge/Node.js-%23339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
-[![Python](https://img.shields.io/badge/Python-%2314354C?style=for-the-badge&logo=python)](https://python.org)
-[![Docker](https://img.shields.io/badge/Docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com)
-</p>
+Explora las carpetas para ver versiones en HTML y recursos estáticos.
 
 ---
 
-## 📞 Contacto — Conecta directamente
+## 🧩 Resumen profesional
 
-<p>
-<strong>Email:</strong> [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com) ·
-<strong>Tel / WhatsApp:</strong> [+57 317 474 3252](tel:+573174743252) ·
-<strong>Chat:</strong> [Abrir WhatsApp](https://wa.me/573174743252)
-</p>
-
-<p>
-[![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/emm1223)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emm1223)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/emm_exe.sys/)
-</p>
+- Rol: Desarrollador Full‑Stack — prototipado rápido, frontend moderno y APIs.
+- Stack preferido: TypeScript + React, Node.js, Python, Docker.
+- Enfoque: entregar demos limpias, reproducibles y documentadas.
 
 ---
 
-## 🎓 Educación
+## 📚 Educación
 
 - Universidad El Bosque — Bogotá, Colombia
 
 ---
 
-## 🧭 Guía rápida para colaboradores
+## 📬 Contacto (rápido)
 
-1. Haz fork o crea rama: `feature/<descripción>`
-2. Agrega tests o una captura si aplicable
-3. Crea PR con descripción clara
-
----
-
-## 🖼 Opciones visuales que puedo añadir (elige):
-
-- Portada SVG personalizada con branding.
-- Palette CSS + `docs/` de estilo.
-- Mini-presentación HTML estática en `docs/` (GitHub Pages).
-
-Dime qué quieres y lo implemento.
+- Email: [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com)
+- WhatsApp: [+57 317 474 3252](https://wa.me/573174743252)
+- LinkedIn: https://www.linkedin.com/in/emm1223
+- GitHub: https://github.com/emm1223
+- Instagram: https://www.instagram.com/emm_exe.sys/
+- TikTok: https://www.tiktok.com/@munayar22
 
 ---
 
-_Diseñado para presentación profesional: limpio, visual y directo._
+## 🛠 Tecnologías (destacadas)
+
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript)
+![TypeScript](https://img.shields.io/badge/TypeScript-%233178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-%2361DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vue.js](https://img.shields.io/badge/Vue-%234FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-%23339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Python](https://img.shields.io/badge/Python-%2314354C?style=for-the-badge&logo=python)
+![Docker](https://img.shields.io/badge/Docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white)
+
+---
+
+## 📂 Estructura rápida
+
+```
+basic/           # plantillas frontend y utilidades
+presentacion/    # demos y páginas estáticas
+minoviabella/    # ejemplos de páginas y cartas
+assets/          # imágenes y recursos (hero placeholder)
+```
+
+---
+
+## ✅ Ideas visuales que puedo implementar ahora mismo
+
+- Portada SVG con tipografía y paleta (archivo `assets/hero.svg`).
+- `docs/` con una página estática (GitHub Pages) con presentación visual.
+- `README` por carpeta con el mismo estilo y enlaces a demos.
+
+Dime cuál quieres y lo agrego en el siguiente paso.
+
+---
+
+_Hecho para impresionar: limpio, moderno y listo para ser extendido con branding personalizado._
 
    → They're catalogued as lessons
 ```
