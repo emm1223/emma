@@ -7,10 +7,17 @@
   --glass: rgba(255,255,255,0.04);
 }
 *{box-sizing:border-box}
+.site-header{background:transparent;padding:10px 0}
+.site-header .header-inner{display:flex;justify-content:space-between;align-items:center}
+.site-header .brand a{color:var(--accent1);font-family:Playfair Display, Georgia, serif;font-size:20px;text-decoration:none}
+.site-header .main-nav a{color:#dfe7ea;margin-left:18px;text-decoration:none;font-weight:600}
 body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,var(--bg),#071226); color:#f4efe6; margin:0}
 .container{max-width:980px;margin:36px auto;padding:28px}
-.hero{background:transparent;border-radius:14px;padding:18px 0;box-shadow:none;display:flex;justify-content:center;align-items:center}
+.hero{background:transparent;border-radius:14px;padding:6px 0;box-shadow:none;display:flex;justify-content:center;align-items:center;position:relative}
 .hero img{max-width:920px;width:100%;border-radius:10px;display:block}
+.hero-cta{position:absolute;left:50%;top:50%;transform:translate(-50%,-10%);text-align:center}
+.hero-cta h1{font-family:Playfair Display, Georgia, serif;font-size:44px;color:var(--accent1);margin:0}
+.hero-cta .subtitle{color:#f6e9d2;margin-top:8px;margin-bottom:14px}
 .grid{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:28px}
 .card{background:var(--card);padding:20px;border-radius:12px;border:1px solid var(--glass);box-shadow:0 6px 20px rgba(2,6,23,0.5)}
 .card h2,.card h3{font-family:Georgia,'Times New Roman',serif;color:var(--accent1);margin:0 0 8px}
@@ -26,3 +33,12 @@ a.cta{display:inline-block;padding:10px 14px;background:linear-gradient(90deg,va
 .card p{color:#dfe7ea}
 .card a{color:var(--accent1)}
 .hero svg,.hero img{filter:drop-shadow(0 10px 30px rgba(0,0,0,0.6))}
+
+/* Button hover */
+.cta:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(184,134,11,0.18)}
+
+/* Responsive hero tweaks */
+@media(max-width:880px){
+  .hero-cta h1{font-size:28px}
+  .hero-cta{transform:translate(-50%,-6%)}
+}
