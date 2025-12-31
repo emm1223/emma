@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Animated SVG hero: replace colors/text as needed -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="EMMA Hero">
+  <defs>
+    <linearGradient id="lg" x1="0" x2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <filter id="f" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="360" rx="18" fill="#071024"/>
+  <g transform="translate(40,40)">
+    <rect width="1120" height="280" rx="12" fill="url(#lg)" opacity="0.08"/>
+    <g filter="url(#f)">
+      <g transform="translate(24,18)">
+        <circle cx="72" cy="72" r="72" fill="#06B6D4">
+          <animate attributeName="r" values="68;76;68" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <g transform="translate(170,28)">
+          <text x="0" y="0" font-family="Inter, Roboto, sans-serif" font-size="34" fill="#ffffff" font-weight="700">EMMA — Laboratorio de Código</text>
+          <text x="0" y="36" font-family="Inter, Roboto, sans-serif" font-size="16" fill="#dbeafe">Prototipos · Producción ligera · Innovación continua</text>
+          <rect x="0" y="56" width="580" height="2" fill="#ffffff" opacity="0.06"/>
+          <text x="0" y="86" font-family="Inter, Roboto, sans-serif" font-size="13" fill="#dbeafe">React · TypeScript · Node.js · Docker · Python · Tailwind</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <!-- Animated accents -->
+  <g>
+    <circle cx="980" cy="60" r="6" fill="#7C3AED">
+      <animate attributeName="cy" values="40;80;40" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1040" cy="120" r="4" fill="#06B6D4">
+      <animate attributeName="cx" values="1030;1048;1030" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
