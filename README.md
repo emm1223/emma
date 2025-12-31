@@ -26,9 +26,8 @@ EMMA es el laboratorio personal de Emmanuel Munayar para prototipos, demos y pro
 - **Email:** [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com)
 - **WhatsApp:** [+57 317 474 3252](https://wa.me/573174743252)
 - **LinkedIn:** https://www.linkedin.com/in/emm1223
-<div align="center">
 
-![EMMA Hero](./assets/hero-personal.svg)
+<div align="center">
 
 # Emmanuel Munayar — EMMA
 
