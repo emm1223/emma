@@ -1,5 +1,78 @@
 <div align="center">
 
+![EMMA Hero](./assets/hero.svg)
+
+## EMMA — Laboratorio de Código
+### Prototipos · Producción ligera · Innovación continua
+
+[![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/emm1223)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emm1223)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-%2300C851?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/573174743252)
+
+</div>
+
+---
+
+Resumen
+
+EMMA es un laboratorio personal de desarrollo donde se construyen y documentan prototipos, demos y proyectos pequeños con enfoque en entrega rápida, calidad y aprendizaje continuo.
+
+---
+
+Contacto
+
+- Email: [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com)
+- WhatsApp: [+57 317 474 3252](https://wa.me/573174743252)
+- LinkedIn: https://www.linkedin.com/in/emm1223
+- GitHub: https://github.com/emm1223
+- Instagram: https://www.instagram.com/emm_exe.sys/
+
+---
+
+Educación
+
+- Universidad El Bosque — Bogotá, Colombia
+
+---
+
+Proyectos destacados
+
+- `basic/` — plantillas frontend, utilidades y experimentos.
+- `basic/presentacion/` — demos y páginas estáticas (opcion1, opcion2).
+- `minoviabella/` — ejemplos de páginas y cartas.
+
+---
+
+Manifesto breve
+
+> No espero a la perfección: construyo, rompo, aprendo y mejoro. Este repositorio es prueba de evolución continua.
+
+---
+
+Docs y landing
+
+Hay una landing estática en `docs/` (lista para GitHub Pages). Abre `docs/index.html` para ver la presentación visual.
+
+---
+
+Estructura rápida
+
+```
+basic/
+  ├─ margarita.installer/
+  ├─ presentacion/
+minoviabella/
+assets/
+docs/
+```
+
+---
+
+Si quieres ajustes de color, una portada SVG personalizada con tu nombre o activar GitHub Pages para `docs/`, lo hago ahora y lo publico. 
+
+Última actualización: 31-12-2025
+<div align="center">
+
 <!-- Hero personalizado -->
 <img src="https://raw.githubusercontent.com/emm1223/emma/main/assets/hero-placeholder.png" alt="hero" width="100%" style="max-width:900px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.25)" />
 
