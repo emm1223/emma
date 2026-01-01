@@ -1,428 +1,305 @@
-<div align="center">
 
-#  EMMA — Code Laboratory 
-## *Where Code Breaks, Legends Rise* 🚀
-
-```
-╔════════════════════════════════════════════════════════════════════╗
-║                      PREMIUM EDITION                               ║
-║════════════════════════════════════════════════════════════════════║
-║                                                                    ║
-║   ███████╗███╗   ███╗███╗   ███╗ █████╗  ██╗      ██╗ ██╗██╗       ║
- ║   ██╔════╝████╗ ████║████╗ ████║██╔══██╗██║      ██║ ██║██║        ║  
-║   █████╗  ██╔████╔██║██╔████╔██║███████║██║      ██║ ██║██║        ║
-║   ██╔══╝  ██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║      ██║ ██║██║        ║
-║   ███████╗██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║███████╗╚█████╔╝██║        ║
-║   ╚══════╝╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝ ╚════╝ ╚═╝        ║
-║                                                                    ║
-║════════════════════════════════════════════════════════════════════║
-║                                                                    ║
-║             🚀 Live Laboratory of Code Evolution 🚀               ║
-║        Breaking Things • Learning Fast • Growing Faster            ║
-║                  24/7 Experimentation in Motion                    ║
-║                                                                    ║
-║              ✨ No Portfolio Bonito — Pure Excellence ✨          ║
-║                    Raw. Honest. Constantly Evolving.               ║
-║                                                                    ║
-╚════════════════════════════════════════════════════════════════════╝
-```
-
-<br>
-
-### 💎 **This is NOT a Portfolio. This is PROOF OF CONSTANT EVOLUTION** 💎
-
-> **Status:** 🟢 **ACTIVE & OPERATIONAL** | **Mode:** 🔥 **FULL POWER** | **Commitment:** 💯 **REAL WORK**
-
+<div style="display:flex;align-items:center;gap:20px;max-width:980px;margin:0 auto;padding:18px;border-radius:10px;">
+	<img src="./assets/hero-personal.svg" alt="Emmanuel Munayar" width="140" style="border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6);" />
+	<div>
+		<h1 style="margin:0 0 6px 0">Emmanuel Munayar — EMMA</h1>
+		<p style="margin:0 0 10px;color:#6b7280">Frontend developer · Prototyping · UI / UX · Deploys ligeros</p>
+		<p style="margin:0">
+			<a href="https://github.com/emm1223"><img src="https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+			<a href="https://www.linkedin.com/in/emm1223"><img src="https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+			<a href="mailto:emmanuelmunayar@gmail.com"><img src="https://img.shields.io/badge/Email-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+		</p>
+	</div>
 </div>
+ 
+	<!-- Redes sociales como botones estilizados -->
+	<div align="center" style="margin-top:12px;">
+		<a href="https://github.com/emm1223" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;border-radius:10px;background:#24292e;color:#fff;text-decoration:none;font-weight:600;margin:6px;">
+			<img src="https://cdn.simpleicons.org/github/ffffff" width="18" style="vertical-align:middle;margin-right:8px" alt="GitHub"/> GitHub
+		</a>
+		<a href="https://www.linkedin.com/in/emm1223" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;border-radius:10px;background:#0A66C2;color:#fff;text-decoration:none;font-weight:600;margin:6px;">
+			<img src="https://cdn.simpleicons.org/linkedin/ffffff" width="18" style="vertical-align:middle;margin-right:8px" alt="LinkedIn"/> LinkedIn
+		</a>
+		<a href="https://wa.me/573174743252" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;border-radius:10px;background:#25D366;color:#061224;text-decoration:none;font-weight:600;margin:6px;">
+			<img src="https://cdn.simpleicons.org/whatsapp/ffffff" width="18" style="vertical-align:middle;margin-right:8px" alt="WhatsApp"/> WhatsApp
+		</a>
+		<a href="https://www.instagram.com/emm_exe.sys/" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;border-radius:10px;background:#E4405F;color:#fff;text-decoration:none;font-weight:600;margin:6px;">
+			<img src="https://cdn.simpleicons.org/instagram/ffffff" width="18" style="vertical-align:middle;margin-right:8px" alt="Instagram"/> Instagram
+		</a>
+		<a href="mailto:emmanuelmunayar@gmail.com" style="display:inline-block;padding:8px 12px;border-radius:10px;background:#EA4335;color:#fff;text-decoration:none;font-weight:600;margin:6px;">
+			<img src="https://cdn.simpleicons.org/gmail/ffffff" width="18" style="vertical-align:middle;margin-right:8px" alt="Email"/> Email
+		</a>
+	</div>
 
 ---
 
-## 📊 **Live Metrics Dashboard**
+**Idioma:** [Español](#sobre-m%C3%AD) • [English](#english)
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                  EMMA PERFORMANCE STATS                 │
-├─────────────────────────────────────────────────────────┤
-│ Active Projects        │ ∞ (Always Building)            │
-│ Learning Mode          │ CONTINUOUS                     │
-│ System Status          │ 🟢 24/7 Operational            │
-│ Energy Level           │ ⚡⚡⚡⚡⚡ MAXIMUM           │
-│ Commitment to Quality  │ 100% Real. Zero Bullshit.      │
-│ Last Updated           │ 21 November 2025               │
-│ Next Evolution         │ Coming in the next commit...   │
-└─────────────────────────────────────────────────────────┘
-```
+## Contenido
+
+- [Emmanuel Munayar — EMMA](#emmanuel-munayar--emma)
+  - [Sobre mí](#sobre-mí)
+  - [Qué hago](#qué-hago)
+  - [Tecnologías \& herramientas](#tecnologías--herramientas)
+  - [Proyectos destacados](#proyectos-destacados)
+  - [Desarrollo local (rápido)](#desarrollo-local-rápido)
+  - [Construcción y despliegue](#construcción-y-despliegue)
+  - [Pruebas y ejemplos](#pruebas-y-ejemplos)
+  - [Contribuciones](#contribuciones)
+  - [Contacto](#contacto)
+- [English](#english)
+  - [About](#about)
+  - [What I do](#what-i-do)
+  - [Tech stack](#tech-stack)
+  - [Notable projects](#notable-projects)
+  - [Local development quickstart](#local-development-quickstart)
+  - [Build \& deploy](#build--deploy)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
+
+---
+---
+
+Resumen
+
+EMMA es el laboratorio personal de Emmanuel Munayar para prototipos, demos y proyectos ligeros. Aquí documento soluciones rápidas, experimentos front-end y ejemplos útiles para aprendizaje y reutilización.
 
 ---
 
-## 🔥 **THE EMMA MANIFESTO**
+**Contacto**
 
-### 🎯 **Core Philosophy**
-
-> **I don't wait for perfect. I build, I break, I learn, I dominate.**
->
-> Every line of code is **proof of growth.**  
-> Every error is a **stepping stone to mastery.**  
-> Every project is a **lesson in motion.**  
-> **Every day is another level unlocked.**
-
-```diff
-╔════════════════════════════════════════════════════════╗
-║  WHAT YOU WON'T FIND              WHAT YOU WILL FIND   ║
-╟────────────────────────────────────────────────────────╢
-║  ❌ Finished polish               ✅ Real experiments ║
-║  ❌ Decorative code               ✅ Purpose-driven   ║
-║  ❌ Tutorial copies               ✅ Original ideas   ║
-║  ❌ Generic solutions             ✅ Custom tooling   ║
-║  ❌ Perfection theater            ✅ Honest progress  ║
-║  ❌ "Best practices only"         ✅ Raw evolution    ║
-║  ❌ Abandoned projects            ✅ Living lab work  ║
-╚════════════════════════════════════════════════════════╝
-```
-
----
-
-## 🧬 **Philosophy of Constant Growth**
+- **Email:** [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com)
+- **WhatsApp:** [+57 317 474 3252](https://wa.me/573174743252)
+- **LinkedIn:** https://www.linkedin.com/in/emm1223
 
 <div align="center">
 
-```
-┌──────────────────────────────────────────────────────────┐
-│          THE INFINITE LEARNING CYCLE                     │
-│                                                          │
-│   🧠 IDEATE    →  💻 BUILD    →  💥 BREAK               │
-│      ↓                             ↓                      │
-│   💡 INSPIRED  ←  🎯 ACHIEVED   ←  📚 LEARNED          │
-│                                                          │
-│   ⏰ Repeat every day, improve every iteration          │
-│   🔄 No linear path — follow the interesting things     │
-│   🎢 Ups and downs are features, not bugs               │
-│                                                          │
-└──────────────────────────────────────────────────────────┘
-```
+# Emmanuel Munayar — EMMA
 
-**I have no predetermined journey.** Web → Backend → Automation → Security → AI → wherever curiosity and chaos lead me.
+Frontend developer & prototipador · Diseño de interfaces y despliegue ligero
+
+[![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/emm1223) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emm1223) [![Mail](https://img.shields.io/badge/Email-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:emmanuelmunayar@gmail.com)
 
 </div>
 
 ---
 
-## 💻 **THE COMPLETE ARSENAL** 
+## Sobre mí
+
+Soy Emmanuel Munayar, desarrollador frontend y creador del laboratorio EMMA. Me especializo en prototipado rápido, interfaces accesibles y despliegues ligeros. Trabajo con herramientas modernas (React, Tailwind, PostCSS) y automatizo flujos con Docker y CI cuando es necesario.
+
+**Formación:** Universidad El Bosque — Bogotá, Colombia.
+
+Vivo en Bogotá y me apasiona construir prototipos que se puedan iterar rápido y llevar a producción cuando aportan valor.
+
+---
+
+## Qué hago
+
+- Diseño y desarrollo de interfaces web interactivas (React + Tailwind).
+- Prototipado rápido para validar ideas y UX.
+- Automatización de despliegues ligeros con Docker y configuración de pipelines simples de CI.
+
+---
+
+## Tecnologías & herramientas
+
+- Lenguajes: JavaScript (ES6+), TypeScript, Python
+- Frontend: React, HTML5, CSS3, Tailwind CSS, PostCSS
+- Build & Tooling: npm, Create React App, PostCSS
+- DevOps / despliegue: Docker, nginx, GitHub Actions
+- Testing: Jest, Testing Library
+
+---
+
+## Proyectos destacados
+
+- `basic/margarita.installer/` — plantilla CRA con Tailwind/PostCSS (setup y scripts listos)
+- `basic/presentacion/` — ejemplos de páginas estáticas para demos rápidas
+- `minoviabella/cartas/carta1` — ejemplo de carta web estática
+
+---
+
+## Desarrollo local (rápido)
+
+Clona y entra al repo:
+
+```bash
+git clone https://github.com/emm1223/emma.git
+cd emma
+```
+
+- Servir la landing estática:
+
+```bash
+python3 -m http.server --directory docs 8000
+# Abrir http://localhost:8000
+```
+
+- Ejecutar la plantilla React (`basic/margarita.installer`):
+
+```bash
+cd basic/margarita.installer
+npm ci
+npm start
+# Desarrollo en http://localhost:3000
+```
+
+- Despliegue local con Docker:
+
+```bash
+./run.sh
+# o
+docker-compose up --build
+# Sitio en http://localhost:8080
+```
+
+---
+
+## Construcción y despliegue
+
+- El `Dockerfile` copia `docs/` a un contenedor nginx listo para producción.
+
+```bash
+docker build -t emma-site .
+docker run -p 8080:80 emma-site
+```
+
+---
+
+## Pruebas y ejemplos
+
+- Ejemplo de depuración: `basic/python/test_debug.py`.
+- Ejecuta `pytest` para Python; para JS usa `npm test` dentro de los proyectos CRA.
+
+---
+
+## Contribuciones
+
+- Abre una issue para discutir cambios grandes. Para contribuciones: fork → branch → PR. Incluye una descripción técnica y pasos para reproducir.
+
+Checklist rápida para PRs:
+- Documenta el comportamiento en `README.md` o nuevo archivo en `docs/`.
+- Optimiza imágenes y recursos estáticos.
+- Si agregas dependencias, explica la necesidad y actualiza `package.json` o `requirements.txt`.
+
+---
+
+## Contacto
+
+- **Emmanuel Munayar** — [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com) • Bogotá, Colombia
+- LinkedIn: https://www.linkedin.com/in/emm1223
+- GitHub: https://github.com/emm1223
+
+---
+
+Si quieres, puedo añadir una versión en inglés, un CV técnico o ejemplos ampliados de CI/Workflows.
+
+---
+
+# English
 
 <div align="center">
 
-### 🎨 FRONTEND MASTERY SUITE
-![React](https://img.shields.io/badge/React-%2361DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Vue.js](https://img.shields.io/badge/Vue.js-%234FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-%233178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-%23E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-%231572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2306B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-### ⚙️ BACKEND POWER STACK
-![Node.js](https://img.shields.io/badge/Node.js-%23339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-%23000000?style=for-the-badge&logo=express&logoColor=white)
-![Python](https://img.shields.io/badge/Python-%233776AB?style=for-the-badge&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-%23CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-%2313AA52?style=for-the-badge&logo=mongodb&logoColor=white)
-
-### 🚀 DEVOPS & INFRASTRUCTURE
-![Docker](https://img.shields.io/badge/Docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-%23F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-%23FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Bash](https://img.shields.io/badge/Bash-%234EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS%20Code-%23007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+**English version** — quick reference and developer notes.
 
 </div>
 
 ---
 
-## 🏆 **AREAS OF EXPERTISE**
+## About
 
-<table>
-<tr>
-<td width="50%">
+EMMA is the personal lab of Emmanuel Munayar for rapid prototypes, demos and lightweight production sites. This repository contains frontend templates, static demos and small utilities focused on speed of iteration and practical learning.
 
-### 🌐 **Web Development** ⭐⭐⭐⭐⭐
-*Production-grade applications*
-- React & advanced patterns
-- Vue.js & component architecture
-- Responsive CSS mastery
-- Performance optimization
-- UX that converts
-
-</td>
-<td width="50%">
-
-### 🤖 **Automation & Scripting** ⭐⭐⭐⭐⭐
-*Task automation warrior*
-- Python scripting excellence
-- Bash automation
-- System utilities
-- Workflow optimization
-- CLI tool development
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 💥 **Rapid Prototyping** ⭐⭐⭐⭐⭐
-*From zero to hero*
-- MVP development
-- Proof of concepts
-- Technology validation
-- Fast iteration cycles
-- Experiment-driven approach
-
-</td>
-<td width="50%">
-
-### ⚙️ **Backend Systems** ⭐⭐⭐⭐☆
-*Scalable architectures*
-- Node.js & Express APIs
-- Database design (SQL & NoSQL)
-- Authentication & security
-- Microservices concepts
-- API optimization
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🐳 **DevOps & Infrastructure** ⭐⭐⭐⭐☆
-*Production deployment*
-- Docker containerization
-- CI/CD pipelines
-- Server configuration
-- Monitoring & logging
-- Deployment strategies
-
-</td>
-<td width="50%">
-
-### 🔐 **Emerging Frontiers** ⭐⭐⭐☆☆
-*Always expanding*
-- Cybersecurity concepts
-- Machine learning basics
-- Blockchain fundamentals
-- Web3 exploration
-- System design patterns
-
-</td>
-</tr>
-</table>
+**Education:** Universidad El Bosque — Bogotá, Colombia
 
 ---
 
-## 📈 **COMPETENCY MATRIX**
+## What I do
 
-| **Technology** | **Mastery Level** | **Experience** | **Use Case** |
-|---|---|---|---|
-| JavaScript/TypeScript | 🌟🌟🌟🌟🌟 | 5+ years | Daily production work |
-| React | 🌟🌟🌟🌟🌟 | 4+ years | Enterprise-grade applications |
-| Python | 🌟🌟🌟🌟☆ | 4+ years | Automation & scripting |
-| Node.js/Express | 🌟🌟🌟🌟☆ | 3+ years | Scalable backend APIs |
-| HTML/CSS | 🌟🌟🌟🌟🌟 | 5+ years | Responsive & animated interfaces |
-| Git/GitHub | 🌟🌟🌟🌟🌟 | 5+ years | Version control mastery |
-| SQL/NoSQL | 🌟🌟🌟🌟☆ | 3+ years | Database architecture |
-| Docker | 🌟🌟🌟🌟☆ | 2+ years | Container deployment |
-| Linux/Bash | 🌟🌟🌟🌟☆ | 3+ years | System administration |
-| Performance Tuning | 🌟🌟🌟🌟☆ | 3+ years | Speed optimization obsession |
+- Design and implement interactive web interfaces (React + Tailwind).
+- Rapid prototyping to validate UX and product ideas.
+- Automate lightweight deployments with Docker and basic CI.
 
 ---
 
-## 🚀 **THE DEVELOPMENT LIFECYCLE**
+## Tech stack
 
-<div align="center">
+- Languages: JavaScript (ES6+), TypeScript, Python
+- Frontend: React, HTML5, CSS3, Tailwind CSS, PostCSS
+- Tooling: npm, Create React App, PostCSS
+- DevOps: Docker, nginx, GitHub Actions
+- Testing: Jest, Testing Library
 
-```
-╔════════════════════════════════════════════════════════════╗
-║               EMMA'S INNOVATION PROCESS                    ║
-╠════════════════════════════════════════════════════════════╣
-║                                                            ║
-║  PHASE 1: 💡 IDEATION                                     ║
-║  Curiosity strikes → Problem identified → Solution forms  ║
-║         ↓                                                  ║
-║  PHASE 2: ⚡ RAPID DEVELOPMENT                            ║
-║  Build fast → Iterate quickly → Ship without fear         ║
-║         ↓                                                  ║
-║  PHASE 3: 💥 TESTING & BREAKING                           ║
-║  Find failures → Document issues → Learn lessons          ║
-║         ↓                                                  ║
-║  PHASE 4: 🔧 REFINEMENT                                   ║
-║  Improve code → Optimize performance → Scale up           ║
-║         ↓                                                  ║
-║  PHASE 5: 📝 DOCUMENTATION                                ║
-║  Record insights → Share learnings → Update repository    ║
-║         ↓                                                  ║
-║  PHASE 6: 🎯 DEPLOYMENT                                   ║
-║  Release to production → Monitor → Iterate again          ║
-║         ↓                                                  ║
-║  ♻️  BACK TO PHASE 1 (LOOP FOREVER)                       ║
-║                                                            ║
-╚════════════════════════════════════════════════════════════╝
+---
+
+## Notable projects
+
+- `basic/margarita.installer/` — CRA template with Tailwind/PostCSS
+- `basic/presentacion/` — static presentation pages
+- `minoviabella/cartas/carta1` — static example card
+
+---
+
+## Local development quickstart
+
+```bash
+git clone https://github.com/emm1223/emma.git
+cd emma
 ```
 
-</div>
+- Serve the static landing:
 
----
-
-## 🎯 **CURRENT FOCUS**
-
-### 🔥 **Right Now**
-- Mastering advanced React patterns
-- Deep-diving TypeScript
-- System design principles
-- Cloud architecture exploration
-
-### 🔮 **Next Frontier**
-- Machine Learning fundamentals
-- Blockchain & Web3 development
-- Advanced DevOps automation
-- Cybersecurity deep-dive
-
-### 📚 **Always Learning**
-- New technologies (weekly)
-- Design patterns (constantly)
-- Industry best practices (monthly)
-- Emerging tools (as they appear)
-
----
-
-## 🌍 **LET'S CONNECT & COLLABORATE**
-
-<div align="center">
-
-[![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/emm1223)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/emm_exe.sys/)
-[![TikTok](https://img.shields.io/badge/TikTok-%23000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@munayar22)
-[![Discord](https://img.shields.io/badge/Discord-%235865F2?style=for-the-badge&logo=discord&logoColor=white)](discord://users/xxemmanuell)
-[![Email](https://img.shields.io/badge/Email-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:emmanuelmunayar@gmail.com)
-
-### 💬 **Talk to Me About:**
- 💻 Code architecture & design excellence
- 🚀 Building products that scale
- 🧪 Experimental technologies
- 🎓 Learning & growth strategies
-  🤝 Collaboration opportunities
-  ☕ Tech discussions over coffee
-
-### ✅ **Always Open To:**
-✔️ Code reviews & constructive feedback  
-✔️ Collaboration on interesting projects  
-✔️ Mentorship (both ways)  
-✔️ Technical discussions  
-✔️ Building cool things together  
-✔️ Breaking & learning from failures
-
-</div>
-
----
-
-## ⚡ **IMPORTANT GUIDELINES**
-
-### 🎯 **Before You Explore**
-
-```
-📈 This repo EVOLVES DAILY
-   → Things change, integrate, and improve constantly
-
-🧩 Each FOLDER IS INDEPENDENT
-   → Pick what interests you, skip what doesn't
-
-⏳ CODE MAY BE INCOMPLETE
-   → That's intentional. Incompleteness = Learning
-
-🔄 ITERATION > PERFECTION
-   → Raw code > Polished nonsense
-   → Working > Theoretical
-
-🚀 EXPERIMENTS ARE SACRED
-   → Breaking things = Learning mechanism
-   → Fear is not welcome here
-
-📝 ERRORS ARE DOCUMENTED
-   → Mistakes aren't hidden
-   → They're catalogued as lessons
+```bash
+python3 -m http.server --directory docs 8000
+# open http://localhost:8000
 ```
 
-### 💪 **My Commitments to You**
+- Run the React template (`basic/margarita.installer`):
 
-  ✅ Everything here has real purpose
-  ✅ Errors are documented & valued
-  ✅ Code evolves with my learning
-  ✅ Honesty over appearances, always
-  ✅ Never "done" — always improving
-  ✅ Real projects > toy examples
-  ✅ Transparency > polish
+```bash
+cd basic/margarita.installer
+npm ci
+npm start
+# dev server at http://localhost:3000
+```
 
+- Run the static site with Docker:
 
----
-
-## 🎆 **JOIN THE MOVEMENT**
-
-### ⭐ **Drop a Star**
-If you find value here, a star costs nothing but means everything.
-
-### 🔗 **Collaborate**
-Got ideas? Found bugs? Want to experiment?  
-Open an issue, start a discussion, send a DM. Let's build.
-
-### 📣 **Spread the Word**
-Know someone like this? Share it!  
-Let's build a community of builders and learners.
-
-### 💡 **Keep Growing**
-Whatever you do: keep experimenting, keep breaking, keep learning.
+```bash
+./run.sh
+# or
+docker-compose up --build
+# site at http://localhost:8080
+```
 
 ---
 
-<div align="center">
+## Build & deploy
 
-## 🚀 **LET'S BUILD SOMETHING EXTRAORDINARY**
+The `Dockerfile` copies `docs/` into an nginx container for production.
 
-<br>
-
-> *"The only way to predict the future is to invent it."*  
-> — Alan Kay
-
-<br>
-
-> *"Innovation distinguishes between a leader and a follower."*  
-> — Steve Jobs
-
-<br>
-
-**This is more than code. This is a journey of growth.**
-
-<br>
-
+```bash
+docker build -t emma-site .
+docker run -p 8080:80 emma-site
+```
 
 ---
 
-###  **EMMANUEL MUNAYAR** 
+## Contributing
 
-**Repository Status:**  **ACTIVE & GROWING**  
-**Energy Level:** **MAXIMUM**  
-**Last Updated:** 21 November 2025  
-**Next Update:** Any moment (can't stop, won't stop)
+- Open an issue to discuss larger changes. For contributions: fork → branch → PR. Provide a technical description and reproduction steps.
 
-<br>
+Checklist for PRs:
+- Document behavior in `README.md` or `docs/`.
+- Optimize static assets (SVG/PNG).
+- If adding dependencies, justify and update `package.json`.
 
 ---
 
-### **THANK YOU FOR EXPLORING EMMA** 🙏
+## Contact
 
-*Whether you steal code, find inspiration, or just pass through—thanks for stopping by.*
+- Emmanuel Munayar — [emmanuelmunayar@gmail.com](mailto:emmanuelmunayar@gmail.com)
+- LinkedIn: https://www.linkedin.com/in/emm1223
+- GitHub: https://github.com/emm1223
 
-*Let's keep building, breaking, and learning together.*
-
-*The code never stops. Neither do I.*
-
-</div>
-
-</div>

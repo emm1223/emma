@@ -1,3 +1,8 @@
+# minoviabella — Ejemplos y cartas
+
+Ejemplos de páginas estáticas y componentes. Revisa `cartas/carta1/index.html` para un ejemplo.
+
+Consulta el README raíz para contacto, educación y documentación adicional.
 # 💌 Carta para Tatis
 
 No sabía muy bien cómo hacerlo, así que lo metí en código. Porque a veces las palabras en un papel no alcanzan, ¿viste?
