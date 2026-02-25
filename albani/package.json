@@ -1,0 +1,28 @@
+{
+  "name": "albani-gallery",
+  "version": "1.0.0",
+  "description": "Galería automática de fotos para Albani",
+  "main": "scripts/generate-gallery.js",
+  "scripts": {
+    "albani": "node scripts/albani.js",
+    "server": "node scripts/server.js",
+    "setup-alias": "node scripts/setup-alias.js",
+    "keyboard": "node scripts/setup-keyboard-shortcut.js",
+    "setup": "node scripts/setup.js",
+    "generate": "node scripts/generate-gallery.js",
+    "watch": "node scripts/watch-gallery.js",
+    "validate": "node scripts/validate.js",
+    "fix": "node scripts/fix.js",
+    "open": "node scripts/open.js",
+    "start": "npm run setup && npm run watch",
+    "dev": "npm run generate && npm run open"
+  },
+  "dependencies": {
+    "sharp": "^0.32.0",
+    "exif-parser": "^0.1.12",
+    "open": "^8.4.0"
+  },
+  "keywords": ["gallery", "albani", "photos"],
+  "author": "Tu Nombre",
+  "license": "MIT"
+}
