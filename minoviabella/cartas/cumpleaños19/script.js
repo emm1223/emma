@@ -3,7 +3,7 @@
 // ============================================================
 class RelationshipCounter {
     constructor() {
-        this.startDate = new Date('2025-10-17');
+        this.startDate = new Date('2025-09-17');
     }
 
     update() {
@@ -442,6 +442,43 @@ function loadGallery() {
     }
 }
 
+
 // ============================================================
 // VARIABLES GLOBALES
 // ============================================================
+
+// ============================================================
+// INICIALIZACIÓN
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('%c🎂 CARTA DE CUMPLEAÑOS ESPECIAL 🎂', 'font-size: 20px; color: #ff1493; font-weight: bold;');
+    console.log('%c19 años de tu hermosa existencia', 'font-size: 16px; color: #f093fb;');
+    console.log('%cTe amo infinitamente ❤️', 'font-size: 16px; color: #ff1493;');
+    
+    // Inicializar componentes
+    lightbox = new LightboxGallery();
+    musicPlayer = new MusicPlayer();
+    
+    // Iniciar contador inmediatamente
+    const counter = new RelationshipCounter();
+    counter.render();
+    setInterval(() => counter.render(), 1000);
+    
+    // Cargar galería después de un pequeño delay para mejor rendimiento
+    setTimeout(() => {
+        loadGallery();
+        initializeAnimations();
+    }, 100);
+    
+    // Confeti automático al entrar
+    setTimeout(() => {
+        throwConfetti();
+    }, 1200);
+    
+    // Permitir click para reproducir música (por políticas de navegador)
+    document.addEventListener('click', () => {
+        if (!musicPlayer.initialized) {
+            musicPlayer.autoPlay();
+        }
+    }, { once: true });
+});
