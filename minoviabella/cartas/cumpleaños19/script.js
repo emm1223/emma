@@ -3,7 +3,7 @@
 // ============================================================
 class RelationshipCounter {
     constructor() {
-        this.startDate = new Date('2025-10-17'); // 17 de octubre 2025
+        this.startDate = new Date('2025-10-17');
     }
 
     update() {
@@ -30,6 +30,169 @@ class RelationshipCounter {
         if (daysEl) daysEl.textContent = String(days).padStart(3, '0');
         if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
         if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+}
+
+// ============================================================
+// GESTOR DE LIGHTBOX
+// ============================================================
+class LightboxGallery {
+    constructor() {
+        this.currentIndex = 0;
+        this.totalPhotos = 0;
+        this.lightbox = document.getElementById('lightbox');
+        this.lightboxImage = document.getElementById('lightbox-image');
+        this.lightboxCaption = document.getElementById('lightbox-caption');
+        this.lightboxCounter = document.getElementById('lightbox-counter');
+        
+        this.captions = [
+            'Tu hermosa sonrisa',
+            'Recuerdos juntos',
+            'Cada momento es perfecto',
+            'Eternamente tuyos',
+            'Mi amor infinito',
+            'Siempre juntos',
+            'Tú eres mi razón',
+            'Contigo en cada paso',
+            'Tu esencia me encanta',
+            'Nosotros es todo',
+            'Momentos de oro',
+            'Luz en mi vida',
+            'Amor infinito',
+            'Mi bendición',
+            'Tu compañía es todo',
+            'Juntos es perfecto',
+            'Te amo más cada día',
+            'Mi corazón es tuyo',
+            'Contigo siempre',
+            'Eres mi persona',
+            'En tus ojos veo el futuro',
+            'Tu risa es mi canción',
+            'Con vos soy feliz',
+            'Eternidad en tus brazos',
+            'Cada foto, un recuerdo',
+            'Mi vida eres vos',
+            'Amor puro y sincero',
+            'Tu presencia me calma',
+            'Sonrisas de amor',
+            'Tú y yo, para siempre',
+            'Instantes inolvidables',
+            'Tu belleza interior',
+            'Nosotros, el destino',
+            'Amor que crece',
+            'Tu mano en la mía',
+            'Momentos mágicos',
+            'Contigo es hogar',
+            'El mejor regalo',
+            'Te quiero hoy y siempre',
+            'Mi mitad del alma',
+            'Felicidad completa',
+            'Amor verdadero',
+            'Tu sonrisa brillante',
+            'Forever with you'
+        ];
+        
+        this.setupEventListeners();
+        this.countPhotos();
+    }
+
+    countPhotos() {
+        for (let i = 1; i <= 50; i++) {
+            const img = new Image();
+            img.onload = () => {
+                if (i > this.totalPhotos) this.totalPhotos = i;
+            };
+            img.src = `fotos/${i}.jpg`;
+        }
+    }
+
+    setupEventListeners() {
+        document.querySelector('.lightbox-close').addEventListener('click', () => this.close());
+        document.querySelector('.lightbox-prev').addEventListener('click', () => this.prevPhoto());
+        document.querySelector('.lightbox-next').addEventListener('click', () => this.nextPhoto());
+        
+        document.addEventListener('keydown', (e) => {
+            if (!this.lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') this.close();
+            if (e.key === 'ArrowLeft') this.prevPhoto();
+            if (e.key === 'ArrowRight') this.nextPhoto();
+        });
+    }
+
+    open(index) {
+        this.currentIndex = index;
+        this.lightbox.classList.add('active');
+        this.updatePhoto();
+        document.body.style.overflow = 'hidden';
+    }
+
+    close() {
+        this.lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    updatePhoto() {
+        const photoNumber = this.currentIndex + 1;
+        this.lightboxImage.src = `fotos/${photoNumber}.jpg`;
+        this.lightboxCaption.textContent = this.captions[(this.currentIndex) % this.captions.length];
+        this.lightboxCounter.textContent = `${photoNumber} / ${this.totalPhotos || '?'}`;
+    }
+
+    nextPhoto() {
+        this.currentIndex = (this.currentIndex + 1) % this.totalPhotos;
+        this.updatePhoto();
+    }
+
+    prevPhoto() {
+        this.currentIndex = (this.currentIndex - 1 + this.totalPhotos) % this.totalPhotos;
+        this.updatePhoto();
+    }
+}
+
+// ============================================================
+// GESTOR DE MÚSICA
+// ============================================================
+class MusicPlayer {
+    constructor() {
+        this.audio = document.getElementById('backgroundMusic');
+        this.isPlaying = false;
+        this.initialized = false;
+        
+        setTimeout(() => {
+            this.autoPlay();
+        }, 2000);
+    }
+
+    autoPlay() {
+        if (this.initialized) return;
+        
+        const promise = this.audio.play();
+        
+        if (promise !== undefined) {
+            promise
+                .then(() => {
+                    this.isPlaying = true;
+                    this.initialized = true;
+                    console.log('🎵 Música iniciada automáticamente');
+                })
+                .catch(() => {
+                    console.log('🔇 Reproducción automática bloqueada (necesita interacción del usuario)');
+                });
+        }
+    }
+
+    toggle() {
+        if (!this.initialized) {
+            this.autoPlay();
+        }
+        
+        if (this.audio.paused) {
+            this.audio.play();
+            this.isPlaying = true;
+        } else {
+            this.audio.pause();
+            this.isPlaying = false;
+        }
     }
 }
 
@@ -91,19 +254,12 @@ function sendLove() {
 // REPRODUCTOR DE MÚSICA
 // ============================================================
 function playMusic(artist) {
-    const audioPlayer = document.getElementById('audioPlayer');
-    
-    // URLs de YouTube Music (requieren acceso directo o servicio proxy)
     const musicLinks = {
         'manuel': 'https://www.youtube.com/results?search_query=Manuel+Medrano',
         'mike': 'https://www.youtube.com/results?search_query=Mike+Towers'
     };
     
-    // Abre búsqueda en YouTube
     window.open(musicLinks[artist], '_blank');
-    
-    // Muestra mensaje
-    alert(`🎵 Abriendo ${artist === 'manuel' ? 'Manuel Medrano' : 'Mike Towers'} en YouTube Music\n\nEscanea el código QR o búscalo en Spotify para escuchar mientras lees esta carta.`);
 }
 
 // ============================================================
@@ -142,12 +298,22 @@ function initializeAnimations() {
 }
 
 // ============================================================
+// VARIABLES GLOBALES
+// ============================================================
+let lightbox = null;
+let musicPlayer = null;
+
+// ============================================================
 // INICIALIZACIÓN
 // ============================================================
 document.addEventListener('DOMContentLoaded', function() {
     console.log('%c🎂 CARTA DE CUMPLEAÑOS ESPECIAL 🎂', 'font-size: 20px; color: #ff1493; font-weight: bold;');
     console.log('%c19 años de tu hermosa existencia', 'font-size: 16px; color: #f093fb;');
     console.log('%cTe amo infinitamente ❤️', 'font-size: 16px; color: #ff1493;');
+    
+    // Inicializar componentes
+    lightbox = new LightboxGallery();
+    musicPlayer = new MusicPlayer();
     
     // Iniciar contador inmediatamente
     const counter = new RelationshipCounter();
@@ -160,10 +326,17 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeAnimations();
     }, 100);
     
-    // Confeti automático al entrar (con delay más grande para que cargue todo primero)
+    // Confeti automático al entrar
     setTimeout(() => {
         throwConfetti();
     }, 1200);
+    
+    // Permitir click para reproducir música (por políticas de navegador)
+    document.addEventListener('click', () => {
+        if (!musicPlayer.initialized) {
+            musicPlayer.autoPlay();
+        }
+    }, { once: true });
 });
 
 // ============================================================
@@ -220,7 +393,6 @@ function loadGallery() {
         'Forever with you'
     ];
     
-    // Cargar fotos de forma más fluida
     for (let photoCount = 1; photoCount <= 50; photoCount++) {
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
@@ -247,6 +419,11 @@ function loadGallery() {
             galleryItem.style.display = 'block';
         };
         
+        placeholder.style.cursor = 'pointer';
+        placeholder.addEventListener('click', () => {
+            if (lightbox) lightbox.open(photoCount - 1);
+        });
+        
         const placeholderText = document.createElement('div');
         placeholderText.className = 'placeholder-text';
         placeholderText.textContent = `Foto ${photoCount}`;
@@ -264,3 +441,7 @@ function loadGallery() {
         galleryContainer.appendChild(galleryItem);
     }
 }
+
+// ============================================================
+// VARIABLES GLOBALES
+// ============================================================

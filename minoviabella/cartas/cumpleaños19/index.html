@@ -8,6 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:ital@0;1&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- MÚSICA DE FONDO -->
+    <audio id="backgroundMusic" preload="auto" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">❮</button>
+            <img id="lightbox-image" src="" alt="Foto ampliada">
+            <button class="lightbox-next">❯</button>
+            <div class="lightbox-info">
+                <p id="lightbox-caption"></p>
+                <p id="lightbox-counter"></p>
+            </div>
+        </div>
+    </div>
+
     <div class="background"></div>
     <div class="balloons">
         <div class="balloon" style="--color: #f093fb; --delay: 0s;"></div>
@@ -97,24 +116,7 @@
                     </p>
                     <p class="signature">Con todo mi amor,<br>Tu amor eterno ❤️‍🔥</p>
                 </div>
-            </section>
-
-            <!-- SECCIÓN DE MÚSICA -->
-            <section class="music-section">
-                <h2>La Banda Sonora De Mi Amor</h2>
-                <div class="music-players">
-                    <div class="player-card">
-                        <h3>🎵 Manuel Medrano</h3>
-                        <p>Tu voz habla de lo que siento por ti</p>
-                        <button class="play-btn" onclick="playMusic('manuel')">🎶 Escuchar</button>
-                    </div>
-                    <div class="player-card">
-                        <h3>🎵 Mike Towers</h3>
-                        <p>El ritmo que acompaña nuestro amor</p>
-                        <button class="play-btn" onclick="playMusic('mike')">🎶 Escuchar</button>
-                    </div>
-                </div>
-            </section>
+            </section>     
 
             <!-- BOTONES DE ACCIONES -->
             <section class="actions">
