@@ -200,12 +200,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: clamp(12px, 2vw, 15px);
 }
 
 .numero {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(60px, 20vw, 120px);
+    font-size: clamp(50px, 18vw, 120px);
     font-weight: 900;
     background: linear-gradient(135deg, #ffd700 0%, #ff6347 100%);
     -webkit-background-clip: text;
@@ -222,9 +222,9 @@ body {
 
 .age-display .text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 16px);
     color: #c8b8ff;
-    letter-spacing: 2px;
+    letter-spacing: clamp(1px, 0.5vw, 2px);
     text-transform: uppercase;
 }
 
@@ -257,7 +257,7 @@ body {
     background: linear-gradient(135deg, rgba(255, 20, 147, 0.25) 0%, rgba(102, 126, 234, 0.25) 100%);
     border: 2px solid rgba(255, 20, 147, 0.6);
     border-radius: 15px;
-    padding: 25px;
+    padding: clamp(18px, 2vw, 25px);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
@@ -269,7 +269,7 @@ body {
 
 .time-value {
     font-family: 'Playfair Display', serif;
-    font-size: 40px;
+    font-size: clamp(28px, 6vw, 40px);
     font-weight: 900;
     background: linear-gradient(135deg, #667eea 0%, #ff1493 100%);
     -webkit-background-clip: text;
@@ -279,15 +279,15 @@ body {
 
 .time-label {
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: clamp(10px, 1.5vw, 12px);
     color: #c8b8ff;
-    letter-spacing: 2px;
+    letter-spacing: clamp(1px, 0.5vw, 2px);
     margin-top: 10px;
 }
 
 .relationship-text {
     color: #e8dff7;
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     line-height: 1.8;
     max-width: 800px;
     margin: 0 auto;
@@ -392,8 +392,8 @@ body {
 
 .message-box {
     background: linear-gradient(135deg, rgba(15, 5, 35, 0.98) 0%, rgba(35, 15, 60, 0.98) 100%);
-    border-radius: 20px;
-    padding: 60px;
+    border-radius: clamp(15px, 3vw, 20px);
+    padding: clamp(30px, 6vw, 60px);
     border: 2px solid rgba(255, 20, 147, 0.6);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 20, 147, 0.3);
     backdrop-filter: blur(15px);
@@ -401,12 +401,12 @@ body {
 
 .message-box h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: clamp(24px, 6vw, 42px);
     background: linear-gradient(135deg, #ff1493 0%, #f093fb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 30px;
+    margin-bottom: clamp(20px, 4vw, 30px);
 }
 
 .message-box p {
@@ -483,9 +483,9 @@ body {
     background: linear-gradient(135deg, #ff1493 0%, #f093fb 100%);
     color: white;
     border: none;
-    padding: 12px 30px;
+    padding: clamp(10px, 2vw, 12px) clamp(22px, 4vw, 30px);
     border-radius: 50px;
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -507,10 +507,10 @@ body {
 }
 
 .btn {
-    padding: 18px 50px;
+    padding: clamp(14px, 2vw, 18px) clamp(30px, 4vw, 50px);
     border: none;
     border-radius: 60px;
-    font-size: 18px;
+    font-size: clamp(14px, 2.5vw, 18px);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     cursor: pointer;
@@ -558,15 +558,15 @@ body {
 
 @media (max-width: 768px) {
     .birthday-card {
-        padding: 40px 30px;
+        padding: clamp(30px, 6vw, 40px);
     }
 
     .title {
-        font-size: 36px;
+        font-size: clamp(32px, 8vw, 44px);
     }
 
     .numero {
-        font-size: 80px;
+        font-size: clamp(60px, 18vw, 80px);
     }
 
     .timer-container {
@@ -575,12 +575,98 @@ body {
 
     .gallery-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 18px;
     }
 
     .btn {
-        padding: 14px 35px;
-        font-size: 16px;
+        padding: clamp(12px, 3vw, 14px) clamp(24px, 5vw, 35px);
+        font-size: clamp(14px, 2.5vw, 16px);
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: clamp(10px, 4vw, 14px) clamp(12px, 4vw, 18px);
+    }
+
+    .birthday-card {
+        padding: clamp(24px, 6vw, 30px);
+    }
+
+    .title {
+        font-size: clamp(28px, 10vw, 34px);
+    }
+
+    .subtitle,
+    .relationship-text,
+    .message-box p,
+    .player-card p,
+    .time-label,
+    .placeholder-text,
+    #lightbox-caption,
+    #lightbox-counter {
+        font-size: clamp(12px, 2.5vw, 14px);
+    }
+
+    .timer-container,
+    .gallery-container,
+    .music-players {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container {
+        gap: 16px;
+    }
+
+    .actions {
+        gap: 18px;
+    }
+
+    .play-btn,
+    .btn {
+        width: 100%;
+        max-width: 320px;
+        padding: clamp(12px, 3vw, 14px) clamp(20px, 4vw, 26px);
+    }
+
+    .lightbox-content {
+        width: 95%;
+        gap: 16px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+
+    .lightbox-close {
+        top: -35px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar-logo {
+        font-size: clamp(16px, 5vw, 18px);
+    }
+
+    .candles {
+        gap: 12px;
+    }
+
+    .title {
+        margin-bottom: clamp(12px, 3vw, 16px);
+    }
+
+    .actions {
+        gap: 12px;
+    }
+
+    .btn,
+    .play-btn {
+        padding: clamp(10px, 3vw, 12px) clamp(18px, 4vw, 22px);
     }
 }
 
