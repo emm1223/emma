@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
+//hola
 public class VistaPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
