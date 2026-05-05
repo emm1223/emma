@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-//hola
+
 public class VistaPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -34,19 +34,17 @@ public class VistaPrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 778, 450);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(15, 15, 15)); // Negro profundo
+		contentPane.setBackground(new Color(15, 15, 15)); 
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(10, 10));
 		
-		// TÍTULO HACKER
 		JLabel lblNewLabel = new JLabel("SYSTEM OVERRIDE: ESTACIÓN DE CIBERSEGURIDAD");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Monospaced", Font.BOLD, 22));
 		lblNewLabel.setForeground(new Color(255, 50, 50)); // Rojo vibrante
 		contentPane.add(lblNewLabel, BorderLayout.NORTH);
 		
-		// CONSOLA DE LOGS
 		JTextArea areaLogs = new JTextArea();
 		areaLogs.setEditable(false);
 		areaLogs.setBackground(new Color(25, 5, 5)); // Rojo vino muy oscuro
