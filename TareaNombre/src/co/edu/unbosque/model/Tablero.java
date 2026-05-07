@@ -1,5 +1,4 @@
 package co.edu.unbosque.model;
-//Avance del tablero paraff el proyecto Sistemas Vivos
 
 public class Tablero {
   
