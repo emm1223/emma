@@ -50,7 +50,7 @@ public class Servidor {
 			colocarObjetoAleatorio("FIREWALL");
 			
 		
-			if (i % 3 == 0) {
+			if (i % 2 == 0) {
 				int af = generarPosicionAleatoria(true);
 				int ac = generarPosicionAleatoria(false);
 				

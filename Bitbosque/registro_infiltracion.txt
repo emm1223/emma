@@ -23,3 +23,13 @@
 [2026/05/13 21:12:20] Resultado: VICTORIA
 [2026/05/13 21:12:20] Movimientos restantes: 91
 [2026/05/13 21:12:20] Puertos comprometidos: 1
+[2026/05/14 06:56:53] --- FIN DE LA INFILTRACIÓN ---
+[2026/05/14 06:56:53] Usuario: User
+[2026/05/14 06:56:53] Resultado: VICTORIA
+[2026/05/14 06:56:53] Movimientos restantes: 73
+[2026/05/14 06:56:53] Puertos comprometidos: 3
+[2026/05/15 13:07:48] --- FIN DE LA INFILTRACIÓN ---
+[2026/05/15 13:07:48] Usuario: User
+[2026/05/15 13:07:48] Resultado: VICTORIA
+[2026/05/15 13:07:48] Movimientos restantes: 8
+[2026/05/15 13:07:48] Puertos comprometidos: 3
