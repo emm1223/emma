@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.io.File;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -17,8 +18,9 @@ import co.edu.unbosque.model.Casilla;
  * Dibuja la cuadrícula del servidor usando etiquetas (JLabel) con íconos e 
  * incorpora una botonera con flechas direccionales en la parte inferior para 
  * controlar el desplazamiento del script en tiempo real.
- * 
- * @author Farid Emmanuel Munayar Rincon
+ * * @author Farid Emmanuel Munayar Rincon
+ * @version 1.2
+ * @since 2026-05-22
  */
 public class PanelTablero extends JPanel {
 
@@ -28,6 +30,11 @@ public class PanelTablero extends JPanel {
     
     private JButton btnMoverArriba, btnMoverAbajo, btnMoverIzquierda, btnMoverDerecha;
     private ImageIcon imgHacker, imgPaquete, imgFirewall, imgAntivirus, imgEscaner, imgNodo, imgPuerto;
+
+    // --- PALETA DE COLORES DE ALTO CONTRASTE (ESTILO CONSOLA HACKING) ---
+    private final Color COLOR_FONDO_VACIO = new Color(30, 32, 33);     // Gris oscuro industrial (despega los logos negros/oscuros)
+    private final Color COLOR_LINEA_MATRIZ = new Color(50, 54, 57);    // Gris medio para los bordes de la cuadrícula
+    private final Color COLOR_RASTRO_DIGITAL = new Color(10, 61, 38);  // Verde circuito profundo para el rastro (REQ-05)
 
     /**
      * Constructor del panel. Divide la pantalla con un BorderLayout:
@@ -40,7 +47,7 @@ public class PanelTablero extends JPanel {
         
         // Contenedor principal donde se creará la rejilla de JLabels
         pnlGrid = new JPanel();
-        pnlGrid.setBackground(Color.BLACK);
+        pnlGrid.setBackground(COLOR_FONDO_VACIO);
         add(pnlGrid, BorderLayout.CENTER);
         
         inicializarBotones();
@@ -53,7 +60,7 @@ public class PanelTablero extends JPanel {
      */
     private void inicializarBotones() {
         pnlControles = new JPanel(new GridLayout(2, 3)); 
-        pnlControles.setBackground(new Color(30, 30, 30));
+        pnlControles.setBackground(new Color(20, 21, 22));
 
         btnMoverArriba = new JButton("▲");
         btnMoverArriba.setActionCommand("ARRIBA");
@@ -100,8 +107,7 @@ public class PanelTablero extends JPanel {
     /**
      * Busca una imagen en la ruta indicada, verifica si físicamente existe 
      * para evitar caídas del programa, y la redimensiona a un tamaño fijo de 40x40.
-     * 
-     * @param ruta El camino relativo hacia el archivo png.
+     * * @param ruta El camino relativo hacia el archivo png.
      * @return El objeto ImageIcon listo para usar, o null si hubo algún fallo.
      */
     private ImageIcon ajustarImagen(String ruta) {
@@ -123,8 +129,7 @@ public class PanelTablero extends JPanel {
     /**
      * Genera dinámicamente la cuadrícula visual de celdas según el tamaño 
      * que haya elegido el usuario en el panel de configuración.
-     * 
-     * @param filas    Cantidad de celdas verticales.
+     * * @param filas    Cantidad de celdas verticales.
      * @param columnas Cantidad de celdas horizontales.
      */
     public void crearTablero(int filas, int columnas) {
@@ -136,8 +141,8 @@ public class PanelTablero extends JPanel {
             for (int j = 0; j < columnas; j++) {
                 celdas[i][j] = new JLabel();
                 celdas[i][j].setOpaque(true); // Permite cambiar el color de fondo del JLabel
-                celdas[i][j].setBackground(new Color(10, 10, 10));
-                celdas[i][j].setBorder(new LineBorder(Color.DARK_GRAY));
+                celdas[i][j].setBackground(COLOR_FONDO_VACIO);
+                celdas[i][j].setBorder(BorderFactory.createLineBorder(COLOR_LINEA_MATRIZ, 1));
                 celdas[i][j].setHorizontalAlignment(JLabel.CENTER); // Centra los iconos
                 pnlGrid.add(celdas[i][j]);
             }
@@ -149,8 +154,7 @@ public class PanelTablero extends JPanel {
     /**
      * Recorre la matriz lógica del Modelo y refresca la interfaz gráfica colocando 
      * los íconos correspondientes y pintando de verde las casillas ya visitadas.
-     * 
-     * @param matriz La estructura bidimensional de objetos Casilla del Modelo.
+     * * @param matriz La estructura bidimensional de objetos Casilla del Modelo.
      */
     public void actualizarTablero(Casilla[][] matriz) {
         if (celdas == null) return; 
@@ -159,11 +163,11 @@ public class PanelTablero extends JPanel {
             for (int j = 0; j < matriz[i].length; j++) {
                 String tipo = matriz[i][j].getTipo();
                 
-                // Efecto de rastro digital por donde pasa el script hacker
+                // Efecto de rastro digital por donde pasa el script hacker (REQ-05)
                 if (matriz[i][j].isTieneRastro()) {
-                    celdas[i][j].setBackground(new Color(0, 50, 0));
+                    celdas[i][j].setBackground(COLOR_RASTRO_DIGITAL);
                 } else {
-                    celdas[i][j].setBackground(new Color(10, 10, 10));
+                    celdas[i][j].setBackground(COLOR_FONDO_VACIO);
                 }
 
                 // Asigna el ícono gráfico según el tipo lógico de la casilla

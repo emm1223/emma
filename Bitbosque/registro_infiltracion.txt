@@ -38,3 +38,13 @@
 [2026/05/22 16:18:08] Resultado: DERROTA
 [2026/05/22 16:18:08] Movimientos restantes: 0
 [2026/05/22 16:18:08] Puertos comprometidos: 2
+[2026/05/22 18:20:32] --- FIN DE LA INFILTRACIÓN ---
+[2026/05/22 18:20:32] Usuario: Farid Emmanuel Munayar Rincon
+[2026/05/22 18:20:32] Resultado: DERROTA
+[2026/05/22 18:20:32] Movimientos restantes: 0
+[2026/05/22 18:20:32] Puertos comprometidos: 0
+[2026/05/22 18:26:05] --- FIN DE LA INFILTRACIÓN ---
+[2026/05/22 18:26:05] Usuario: Farid Emmanuel Munayar Rincon
+[2026/05/22 18:26:05] Resultado: VICTORIA
+[2026/05/22 18:26:05] Movimientos restantes: 113
+[2026/05/22 18:26:05] Puertos comprometidos: 3
