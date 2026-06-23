@@ -1,14 +1,19 @@
 'use client'
 
-import { mockProducts, mockCategories } from '@/lib/mockData'
+import { mockCategories } from '@/lib/mockData'
 import { useState } from 'react'
 import { Search } from 'lucide-react'
 import { sanitizeString, isSafeString } from '@/lib/security'
+import { useCart } from '@/context/CartContext'
+import { useProducts } from '@/hooks/useProducts'
 
 export default function ProductosPage() {
-  const [filteredProducts, setFilteredProducts] = useState(mockProducts)
+  const { products } = useProducts()
+  const { addItem } = useCart()
+  const [filteredProducts, setFilteredProducts] = useState(products.length > 0 ? products : [])
   const [selectedCategory, setSelectedCategory] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
+  const [addedNotification, setAddedNotification] = useState<string | null>(null)
 
   const handleCategoryFilter = (category: string) => {
     if (!isSafeString(category)) return
@@ -24,7 +29,7 @@ export default function ProductosPage() {
   }
 
   const filterProducts = (category: string, search: string) => {
-    let filtered = mockProducts
+    let filtered = products
 
     if (category && isSafeString(category)) {
       filtered = filtered.filter((p) => p.category === category)
@@ -40,6 +45,12 @@ export default function ProductosPage() {
     }
 
     setFilteredProducts(filtered)
+  }
+
+  const handleAddToCart = (productId: string, productName: string, price: number) => {
+    addItem({ productId, quantity: 1, price })
+    setAddedNotification(productName)
+    setTimeout(() => setAddedNotification(null), 2000)
   }
 
   return (
@@ -97,6 +108,13 @@ export default function ProductosPage() {
           </div>
         </div>
 
+        {/* Notification */}
+        {addedNotification && (
+          <div className="fixed bottom-6 right-6 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg animate-slide-in-up">
+            ✅ {addedNotification} agregado al carrito
+          </div>
+        )}
+
         {/* Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product, idx) => (
@@ -127,6 +145,7 @@ export default function ProductosPage() {
                   </div>
                 </div>
                 <button 
+                  onClick={() => handleAddToCart(product.id, product.name, product.price)}
                   disabled={product.stock === 0}
                   className={`w-full py-3 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 active:scale-95 ${
                     product.stock > 0
