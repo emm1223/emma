@@ -1,13 +1,14 @@
 /**
  * Security Headers Configuration
  * Headers HTTP para protección contra ataques comunes
+ * Basado en OWASP Top 10 y CWE/SANS Top 25
  */
 
 /**
  * Headers de seguridad recomendados por OWASP
  */
 export const securityHeaders = {
-  // Prevenir clickjacking
+  // Prevenir clickjacking (proteger contra XClickjacking)
   'X-Frame-Options': 'DENY',
 
   // Prevenir MIME type sniffing
@@ -20,19 +21,22 @@ export const securityHeaders = {
   'Referrer-Policy': 'strict-origin-when-cross-origin',
 
   // Content Security Policy - prevenir inyecciones de scripts
+  // NOTA: Next.js Next.js 13.5 requiere algunos unsafe-inline para hydration
+  // pero es lo más restrictivo posible
   'Content-Security-Policy': [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net", // Next.js require esto
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net",
-    "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net",
-    "img-src 'self' data: https:",
+    "font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net",
+    "img-src 'self' data: https: blob:",
     "connect-src 'self' https: wss:",
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",
+    "upgrade-insecure-requests",
   ].join('; '),
 
-  // Feature policy / Permissions policy
+  // Permissions Policy (Feature Policy) - restricción de características del navegador
   'Permissions-Policy': [
     'geolocation=()',
     'microphone=()',
@@ -42,10 +46,18 @@ export const securityHeaders = {
     'magnetometer=()',
     'gyroscope=()',
     'accelerometer=()',
+    'vr=()',
+    'xr-spatial-tracking=()',
+    'interest-cohort=()',
   ].join(', '),
 
-  // Strict Transport Security (HTTPS)
+  // Strict Transport Security (HTTPS) - forzar HTTPS
   'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
+
+  // Evitar que el navegador cache contenido sensible
+  'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+  'Pragma': 'no-cache',
+  'Expires': '0',
 }
 
 /**
