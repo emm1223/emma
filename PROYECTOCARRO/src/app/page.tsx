@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { ShoppingCart, Menu, X, Zap, Clock, Heart } from 'lucide-react'
+import Image from 'next/image'
 import { useState } from 'react'
 import { useCart } from '@/context/CartContext'
 
@@ -14,10 +15,30 @@ export default function Home() {
     <div className="min-h-screen bg-neutral-50">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-neutral-200 shadow-lg">
-        <div className="max-w-7xl mx-auto px-6 py-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 py-3 lg:px-8">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold gradient-text hover:scale-105 transition-transform">
-              El Carrito Rojo
+            <Link href="/" className="flex items-center gap-2 hover:scale-105 transition-transform">
+              <div className="w-10 h-10">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                  <circle cx="100" cy="100" r="95" fill="#fff5f5" stroke="#dc2626" strokeWidth="2"/>
+                  <g>
+                    <path d="M 60 70 Q 100 40, 140 70" stroke="#dc2626" strokeWidth="4" fill="none" strokeLinecap="round"/>
+                    <rect x="50" y="75" width="100" height="70" rx="5" fill="none" stroke="#dc2626" strokeWidth="3"/>
+                    <circle cx="70" cy="155" r="8" fill="none" stroke="#dc2626" strokeWidth="3"/>
+                    <circle cx="130" cy="155" r="8" fill="none" stroke="#dc2626" strokeWidth="3"/>
+                    <line x1="78" y1="155" x2="122" y2="155" stroke="#dc2626" strokeWidth="2"/>
+                  </g>
+                  <g>
+                    <ellipse cx="75" cy="110" rx="12" ry="15" fill="#f97316" opacity="0.8"/>
+                    <path d="M 75 95 Q 82 105, 75 125" stroke="#ea580c" strokeWidth="1" fill="none"/>
+                    <ellipse cx="100" cy="105" rx="12" ry="15" fill="#f97316" opacity="0.8"/>
+                    <path d="M 100 90 Q 107 100, 100 120" stroke="#ea580c" strokeWidth="1" fill="none"/>
+                    <rect x="115" y="100" width="18" height="20" rx="2" fill="#fbbf24" opacity="0.8"/>
+                    <path d="M 115 100 L 124 90 L 133 100" fill="#f59e0b" opacity="0.8"/>
+                  </g>
+                </svg>
+              </div>
+              <span className="hidden sm:inline text-xl font-bold text-red-700">El Carrito Rojo</span>
             </Link>
 
             <div className="hidden md:flex items-center gap-8">
