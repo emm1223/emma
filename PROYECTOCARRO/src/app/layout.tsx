@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { CartProvider } from '@/context/CartContext'
 
 export const metadata: Metadata = {
   title: 'El Carrito Rojo - Comidas Caseras',
@@ -21,7 +22,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-neutral-50">{children}</body>
+      <body className="bg-neutral-50">
+        <CartProvider>{children}</CartProvider>
+      </body>
     </html>
   )
 }
