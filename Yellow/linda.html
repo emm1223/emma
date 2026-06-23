@@ -2835,107 +2835,26 @@
     </footer>
 
     <script>
-        // Debug - Verificar que todo está funcionando
-        console.log('📱 Página cargada en iPhone');
+        // Timer simple y confiable
+        const FECHA = new Date(2027, 5, 8, 0, 40, 58);
         
-        // Timer - Cuenta hacia nuestro próximo aniversario (1 año desde el primer mensaje)
-        const FECHA_OBJETIVO = new Date(2027, 5, 8, 0, 40, 58); // 8 de Junio de 2027
-        console.log('⏰ Fecha objetivo:', FECHA_OBJETIVO);
-
-        function updateTimer() {
-            try {
-                const daysEl = document.getElementById('days');
-                const hoursEl = document.getElementById('hours');
-                const minutesEl = document.getElementById('minutes');
-                const secondsEl = document.getElementById('seconds');
-
-                if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
-                    console.log('❌ Timer elements not found');
-                    return;
-                }
-
-                const now = new Date();
-                const difference = FECHA_OBJETIVO - now;
-
-                if (difference <= 0) {
-                    daysEl.textContent = '000';
-                    hoursEl.textContent = '00';
-                    minutesEl.textContent = '00';
-                    secondsEl.textContent = '00';
-                    console.log('✅ Timer finalizado');
-                    return;
-                }
-
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                daysEl.textContent = String(days).padStart(3, '0');
-                hoursEl.textContent = String(hours).padStart(2, '0');
-                minutesEl.textContent = String(minutes).padStart(2, '0');
-                secondsEl.textContent = String(seconds).padStart(2, '0');
-                console.log(`✅ Timer actualizado: ${days}d ${hours}h ${minutes}m ${seconds}s`);
-            } catch (error) {
-                console.error('❌ Timer error:', error);
-            }
-        }
-
-        // Esperar a que DOM esté listo
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                console.log('📄 DOM cargado - Inicializando timer');
-                updateTimer();
-                setInterval(updateTimer, 1000);
-            });
-        } else {
-            console.log('📄 DOM ya cargado - Inicializando timer');
-            updateTimer();
-            setInterval(updateTimer, 1000);
-        }
-
-        // Hide navbar on scroll - iPhone (SIMPLIFICADO PARA iOS)
-        const navbar = document.querySelector('nav');
-        let lastTouchY = 0;
-        let lastScrollTime = 0;
-        
-        console.log('📱 Navbar encontrada:', navbar ? '✅' : '❌');
-        
-        // Solo para móvil < 768px
-        if (window.innerWidth <= 768 && navbar) {
-            // Detectar scroll por touch (la única que funciona realmente en iOS)
-            document.addEventListener('touchstart', (e) => {
-                lastTouchY = e.touches[0].clientY;
-                lastScrollTime = Date.now();
-            }, { passive: true });
+        function actualizar() {
+            const ahora = new Date();
+            const diferencia = FECHA - ahora;
             
-            document.addEventListener('touchend', (e) => {
-                const touchEndY = e.changedTouches[0].clientY;
-                const diff = lastTouchY - touchEndY;
-                const currentScroll = window.pageYOffset;
-                
-                // Si scrolleó hacia abajo más de 5px y pasó 100px del top
-                if (diff > 5 && currentScroll > 100) {
-                    navbar.classList.add('navbar-hidden');
-                    console.log('⬇️ OCULTAR navbar');
-                }
-                // Si scrolleó hacia arriba más de 5px
-                else if (diff < -5 || currentScroll < 100) {
-                    navbar.classList.remove('navbar-hidden');
-                    console.log('⬆️ MOSTRAR navbar');
-                }
-            }, { passive: true });
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
             
-            // Backup: scroll event por si acaso
-            window.addEventListener('scroll', () => {
-                const currentScroll = window.pageYOffset;
-                
-                // Siempre mostrar en los primeros 80px
-                if (currentScroll < 80) {
-                    navbar.classList.remove('navbar-hidden');
-                }
-            }, { passive: true });
+            document.getElementById('days').textContent = String(dias).padStart(3, '0');
+            document.getElementById('hours').textContent = String(horas).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutos).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(segundos).padStart(2, '0');
         }
+        
+        actualizar();
+        setInterval(actualizar, 1000);
             // Ocultar cuando scrollea hacia abajo (después de 100px)
             else if (currentScroll > lastScrollTop && currentScroll > 100) {
                 navbar.classList.add('navbar-hidden');
