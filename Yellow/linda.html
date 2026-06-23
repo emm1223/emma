@@ -2894,60 +2894,48 @@
             setInterval(updateTimer, 1000);
         }
 
-        // Hide navbar on scroll - iPhone
+        // Hide navbar on scroll - iPhone (SIMPLIFICADO PARA iOS)
         const navbar = document.querySelector('nav');
-        let lastScrollTop = 0;
-        let scrollTimeout;
-        let isScrolling = false;
+        let lastTouchY = 0;
+        let lastScrollTime = 0;
         
         console.log('📱 Navbar encontrada:', navbar ? '✅' : '❌');
         
-        // Para iPhone - detectar cuando scrollea
-        let touchStartY = 0;
-        document.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
-        }, false);
-        
-        document.addEventListener('touchmove', (e) => {
-            if (!navbar || window.innerWidth > 768) return;
+        // Solo para móvil < 768px
+        if (window.innerWidth <= 768 && navbar) {
+            // Detectar scroll por touch (la única que funciona realmente en iOS)
+            document.addEventListener('touchstart', (e) => {
+                lastTouchY = e.touches[0].clientY;
+                lastScrollTime = Date.now();
+            }, { passive: true });
             
-            const touchCurrentY = e.touches[0].clientY;
-            const diff = touchStartY - touchCurrentY;
-            const currentScroll = window.pageYOffset;
+            document.addEventListener('touchend', (e) => {
+                const touchEndY = e.changedTouches[0].clientY;
+                const diff = lastTouchY - touchEndY;
+                const currentScroll = window.pageYOffset;
+                
+                // Si scrolleó hacia abajo más de 5px y pasó 100px del top
+                if (diff > 5 && currentScroll > 100) {
+                    navbar.classList.add('navbar-hidden');
+                    console.log('⬇️ OCULTAR navbar');
+                }
+                // Si scrolleó hacia arriba más de 5px
+                else if (diff < -5 || currentScroll < 100) {
+                    navbar.classList.remove('navbar-hidden');
+                    console.log('⬆️ MOSTRAR navbar');
+                }
+            }, { passive: true });
             
-            // Scrolleando hacia abajo y pasó 100px
-            if (diff > 0 && currentScroll > 100) {
-                navbar.classList.add('navbar-hidden');
-                console.log('⬇️ Ocultando navbar');
-            }
-            // Scrolleando hacia arriba
-            else if (diff < 0) {
-                navbar.classList.remove('navbar-hidden');
-                console.log('⬆️ Mostrando navbar');
-            }
-            
-            touchStartY = touchCurrentY;
-        }, false);
-        
-        // Backup: scroll event para desktop y como respaldo
-        window.addEventListener('scroll', () => {
-            if (window.innerWidth > 768) return;
-            
-            const currentScroll = window.pageYOffset;
-            
-            if (scrollTimeout) clearTimeout(scrollTimeout);
-            
-            // Siempre mostrar en los primeros 100px
-            if (currentScroll < 100) {
-                navbar.classList.remove('navbar-hidden');
-                console.log('📍 Cerca del top - mostrando navbar');
-            }
-            
-            // Mostrar cuando scrollea hacia arriba
-            if (currentScroll < lastScrollTop) {
-                navbar.classList.remove('navbar-hidden');
-                console.log('⬆️ Scroll up - mostrando navbar');
-            }
+            // Backup: scroll event por si acaso
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                // Siempre mostrar en los primeros 80px
+                if (currentScroll < 80) {
+                    navbar.classList.remove('navbar-hidden');
+                }
+            }, { passive: true });
+        }
             // Ocultar cuando scrollea hacia abajo (después de 100px)
             else if (currentScroll > lastScrollTop && currentScroll > 100) {
                 navbar.classList.add('navbar-hidden');
