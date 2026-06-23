@@ -1,248 +1,229 @@
 'use client'
 
 import Link from 'next/link'
-import { ShoppingCart, Menu, X, Zap, Clock, Heart } from 'lucide-react'
-import Image from 'next/image'
-import { useState } from 'react'
-import { useCart } from '@/context/CartContext'
+import Header from '@/components/Header'
+import { ChevronRight, Star, Truck, Shield, Zap } from 'lucide-react'
+import { useProducts } from '@/hooks/useProducts'
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const { items } = useCart()
-  const cartCount = items.length
+  const { products } = useProducts()
+  const featuredProducts = products.slice(0, 3)
 
   return (
-    <div className="min-h-screen bg-neutral-50">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-neutral-200 shadow-lg">
-        <div className="max-w-7xl mx-auto px-6 py-3 lg:px-8">
-          <div className="flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2 hover:scale-105 transition-transform">
-              <div className="w-10 h-10">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <circle cx="100" cy="100" r="95" fill="#fff5f5" stroke="#dc2626" strokeWidth="2"/>
-                  <g>
-                    <path d="M 60 70 Q 100 40, 140 70" stroke="#dc2626" strokeWidth="4" fill="none" strokeLinecap="round"/>
-                    <rect x="50" y="75" width="100" height="70" rx="5" fill="none" stroke="#dc2626" strokeWidth="3"/>
-                    <circle cx="70" cy="155" r="8" fill="none" stroke="#dc2626" strokeWidth="3"/>
-                    <circle cx="130" cy="155" r="8" fill="none" stroke="#dc2626" strokeWidth="3"/>
-                    <line x1="78" y1="155" x2="122" y2="155" stroke="#dc2626" strokeWidth="2"/>
-                  </g>
-                  <g>
-                    <ellipse cx="75" cy="110" rx="12" ry="15" fill="#f97316" opacity="0.8"/>
-                    <path d="M 75 95 Q 82 105, 75 125" stroke="#ea580c" strokeWidth="1" fill="none"/>
-                    <ellipse cx="100" cy="105" rx="12" ry="15" fill="#f97316" opacity="0.8"/>
-                    <path d="M 100 90 Q 107 100, 100 120" stroke="#ea580c" strokeWidth="1" fill="none"/>
-                    <rect x="115" y="100" width="18" height="20" rx="2" fill="#fbbf24" opacity="0.8"/>
-                    <path d="M 115 100 L 124 90 L 133 100" fill="#f59e0b" opacity="0.8"/>
-                  </g>
-                </svg>
-              </div>
-              <span className="hidden sm:inline text-xl font-bold text-red-700">El Carrito Rojo</span>
-            </Link>
+    <div className="min-h-screen bg-white">
+      <Header />
 
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/" className="text-neutral-900 hover:text-red-700 transition-colors font-medium">
-                Inicio
-              </Link>
-              <Link href="/productos" className="text-neutral-900 hover:text-red-700 transition-colors font-medium">
-                Productos
-              </Link>
-              <Link href="/about" className="text-neutral-900 hover:text-red-700 transition-colors font-medium">
-                Nosotros
-              </Link>
-              <Link href="/admin" className="text-neutral-900 hover:text-red-700 transition-colors font-medium">
-                Administración
-              </Link>
-              <Link href="/carrito" className="relative group">
-                <ShoppingCart className="text-red-700 group-hover:scale-110 transition-transform" size={24} />
-                {cartCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-red-700 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center animate-pulse">
-                    {cartCount}
-                  </span>
-                )}
-              </Link>
-            </div>
+      {/* ==================== HERO SECTION ==================== */}
+      <section className="relative overflow-hidden pt-20 md:pt-32 pb-12 md:pb-24">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-orange-50 -z-10" />
+        
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10" />
+        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 transform -translate-x-1/2" />
 
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden text-neutral-900"
-            >
-              {menuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-
-          {menuOpen && (
-            <div className="md:hidden bg-white border-t border-neutral-200 p-4 space-y-4 animate-slide-in-up">
-              <Link href="/" className="block text-neutral-900 hover:text-red-700 transition-colors font-medium">
-                Inicio
-              </Link>
-              <Link href="/productos" className="block text-neutral-900 hover:text-red-700 transition-colors font-medium">
-                Productos
-              </Link>
-              <Link href="/about" className="block text-neutral-900 hover:text-red-700 transition-colors font-medium">
-                Nosotros
-              </Link>
-              <Link href="/admin" className="block text-neutral-900 hover:text-red-700 transition-colors font-medium">
-                Administración
-              </Link>
-              <Link href="/carrito" className="block text-neutral-900 hover:text-red-700 transition-colors font-medium flex items-center gap-2">
-                <ShoppingCart size={20} /> Carrito
-              </Link>
-            </div>
-          )}
-        </div>
-      </nav>
-
-      <main>
-        {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 md:py-28">
-          <div className="absolute inset-0 bg-gradient-to-br from-red-900/5 via-transparent to-red-900/10 pointer-events-none" />
-          
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="animate-fade-in">
-                <div className="inline-block mb-6 px-4 py-2 bg-red-100 text-red-700 rounded-full font-semibold text-sm">
-                  ✨ Comidas Caseras Auténticas
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Left content */}
+            <div className="animate-fade-in-left space-y-6 md:space-y-8">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-semibold">
+                  <Zap className="w-4 h-4" />
+                  Comidas Caseras Auténticas
                 </div>
                 
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                  Comidas Caseras de Calidad
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold">
+                  <span className="block text-gray-900">Delicious</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">Food Delivery</span>
                 </h1>
 
-                <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                  Cada receta preparada con dedicación. Empandas, pasteles, bandejas y especialidades caseras que te traeremos en la fecha que prefieras.
+                <p className="text-lg md:text-xl text-gray-600 max-w-lg">
+                  La mejor comida casera de tu ciudad, entregada en la fecha que prefieras. Empandas, pasteles, bandejas y más.
                 </p>
+              </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/productos"
-                    className="btn-primary inline-flex items-center justify-center gap-2 hover:shadow-2xl"
-                  >
-                    <Zap size={20} />
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/productos">
+                  <button className="btn btn-primary btn-lg w-full sm:w-auto hover:shadow-2xl">
                     Ver Menú
-                  </Link>
-                  <Link
-                    href="/admin"
-                    className="btn-secondary inline-flex items-center justify-center gap-2 hover:scale-105"
-                  >
-                    Panel de Administración
-                  </Link>
-                </div>
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </Link>
+                <button className="btn btn-secondary btn-lg w-full sm:w-auto hover:bg-red-50">
+                  Contactar
+                </button>
               </div>
 
-              <div className="hidden md:block relative h-96">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-700/20 to-red-900/20 rounded-2xl blur-3xl animate-pulse" />
-                <div className="relative h-full bg-gradient-to-br from-red-600 to-red-900 rounded-2xl shadow-2xl flex items-center justify-center text-white text-6xl font-bold animate-bounce-in">
-                  🍲
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-4 md:gap-6 pt-8">
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-red-600">1000+</div>
+                  <div className="text-sm text-gray-600">Clientes</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-red-600">500+</div>
+                  <div className="text-sm text-gray-600">Productos</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-red-600">5.0</div>
+                  <div className="text-sm text-gray-600">Estrellas</div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* Why Choose Us Section */}
-        <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className="section-header text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-                <span>¿Por qué elegirnos?</span>
-              </h2>
-              <p className="text-neutral-600 max-w-2xl mx-auto text-lg">
-                Nos especializamos en comidas caseras de excelente calidad, preparadas con ingredientes frescos y entregas puntuales.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Zap,
-                  title: 'Productos Frescos',
-                  description: 'Preparamos cada producto el mismo día. Sin conservantes, sin preservantes. Solo ingredientes de calidad.',
-                  delay: 'delay-1'
-                },
-                {
-                  icon: Clock,
-                  title: 'Entrega Puntual',
-                  description: 'Agendamos entregas según tu disponibilidad. Llegamos en la fecha y hora acordada sin excusas.',
-                  delay: 'delay-2'
-                },
-                {
-                  icon: Heart,
-                  title: 'Recetas Tradicionales',
-                  description: 'Heredamos las mejores recetas. Preparadas con dedicación, como en casa, con amor.',
-                  delay: 'delay-3'
-                },
-              ].map((feature, idx) => (
-                <div
-                  key={idx}
-                  className={`feature-box group animate-slide-in-up ${feature.delay}`}
-                >
-                  <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-red-800 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <feature.icon className="text-white" size={28} />
+            {/* Right image */}
+            <div className="relative animate-fade-in-right">
+              <div className="relative h-96 md:h-96 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
+                <span className="text-9xl">🍲</span>
+              </div>
+              {/* Floating card */}
+              <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-4 shadow-xl animate-float hidden md:block">
+                <div className="flex items-center gap-3">
+                  <div className="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center">
+                    <Truck className="w-8 h-8 text-red-600" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-red-700 transition-colors">{feature.title}</h3>
-                  <p className="text-neutral-600">{feature.description}</p>
+                  <div>
+                    <div className="font-bold text-gray-900">Envío Gratis</div>
+                    <div className="text-sm text-gray-600">En tu fecha</div>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section className="relative py-20 md:py-28 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-red-700 via-red-800 to-red-900 opacity-95" />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2760%27%20height=%2760%27%20viewBox=%270%200%2060%2060%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20fill=%27%23ffffff%27%20fill-opacity=%270.05%27%3E%3Cpath%20d=%27M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%27/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10" />
-          
-          <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Haz tu pedido ahora
-            </h2>
-            <p className="text-xl text-white/90 mb-10">
-              Explora nuestro menú y elige los productos que deseas. Agendamos la entrega para cuando más te convenga.
-            </p>
-            <Link
-              href="/productos"
-              className="inline-block px-10 py-4 bg-white text-red-700 font-semibold rounded-lg hover:bg-neutral-100 hover:scale-105 transition-all duration-300 shadow-2xl"
-            >
-              Explorar Menú Completo
+      {/* ==================== FEATURES ==================== */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Truck className="w-8 h-8" />,
+                title: 'Entrega Puntual',
+                desc: 'Agendamos según tu disponibilidad. Llegamos en la fecha acordada.',
+              },
+              {
+                icon: <Shield className="w-8 h-8" />,
+                title: 'Comida Fresca',
+                desc: 'Sin conservantes. Solo ingredientes frescos de calidad.',
+              },
+              {
+                icon: <Star className="w-8 h-8" />,
+                title: 'Recetas Tradicionales',
+                desc: 'Preparadas con dedicación y amor. Como en casa.',
+              },
+            ].map((feature, i) => (
+              <div key={i} className="card text-center hover:shadow-xl transition-all duration-300 animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center text-white">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">{feature.title}</h3>
+                <p className="text-gray-600">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== FEATURED PRODUCTS ==================== */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="section-header">
+            <h2 className="mb-4">Productos Destacados</h2>
+            <p className="text-lg text-gray-600">Descubre nuestros favoritos</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {featuredProducts.map((product, i) => (
+              <div key={product.id} className="animate-fade-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="card card-hover group">
+                  <div className="card-image relative bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-5xl">
+                    🍕
+                  </div>
+                  <div className="space-y-3">
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 line-clamp-2 group-hover:text-red-600 transition-colors">
+                        {product.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 line-clamp-2">{product.description}</p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, j) => (
+                        <Star
+                          key={j}
+                          className={`w-4 h-4 ${j < 4 ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
+                        />
+                      ))}
+                    </div>
+                    <div className="flex items-end gap-2">
+                      <span className="text-3xl font-bold text-red-600">${product.price.toFixed(2)}</span>
+                    </div>
+                    <button className="btn btn-primary w-full justify-center gap-2">
+                      Agregar al carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/productos">
+              <button className="btn btn-primary btn-lg hover:shadow-2xl">
+                Ver Todos
+                <ChevronRight className="w-5 h-5" />
+              </button>
             </Link>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
-      {/* Footer */}
-      <footer className="bg-neutral-900 text-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            <div className="animate-fade-in delay-1">
+      {/* ==================== CTA ==================== */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-red-600 to-orange-500 text-white">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center space-y-8 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            ¿Listo para ordenar?
+          </h2>
+          <p className="text-lg text-red-100 max-w-2xl mx-auto">
+            Únete a miles de clientes satisfechos que disfrutan de la mejor comida casera.
+          </p>
+          <Link href="/productos">
+            <button className="btn btn-lg bg-white text-red-600 hover:bg-gray-100 font-bold shadow-lg">
+              Hacer Pedido Ahora
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* ==================== FOOTER ==================== */}
+      <footer className="bg-gray-900 text-white py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
               <h3 className="text-xl font-bold mb-4 text-red-400">El Carrito Rojo</h3>
-              <p className="text-neutral-400">
-                Comidas caseras de calidad, entregadas en tu puerta.
+              <p className="text-gray-400">
+                Comidas caseras de calidad, entregadas con dedicación.
               </p>
             </div>
-
-            <div className="animate-fade-in delay-2">
+            <div>
               <h3 className="text-xl font-bold mb-4 text-red-400">Navegación</h3>
-              <ul className="space-y-2 text-neutral-400">
+              <ul className="space-y-2 text-gray-400">
                 <li><Link href="/" className="hover:text-red-400 transition-colors">Inicio</Link></li>
                 <li><Link href="/productos" className="hover:text-red-400 transition-colors">Productos</Link></li>
-                <li><Link href="/admin" className="hover:text-red-400 transition-colors">Admin</Link></li>
+                <li><Link href="/about" className="hover:text-red-400 transition-colors">Nosotros</Link></li>
               </ul>
             </div>
-
-            <div className="animate-fade-in delay-3">
-              <h3 className="text-xl font-bold mb-4 text-red-400">Información</h3>
-              <p className="text-neutral-400">
-                Operamos de lunes a sábado
+            <div>
+              <h3 className="text-xl font-bold mb-4 text-red-400">Contacto</h3>
+              <p className="text-gray-400">
+                📞 +1 (555) 000-0000<br />
+                📧 info@carritorrojo.com
               </p>
             </div>
           </div>
-
-          <div className="border-t border-neutral-800 pt-8">
-            <p className="text-center text-neutral-500">
-              © 2024 El Carrito Rojo. Todos los derechos reservados.
-            </p>
+          <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 El Carrito Rojo. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
