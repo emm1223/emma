@@ -1,0 +1,8 @@
+{
+  "projectSettings": {
+    "sourceFilesOutsideRootDirectory": true
+  },
+  "buildCommand": "cd PROYECTOCARRO && npm run build",
+  "outputDirectory": "PROYECTOCARRO/.next",
+  "nodeVersion": "18.x"
+}
