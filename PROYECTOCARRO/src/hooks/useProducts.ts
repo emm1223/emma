@@ -27,8 +27,9 @@ export function useProducts() {
     }
   }, [])
 
-  const addProduct = (product: Product) => {
-    const newProducts = [...products, { ...product, id: Date.now().toString() }]
+  const addProduct = (product: Omit<Product, 'id'>) => {
+    const newProduct = { ...product, id: Date.now().toString() } as Product
+    const newProducts = [...products, newProduct]
     setProducts(newProducts)
     localStorage.setItem('products', JSON.stringify(newProducts))
   }
