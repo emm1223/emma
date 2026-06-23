@@ -1,11 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { ShoppingCart, Trash2, Plus, Minus } from 'lucide-react'
+import { ShoppingCart } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
 import { useProducts } from '@/hooks/useProducts'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { CartItem } from '@/components/CartItem'
+import { WhatsAppButton } from '@/components/WhatsAppButton'
+import { generateOrderMessage } from '@/lib/whatsapp'
 
 export default function CarritoPage() {
   const { items, removeItem, updateQuantity, total, clearCart } = useCart()
@@ -27,6 +30,15 @@ export default function CarritoPage() {
     if (newQuantity > 0) {
       updateQuantity(productId, newQuantity)
     }
+  }
+
+  const generateWhatsAppOrderMessage = () => {
+    const itemsList = items
+      .map(
+        (item) => `• ${getProductName(item.productId)} x${item.quantity} = $${(item.price * item.quantity).toFixed(2)}`
+      )
+      .join('\n')
+    return generateOrderMessage(`Pedido de El Carrito Rojo:\n\n${itemsList}\n\nTotal: $${total.toFixed(2)}`)
   }
 
   const handleCheckout = (e: React.FormEvent) => {
@@ -112,51 +124,17 @@ export default function CarritoPage() {
           <div className="lg:col-span-2">
             <div className="space-y-4">
               {items.map((item) => (
-                <div
+                <CartItem
                   key={item.productId}
-                  className="bg-white border border-neutral-300 rounded-lg p-6 flex gap-6 items-start hover:shadow-lg transition-shadow"
-                >
-                  <div className="w-24 h-24 bg-gradient-to-br from-neutral-200 to-neutral-300 rounded-lg flex items-center justify-center text-neutral-400 text-sm">
-                    Imagen
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-neutral-900 text-lg">
-                      {getProductName(item.productId)}
-                    </h3>
-                    <p className="text-2xl font-bold text-red-700 my-2">
-                      ${item.price.toFixed(2)}
-                    </p>
-                    <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => handleQuantityChange(item.productId, item.quantity - 1)}
-                        className="p-1 hover:bg-neutral-200 rounded transition"
-                      >
-                        <Minus size={18} />
-                      </button>
-                      <span className="px-4 py-1 bg-neutral-100 rounded">
-                        {item.quantity}
-                      </span>
-                      <button
-                        onClick={() => handleQuantityChange(item.productId, item.quantity + 1)}
-                        className="p-1 hover:bg-neutral-200 rounded transition"
-                      >
-                        <Plus size={18} />
-                      </button>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm text-neutral-600 mb-2">Subtotal</p>
-                    <p className="text-2xl font-bold text-neutral-900">
-                      ${(item.price * item.quantity).toFixed(2)}
-                    </p>
-                    <button
-                      onClick={() => removeItem(item.productId)}
-                      className="mt-4 text-red-700 hover:text-red-800 font-semibold flex items-center gap-2"
-                    >
-                      <Trash2 size={18} /> Eliminar
-                    </button>
-                  </div>
-                </div>
+                  productId={item.productId}
+                  productName={getProductName(item.productId)}
+                  price={item.price}
+                  quantity={item.quantity}
+                  onUpdateQuantity={(newQuantity) =>
+                    handleQuantityChange(item.productId, newQuantity)
+                  }
+                  onRemove={() => removeItem(item.productId)}
+                />
               ))}
             </div>
 
@@ -194,10 +172,17 @@ export default function CarritoPage() {
 
                   <button
                     onClick={() => setIsCheckout(true)}
-                    className="w-full bg-gradient-to-r from-red-700 to-red-800 text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all"
+                    className="w-full bg-gradient-to-r from-red-700 to-red-800 text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all mb-3"
                   >
                     Proceder a Pagar
                   </button>
+
+                  <WhatsAppButton
+                    message={generateWhatsAppOrderMessage()}
+                    variant="secondary"
+                    text="Contactar por WhatsApp"
+                    className="w-full"
+                  />
                 </>
               ) : (
                 <form onSubmit={handleCheckout} className="space-y-4">

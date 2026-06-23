@@ -48,6 +48,9 @@ export default function Home() {
               <Link href="/productos" className="text-neutral-900 hover:text-red-700 transition-colors font-medium">
                 Productos
               </Link>
+              <Link href="/about" className="text-neutral-900 hover:text-red-700 transition-colors font-medium">
+                Nosotros
+              </Link>
               <Link href="/admin" className="text-neutral-900 hover:text-red-700 transition-colors font-medium">
                 Administración
               </Link>
@@ -76,6 +79,9 @@ export default function Home() {
               </Link>
               <Link href="/productos" className="block text-neutral-900 hover:text-red-700 transition-colors font-medium">
                 Productos
+              </Link>
+              <Link href="/about" className="block text-neutral-900 hover:text-red-700 transition-colors font-medium">
+                Nosotros
               </Link>
               <Link href="/admin" className="block text-neutral-900 hover:text-red-700 transition-colors font-medium">
                 Administración

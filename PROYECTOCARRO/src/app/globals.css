@@ -298,6 +298,169 @@ textarea::placeholder {
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
+
+/* ============ EFECTOS VISUALES ============ */
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradientes */
+.gradient-primary {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+}
+
+/* Cards con hover effect */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+  z-index: 1;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Badge animado */
+.badge-animated {
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Botones con effecto ripple */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  pointer-events: none;
+}
+
+button:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Hover efectos de texto */
+.text-hover-gradient {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.3s;
+}
+
+.text-hover-gradient:hover {
+  background-position: 200% 200%;
+}
+
+/* Efecto de shadow dinámico */
+.dynamic-shadow {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dynamic-shadow:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Separadores elegantes */
+.elegant-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.1),
+    transparent
+  );
+}
+
+.elegant-divider::before {
+  content: '●';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 0 8px;
+  font-size: 0.5rem;
+  color: #dc2626;
+}
+
+/* Transiciones suaves */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.transition-fast {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============ UTILIDADES ============ */
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .delay-5 { animation-delay: 0.5s; }
 
 /* ============ COMPONENTES REUTILIZABLES ============ */

@@ -6,6 +6,9 @@ import { Search } from 'lucide-react'
 import { sanitizeString, isSafeString } from '@/lib/security'
 import { useCart } from '@/context/CartContext'
 import { useProducts } from '@/hooks/useProducts'
+import { ProductCard } from '@/components/ProductCard'
+import { WhatsAppButton } from '@/components/WhatsAppButton'
+import { generateOrderMessage } from '@/lib/whatsapp'
 
 export default function ProductosPage() {
   const { products } = useProducts()
@@ -116,47 +119,18 @@ export default function ProductosPage() {
         )}
 
         {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((product, idx) => (
-            <div key={product.id} className={`group card animate-scale-in`} style={{ animationDelay: `${idx * 0.1}s` }}>
-              <div className="bg-gradient-to-br from-neutral-200 to-neutral-300 rounded-lg aspect-square mb-6 overflow-hidden flex items-center justify-center text-neutral-500 text-sm font-medium relative group-hover:shadow-inner transition-all">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-red-600/0 group-hover:from-red-600/10 group-hover:to-red-600/20 transition-all" />
-                Imagen
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2 group-hover:text-red-700 transition-colors">
-                  {sanitizeString(product.name)}
-                </h3>
-                <p className="text-neutral-600 text-sm mb-4 line-clamp-2">
-                  {sanitizeString(product.description)}
-                </p>
-                <div className="flex justify-between items-end mb-6">
-                  <div>
-                    <p className="text-xs text-neutral-500 mb-1">Precio</p>
-                    <p className="text-2xl font-bold bg-gradient-to-r from-red-700 to-red-600 bg-clip-text text-transparent">
-                      ${product.price.toFixed(2)}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs text-neutral-500 mb-1">Disponible</p>
-                    <p className={`font-semibold ${product.stock > 5 ? 'text-green-600' : 'text-orange-600'}`}>
-                      {product.stock > 0 ? `${product.stock}` : 'Sin stock'}
-                    </p>
-                  </div>
-                </div>
-                <button 
-                  onClick={() => handleAddToCart(product.id, product.name, product.price)}
-                  disabled={product.stock === 0}
-                  className={`w-full py-3 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 active:scale-95 ${
-                    product.stock > 0
-                      ? 'bg-gradient-to-r from-red-700 to-red-800 text-white shadow-lg hover:shadow-xl hover:-translate-y-1'
-                      : 'bg-neutral-300 text-neutral-500 cursor-not-allowed'
-                  }`}
-                >
-                  {product.stock > 0 ? 'Agregar al Carrito' : 'Sin Stock'}
-                </button>
-              </div>
-            </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {filteredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              name={sanitizeString(product.name)}
+              description={sanitizeString(product.description)}
+              price={product.price}
+              category={product.category}
+              stock={product.stock}
+              onAddToCart={handleAddToCart}
+            />
           ))}
         </div>
 
@@ -165,6 +139,19 @@ export default function ProductosPage() {
             <p className="text-neutral-500 text-lg">No se encontraron productos</p>
           </div>
         )}
+
+        {/* WhatsApp CTA */}
+        <div className="mt-16 bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-300 rounded-lg p-12 text-center">
+          <h2 className="text-3xl font-bold text-neutral-900 mb-4">¿Necesitas algo especial?</h2>
+          <p className="text-neutral-600 mb-8 max-w-2xl mx-auto">
+            Contacta con nosotros directamente por WhatsApp para consultas personalizadas, pedidos especiales o más información.
+          </p>
+          <WhatsAppButton 
+            message={generateOrderMessage('Hola, tengo una consulta sobre los productos de El Carrito Rojo.')}
+            text="Consultar por WhatsApp"
+            className="mx-auto"
+          />
+        </div>
       </div>
     </div>
   )
