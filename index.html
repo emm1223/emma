@@ -2713,18 +2713,19 @@
 
         /* Navbar hide on scroll - iPhone */
         nav {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             will-change: transform;
+            transform: translateY(0);
         }
 
         nav.navbar-hidden {
-            transform: translateY(-100%);
+            transform: translateY(-100%) !important;
             box-shadow: none;
         }
 
         @media (max-width: 768px) {
             nav {
-                transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
             }
         }
 
@@ -2894,24 +2895,66 @@
         }
 
         // Hide navbar on scroll - iPhone
-        let lastScrollTop = 0;
         const navbar = document.querySelector('nav');
+        let lastScrollTop = 0;
+        let scrollTimeout;
+        let isScrolling = false;
+        
         console.log('📱 Navbar encontrada:', navbar ? '✅' : '❌');
         
-        window.addEventListener('scroll', () => {
+        // Para iPhone - detectar cuando scrollea
+        let touchStartY = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        }, false);
+        
+        document.addEventListener('touchmove', (e) => {
+            if (!navbar || window.innerWidth > 768) return;
+            
+            const touchCurrentY = e.touches[0].clientY;
+            const diff = touchStartY - touchCurrentY;
             const currentScroll = window.pageYOffset;
-            const isMobile = window.innerWidth <= 768;
             
-            // Show navbar when scroll up or near top
-            if (currentScroll < lastScrollTop || currentScroll < 50) {
-                navbar.classList.remove('navbar-hidden');
-            }
-            // Hide navbar when scroll down (only on mobile)
-            else if (currentScroll > lastScrollTop && currentScroll > 100 && isMobile) {
+            // Scrolleando hacia abajo y pasó 100px
+            if (diff > 0 && currentScroll > 100) {
                 navbar.classList.add('navbar-hidden');
+                console.log('⬇️ Ocultando navbar');
+            }
+            // Scrolleando hacia arriba
+            else if (diff < 0) {
+                navbar.classList.remove('navbar-hidden');
+                console.log('⬆️ Mostrando navbar');
             }
             
-            lastScrollTop = Math.max(0, currentScroll);
+            touchStartY = touchCurrentY;
+        }, false);
+        
+        // Backup: scroll event para desktop y como respaldo
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth > 768) return;
+            
+            const currentScroll = window.pageYOffset;
+            
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            
+            // Siempre mostrar en los primeros 100px
+            if (currentScroll < 100) {
+                navbar.classList.remove('navbar-hidden');
+                console.log('📍 Cerca del top - mostrando navbar');
+            }
+            
+            // Mostrar cuando scrollea hacia arriba
+            if (currentScroll < lastScrollTop) {
+                navbar.classList.remove('navbar-hidden');
+                console.log('⬆️ Scroll up - mostrando navbar');
+            }
+            // Ocultar cuando scrollea hacia abajo (después de 100px)
+            else if (currentScroll > lastScrollTop && currentScroll > 100) {
+                navbar.classList.add('navbar-hidden');
+                console.log('⬇️ Scroll down - ocultando navbar');
+            }
+            
+            lastScrollTop = currentScroll;
         }, false);
 
         // Parallax Effect
