@@ -2834,8 +2834,12 @@
     </footer>
 
     <script>
+        // Debug - Verificar que todo está funcionando
+        console.log('📱 Página cargada en iPhone');
+        
         // Timer - Cuenta hacia nuestro próximo aniversario (1 año desde el primer mensaje)
         const FECHA_OBJETIVO = new Date(2027, 5, 8, 0, 40, 58); // 8 de Junio de 2027
+        console.log('⏰ Fecha objetivo:', FECHA_OBJETIVO);
 
         function updateTimer() {
             try {
@@ -2844,7 +2848,10 @@
                 const minutesEl = document.getElementById('minutes');
                 const secondsEl = document.getElementById('seconds');
 
-                if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+                if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+                    console.log('❌ Timer elements not found');
+                    return;
+                }
 
                 const now = new Date();
                 const difference = FECHA_OBJETIVO - now;
@@ -2854,6 +2861,7 @@
                     hoursEl.textContent = '00';
                     minutesEl.textContent = '00';
                     secondsEl.textContent = '00';
+                    console.log('✅ Timer finalizado');
                     return;
                 }
 
@@ -2866,31 +2874,40 @@
                 hoursEl.textContent = String(hours).padStart(2, '0');
                 minutesEl.textContent = String(minutes).padStart(2, '0');
                 secondsEl.textContent = String(seconds).padStart(2, '0');
+                console.log(`✅ Timer actualizado: ${days}d ${hours}h ${minutes}m ${seconds}s`);
             } catch (error) {
-                console.log('Timer error:', error);
+                console.error('❌ Timer error:', error);
             }
         }
 
-        // Ejecutar primero para no tener retraso
-        updateTimer();
-        
-        // Actualizar cada segundo
-        setInterval(updateTimer, 1000);
+        // Esperar a que DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('📄 DOM cargado - Inicializando timer');
+                updateTimer();
+                setInterval(updateTimer, 1000);
+            });
+        } else {
+            console.log('📄 DOM ya cargado - Inicializando timer');
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
 
         // Hide navbar on scroll - iPhone
         let lastScrollTop = 0;
-        let scrollTimeout;
         const navbar = document.querySelector('nav');
+        console.log('📱 Navbar encontrada:', navbar ? '✅' : '❌');
         
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
+            const isMobile = window.innerWidth <= 768;
             
             // Show navbar when scroll up or near top
             if (currentScroll < lastScrollTop || currentScroll < 50) {
                 navbar.classList.remove('navbar-hidden');
             }
             // Hide navbar when scroll down (only on mobile)
-            else if (currentScroll > lastScrollTop && currentScroll > 100 && window.innerWidth <= 768) {
+            else if (currentScroll > lastScrollTop && currentScroll > 100 && isMobile) {
                 navbar.classList.add('navbar-hidden');
             }
             
