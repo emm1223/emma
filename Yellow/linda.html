@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Persona Favorita 💖</title>
+    <!-- Fuentes Elegantes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           VARIABLES Y CONFIGURACIÓN GLOBAL (CSS)
+           ========================================================================== */
+        :root {
+            --bg-dark: #0b0914;
+            --pink-primary: #ff7597;
+            --pink-glow: #ff2a6d;
+            --pastel-rose: #ffd3b6;
+            --text-light: #f3eff5;
+            --card-bg: rgba(25, 20, 38, 0.65);
+            --border-glow: rgba(255, 117, 151, 0.3);
+            --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Ocultar barra de scroll pero mantener funcionalidad */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--pink-primary);
+            border-radius: 10px;
+        }
+
+        /* ==========================================================================
+           FONDOS ANIMADOS (CANVAS Y CAPAS)
+           ========================================================================== */
+        #canvas-stars, #canvas-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        #canvas-hearts {
+            z-index: 2;
+        }
+
+        .main-wrapper {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+
+        /* ==========================================================================
+           ANIMACIONES KEYFRAMES REUTILIZABLES
+           ========================================================================== */
+        @keyframes floatEffect {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px rgba(255, 117, 151, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(255, 42, 109, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(255, 117, 151, 0.4); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes typingCursor {
+            from { border-right-color: rgba(255,117,151,.75); }
+            to { border-right-color: transparent; }
+        }
+
+        /* ==========================================================================
+           SECCIÓN 1: SECCIÓN HERO / BIENVENIDA
+           ========================================================================== */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Sacramento', cursive;
+            font-size: 5.5rem;
+            color: var(--pink-primary);
+            text-shadow: 0 0 20px var(--pink-glow);
+            margin-bottom: 10px;
+            animation: fadeIn 1.5s ease-out, floatEffect 6s ease-in-out infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--pastel-rose);
+            opacity: 0.9;
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pink-primary);
+            cursor: pointer;
+            animation: floatEffect 3s ease-in-out infinite;
+            border-bottom: 1px dashed var(--pink-primary);
+            padding-bottom: 5px;
+        }
+
+        /* ==========================================================================
+           SECCIÓN 2: EL CONTADOR DE TIEMPO REVOLUCIONARIO
+           ========================================================================== */
+        .counter-section {
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(180deg, transparent, rgba(15,10,25,0.8), transparent);
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--pink-primary);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .timer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .timer-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+            animation: pulseGlow 4s infinite ease-in-out;
+        }
+
+        .timer-box:hover {
+            transform: translateY(-10px);
+            border-color: var(--pink-primary);
+        }
+
+        .timer-number {
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-shadow: 0 0 15px rgba(255,255,255,0.2);
+            font-family: monospace;
+        }
+
+        .timer-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--pink-primary);
+            margin-top: 10px;
+        }
+
+        /* ==========================================================================
+           SECCIÓN 3: LA CARTA DIGITAL (EL SOBRE INTERACTIVO)
+           ========================================================================== */
+        .letter-section {
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .envelope-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            height: 400px;
+            background: rgba(20, 15, 30, 0.8);
+            border: 2px solid var(--pink-primary);
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            padding: 40px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(15px);
+        }
+
+        .envelope-wrapper.opened {
+            height: auto;
+            min-height: 550px;
+            cursor: default;
+            border-color: var(--pink-glow);
+            box-shadow: 0 0 40px rgba(255, 42, 109, 0.3);
+        }
+
+        .envelope-hint {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--pink-primary);
+            text-align: center;
+            transition: var(--transition-smooth);
+            pointer-events: none;
+        }
+
+        .envelope-wrapper.opened .envelope-hint {
+            opacity: 0;
+            transform: translate(-50%, -100%);
+        }
+
+        .letter-content {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.8s ease-in-out;
+            pointer-events: none;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e0dbe3;
+            text-align: justify;
+        }
+
+        .envelope-wrapper.opened .letter-content {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
+        .letter-content p {
+            margin-bottom: 20px;
+            text-indent: 20px;
+        }
+
+        .letter-signature {
+            font-family: 'Sacramento', cursive;
+            font-size: 3rem;
+            text-align: right;
+            color: var(--pink-primary);
+            margin-top: 30px;
+            text-shadow: 0 0 10px rgba(255,117,151,0.3);
+        }
+
+        /* ==========================================================================
+           SECCIÓN 4: LÍNEA DE TIEMPO (NUESTRA HISTORIA)
+           ========================================================================== */
+        .timeline-section {
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-container {
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--pink-primary), var(--pink-glow), transparent);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            background: transparent;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item-left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item-right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--pink-glow);
+            box-shadow: 0 0 10px var(--pink-glow);
+            z-index: 5;
+        }
+
+        .timeline-item-left .timeline-dot {
+            right: -8px;
+        }
+
+        .timeline-item-right .timeline-dot {
+            left: -8px;
+        }
+
+        .timeline-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            padding: 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+        }
+
+        .timeline-card:hover {
+            border-color: var(--pink-primary);
+            box-shadow: 0 10px 25px rgba(255, 117, 151, 0.15);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--pink-primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        /* ==========================================================================
+           SECCIÓN 5: JUEGO INTERACTIVO / PREGUNTA FINAL
+           ========================================================================== */
+        .quiz-section {
+            padding: 120px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh;
+        }
+
+        .quiz-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-glow);
+            border-radius: 30px;
+            padding: 50px 30px;
+            max-width: 600px;
+            width: 100%;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            position: relative;
+        }
+
+        .quiz-question {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            height: 80px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-yes {
+            background: linear-gradient(45deg, var(--pink-primary), var(--pink-glow));
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 42, 109, 0.4);
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 42, 109, 0.6);
+        }
+
+        .btn-no {
+            background: #332941;
+            color: #b5a9c4;
+            position: absolute;
+        }
+
+        /* Ventana emergente de victoria */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(7, 5, 12, 0.95);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-box {
+            background: var(--bg-dark);
+            border: 2px solid var(--pink-primary);
+            border-radius: 30px;
+            padding: 50px 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 117, 151, 0.4);
+            transform: scale(0.8);
+            transition: var(--transition-smooth);
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+
+        .modal-title {
+            font-family: 'Sacramento', cursive;
+            font-size: 4.5rem;
+            color: var(--pink-primary);
+            margin-bottom: 20px;
+        }
+
+        .modal-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* RESPONSIVIDAD */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3.8rem; }
+            .timer-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .timer-number { font-size: 2.5rem; }
+            .timeline-container::before { left: 40px; }
+            .timeline-item { width: 100%; text-align: left !important; padding-left: 80px; padding-right: 20px; }
+            .timeline-item-right { left: 0; }
+            .timeline-dot { left: 32px !important; right: auto !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Capas de Renderizado de Animaciones -->
+    <canvas id="canvas-stars"></canvas>
+    <canvas id="canvas-hearts"></canvas>
+
+    <div class="main-wrapper">
+
+        <!-- ==========================================
+             HERO SECTION
+             ========================================== -->
+        <section class="hero-section">
+            <h1 class="hero-title">Hola, Mi Vida</h1>
+            <p class="hero-subtitle">Diseñé este rincón digital especialmente para ti</p>
+            <div class="scroll-indicator" onclick="document.getElementById('contador').scrollIntoView();">
+                Descubrir nuestro universo ↓
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN DEL CONTADOR
+             ========================================== -->
+        <section class="counter-section" id="contador">
+            <h2 class="section-title">El tiempo que llevamos construyendo lo nuestro</h2>
+            <div class="timer-grid">
+                <div class="timer-box">
+                    <div id="days" class="timer-number">00</div>
+                    <div class="timer-label">Días</div>
+                </div>
+                <div class="timer-box">
+                    <div id="hours" class="timer-number">00</div>
+                    <div class="timer-label">Horas</div>
+                </div>
+                <div class="timer-box">
+                    <div id="minutes" class="timer-number">00</div>
+                    <div class="timer-label">Minutos</div>
+                </div>
+                <div class="timer-box">
+                    <div id="seconds" class="timer-number">00</div>
+                    <div class="timer-label">Segundos</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN DE LA CARTA
+             ========================================== -->
+        <section class="letter-section">
+            <h2 class="section-title">Una pequeña confesión...</h2>
+            <div class="envelope-wrapper" id="envelope" onclick="openLetter()">
+                <div class="envelope-hint">Haz clic aquí para abrir mi corazón ✨</div>
+                <div class="letter-content">
+                    <p>Querida Emma,</p>
+                    <p>Quería crear algo único para ti, un espacio que fuera solo nuestro en este gigantesco mundo digital. Escribir líneas de código e implementar lógica es lo que hago, pero tú eres la verdadera inspiración detrás de cada idea y proyecto que pasa por mi mente.</p>
+                    <p>Desde que estás en mi vida, cada momento se ha vuelto infinitamente mejor. Gracias por tu sonrisa, por tus palabras y por ser esa persona increíble que ilumina todo a su paso. Esta página es solo una pequeña muestra de lo mucho que significas para mí, un rincón que vivirá para siempre en la red, tal como lo que siento por ti.</p>
+                    <p>Espero que te guste este pequeño universo interactivo que armé pensando en cada detalle de nosotros.</p>
+                    <div class="letter-signature">Con todo mi amor...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN DE LA LÍNEA DE TIEMPO
+             ========================================== -->
+        <section class="timeline-section">
+            <h2 class="section-title">Nuestra Historia</h2>
+            <div class="timeline-container">
+                
+                <div class="timeline-item timeline-item-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">Paso Uno</div>
+                        <h3 class="timeline-title">El Primer Encuentro 🌟</h3>
+                        <p>El día exacto en que nuestros caminos se cruzaron por primera vez. Una coincidencia que cambió mi mundo por completo.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-item-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">Paso Dos</div>
+                        <h3 class="timeline-title">Nuestra Primera Cita ☕</h3>
+                        <p>Los nervios del principio, las risas interminables y ese momento preciso en el que supe que eras alguien totalmente especial.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-item-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">Paso Tres</div>
+                        <h3 class="timeline-title">Miles de Memorias Juntos 📸</h3>
+                        <p>Cada salida, cada chiste interno, cada canción compartida y el crecimiento constante de este vínculo tan lindo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN PREGUNTA FINAL INTERACTIVA
+             ========================================== -->
+        <section class="quiz-section">
+            <div class="quiz-card">
+                <div class="quiz-question">¿Me darías el honor de seguir compartiendo este hermoso viaje digital y real a tu lado por siempre?</div>
+                <div class="button-group">
+                    <button class="btn btn-yes" onclick="celebrate()">¡Sí, claro!</button>
+                    <button class="btn btn-no" id="btn-no" onmouseover="fleeButton()" onclick="fleeButton()">No</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- POPUP DE FELICIDAD -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-box">
+            <h2 class="modal-title">¡S sabía que dirías que sí! 🥰</h2>
+            <p class="modal-text">Me haces la persona más feliz de todo el planeta. Prometo cuidar siempre de ti y seguir programando momentos perfectos juntos.</p>
+            <button class="btn btn-yes" onclick="closeModal()">Eres lo máximo</button>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       MOTORES LOGICOS EN JAVASCRIPT (EFECTOS, CANVAS, CONTADORES)
+       ========================================================================== -->
+    <script>
+        /* ==========================================
+           1. CONFIGURACIÓN DEL ANIVERSARIO (CAMBIA TU FECHA AQUÍ)
+           ========================================== */
+        // Formato: Año, Mes (0-11, donde 0 es Enero, 4 es Mayo, etc), Día
+        const FECHA_ANIVERSARIO = new Date(2025, 4, 14, 0, 0, 0); 
+
+        function updateLoveTimer() {
+            const now = new Date();
+            const difference = now - FECHA_ANIVERSARIO;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateLoveTimer, 1000);
+        updateLoveTimer();
+
+        /* ==========================================
+           2. MOTOR DE EFECTO VISUAL: ESTRELLAS PARPADEANTES
+           ========================================== */
+        const canvasStars = document.getElementById('canvas-stars');
+        const ctxStars = canvasStars.getContext('2d');
+        let starsArray = [];
+
+        function resizeStarsCanvas() {
+            canvasStars.width = window.innerWidth;
+            canvasStars.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeStarsCanvas);
+        resizeStarsCanvas();
+
+        class Star {
+            constructor() {
+                this.x = Math.random() * canvasStars.width;
+                this.y = Math.random() * canvasStars.height;
+                this.size = Math.random() * 1.5;
+                this.alpha = Math.random();
+                this.speed = Math.random() * 0.02 + 0.005;
+            }
+            draw() {
+                ctxStars.save();
+                ctxStars.globalAlpha = this.alpha;
+                ctxStars.fillStyle = '#f3eff5';
+                ctxStars.beginPath();
+                ctxStars.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctxStars.fill();
+                ctxStars.restore();
+            }
+            update() {
+                this.alpha += this.speed;
+                if (this.alpha > 1 || this.alpha < 0) {
+                    this.speed = -this.speed;
+                }
+            }
+        }
+
+        function initStars() {
+            starsArray = [];
+            for (let i = 0; i < 150; i++) {
+                starsArray.push(new Star());
+            }
+        }
+
+        function animateStars() {
+            ctxStars.clearRect(0, 0, canvasStars.width, canvasStars.height);
+            starsArray.forEach(star => {
+                star.update();
+                star.draw();
+            });
+            requestAnimationFrame(animateStars);
+        }
+        initStars();
+        animateStars();
+
+        /* ==========================================
+           3. MOTOR DE PARTICULAS: CORAZONES MATEMÁTICOS FLOTANTES
+           ========================================== */
+        const canvasHearts = document.getElementById('canvas-hearts');
+        const ctxHearts = canvasHearts.getContext('2d');
+        let heartsArray = [];
+        let forceHeartsActive = false;
+
+        function resizeHeartsCanvas() {
+            canvasHearts.width = window.innerWidth;
+            canvasHearts.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeHeartsCanvas);
+        resizeHeartsCanvas();
+
+        class HeartParticle {
+            constructor(x, y, forceExplosion = false) {
+                this.x = x || Math.random() * canvasHearts.width;
+                this.y = y || canvasHearts.height + 20;
+                this.size = Math.random() * 12 + 6;
+                this.speedY = forceExplosion ? (Math.random() * -6 - 2) : (Math.random() * -2 - 0.5);
+                this.speedX = forceExplosion ? (Math.random() * 6 - 3) : (Math.random() * 1 - 0.5);
+                this.alpha = 1;
+                this.decay = Math.random() * 0.01 + 0.004;
+            }
+            draw() {
+                ctxHearts.save();
+                ctxHearts.globalAlpha = this.alpha;
+                ctxHearts.fillStyle = `rgba(255, ${Math.floor(Math.random()*40 + 80)}, 151, ${this.alpha})`;
+                ctxHearts.beginPath();
+                
+                // Dibujo matemático vectorial de un corazón perfecto
+                const topCurveHeight = this.size * 0.3;
+                ctxHearts.moveTo(this.x, this.y + topCurveHeight);
+                ctxHearts.bezierCurveTo(this.x, this.y, this.x - this.size / 2, this.y, this.x - this.size / 2, this.y + topCurveHeight);
+                ctxHearts.bezierCurveTo(this.x - this.size / 2, this.y + (this.size + topCurveHeight) / 2, this.x, this.y + (this.size + topCurveHeight) / 2, this.x, this.y + this.size);
+                ctxHearts.bezierCurveTo(this.x, this.y + (this.size + topCurveHeight) / 2, this.x + this.size / 2, this.y + (this.size + topCurveHeight) / 2, this.x + this.size / 2, this.y + topCurveHeight);
+                ctxHearts.bezierCurveTo(this.x + this.size / 2, this.y, this.x, this.y, this.x, this.y + topCurveHeight);
+                
+                ctxHearts.closePath();
+                ctxHearts.fill();
+                ctxHearts.restore();
+            }
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.alpha -= this.decay;
+            }
+        }
+
+        function handleHearts() {
+            // Flujo regular de corazones subiendo de fondo
+            if (Math.random() < 0.06 || forceHeartsActive) {
+                heartsArray.push(new HeartParticle());
+            }
+
+            for (let i = heartsArray.length - 1; i >= 0; i--) {
+                heartsArray[i].update();
+                heartsArray[i].draw();
+                if (heartsArray[i].alpha <= 0) {
+                    heartsArray.splice(i, 1);
+                }
+            }
+        }
+
+        function animateHeartsLoop() {
+            ctxHearts.clearRect(0, 0, canvasHearts.width, canvasHearts.height);
+            handleHearts();
+            requestAnimationFrame(animateHeartsLoop);
+        }
+        animateHeartsLoop();
+
+        /* ==========================================
+           4. CONTROL DE COMPONENTES INTERACTIVOS
+           ========================================== */
+        // Abrir Carta
+        function openLetter() {
+            const envelope = document.getElementById('envelope');
+            if(!envelope.classList.contains('opened')) {
+                envelope.classList.add('opened');
+                // Rafaga de corazones al abrir la carta
+                for(let i=0; i<30; i++) {
+                    heartsArray.push(new HeartParticle(window.innerWidth / 2, window.innerHeight / 2 + 100, true));
+                }
+            }
+        }
+
+        // Animación al hacer Scroll para revelar elementos de la historia (Efecto de Intersección)
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observerOptions = { threshold: 0.25, rootMargin: "0px 0px -50px 0px" };
+
+        const timelineObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        timelineItems.forEach(item => timelineObserver.observe(item));
+
+        // El Botón Evasivo Inteligente (Huye del cursor)
+        function fleeButton() {
+            const btnNo = document.getElementById('btn-no');
+            // Rangos de movimiento controlados para que no se salga de la tarjeta de la pregunta
+            const container = document.querySelector('.button-group');
+            const containerRect = container.getBoundingClientRect();
+            
+            const maxX = containerRect.width - btnNo.offsetWidth - 20;
+            const maxY = containerRect.height - btnNo.offsetHeight - 10;
+
+            const randomX = Math.max(10, Math.floor(Math.random() * maxX));
+            const randomY = Math.max(-30, Math.floor(Math.random() * maxY) - (containerRect.height / 2));
+
+            btnNo.style.left = `${randomX}px`;
+            btnNo.style.top = `${randomY}px`;
+        }
+
+        // Celebración de la Victoria (Dijo que Sí)
+        function celebrate() {
+            forceHeartsActive = true;
+            document.getElementById('success-modal').classList.add('active');
+            
+            // Lluvia masiva de corazones
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => {
+                    heartsArray.push(new HeartParticle(Math.random() * window.innerWidth, window.innerHeight + 10, true));
+                }, i * 50);
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('success-modal').classList.remove('active');
+            forceHeartsActive = false;
+        }
+    </script>
+</body>
+</html>
