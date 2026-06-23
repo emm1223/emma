@@ -2836,11 +2836,12 @@
 
     <script>
         // ========== TIMER ==========
-        const FECHA = new Date(2027, 5, 8, 0, 40, 58);
+        // Cuenta desde el primer mensaje: 6 de Junio de 2026 12:40:58
+        const FECHA = new Date(2026, 5, 6, 0, 40, 58);
         
         function actualizarTiempo() {
             const ahora = new Date();
-            const diferencia = FECHA - ahora;
+            const diferencia = ahora - FECHA; // Resta para contar desde esa fecha
             
             const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
             const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
