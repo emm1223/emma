@@ -3,9 +3,12 @@
 import Link from 'next/link'
 import { ShoppingCart, Menu, X, Zap, Clock, Heart } from 'lucide-react'
 import { useState } from 'react'
+import { useCart } from '@/context/CartContext'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { items } = useCart()
+  const cartCount = items.length
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -29,9 +32,11 @@ export default function Home() {
               </Link>
               <Link href="/carrito" className="relative group">
                 <ShoppingCart className="text-red-700 group-hover:scale-110 transition-transform" size={24} />
-                <span className="absolute -top-2 -right-2 bg-red-700 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center animate-pulse">
-                  0
-                </span>
+                {cartCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-700 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center animate-pulse">
+                    {cartCount}
+                  </span>
+                )}
               </Link>
             </div>
 
