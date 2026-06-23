@@ -12,51 +12,51 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 public class PanelDatos extends JPanel {
-	
+
 	private JLabel lblL1;
 	private JComboBox<String> cbxSitios;
 	private JLabel lblL2;
 	private JComboBox<String> cbxElementos;
 	private JButton btnBuscar;
 	private JButton btnReiniciar;
-	
+
 	public PanelDatos() {
-		setLayout(new GridLayout(1,6,5,5));
-		setBackground(new Color(212,217,217));
+		setLayout(new GridLayout(1, 6, 5, 5));
+		setBackground(new Color(212, 217, 217));
 		setPreferredSize(new Dimension(600, 50));
-		setBorder( new TitledBorder( "Modulo de Datos:" ) ) ;
-		
+		setBorder(new TitledBorder("Modulo de Datos:"));
+
 		inicializarComponentes();
-		
+
 		setVisible(true);
 	}
 
 	public void inicializarComponentes() {
-		
+
 		lblL1 = new JLabel("Sitio: ");
 		add(lblL1);
-		
+
 		cbxSitios = new JComboBox<String>();
 		cbxSitios.setActionCommand("SITIO");
 		add(cbxSitios);
-		
+
 		lblL2 = new JLabel("Elemento: ");
 		add(lblL2);
-		
+
 		cbxElementos = new JComboBox<String>();
 		cbxElementos.setEnabled(false);
 		add(cbxElementos);
-		
+
 		btnBuscar = new JButton("Buscar");
 		btnBuscar.setActionCommand("BUSCAR");
 		btnBuscar.setEnabled(false);
 		add(btnBuscar);
-		
+
 		btnReiniciar = new JButton("Reiniciar");
 		btnReiniciar.setActionCommand("REINICIAR");
 		btnReiniciar.setEnabled(false);
 		add(btnReiniciar);
-		
+
 	}
 
 	public JLabel getLblL1() {
@@ -106,5 +106,5 @@ public class PanelDatos extends JPanel {
 	public void setBtnReiniciar(JButton btnReiniciar) {
 		this.btnReiniciar = btnReiniciar;
 	}
-	
+
 }
