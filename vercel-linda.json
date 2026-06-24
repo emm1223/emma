@@ -1,0 +1,14 @@
+{
+  "projectSettings": {
+    "sourceFilesOutsideRootDirectory": true
+  },
+  "routes": [
+    {
+      "src": "/(?!api/|_next/|static/|.*\\.)(.*)",
+      "dest": "Linda/$1"
+    }
+  ],
+  "buildCommand": "npm run build || true",
+  "outputDirectory": "Linda",
+  "public": true
+}
