@@ -1,24 +1,5 @@
 {
-  "projects": {
-    "default": {
-      "projectSettings": {
-        "sourceFilesOutsideRootDirectory": true
-      },
-      "buildCommand": "cd PROYECTOCARRO && npm run build",
-      "outputDirectory": "PROYECTOCARRO/.next",
-      "nodeVersion": "18.x"
-    },
-    "linda": {
-      "rootDirectory": "Linda",
-      "buildCommand": null,
-      "outputDirectory": null
-    }
-  },
-  "routes": [
-    {
-      "src": "/linda(/?.*)",
-      "dest": "/Linda$1"
-    }
-  ]
+  "buildCommand": "echo 'No build needed'",
+  "outputDirectory": "Linda"
 }
 
