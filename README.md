@@ -1,243 +1,142 @@
 <div align="center">
 
-# 💫 EMMANUELL MUNAYAR 💫
-### Full Stack Developer | Ingeniería en Sistemas
+# EMMANUELL MUNAYAR
 
-```
-╔══════════════════════════════════════╗
-║  📍 Bogotá, Colombia                 ║
-║  🎓 Universidad El Bosque            ║
-║  💻 Building Digital Magic           ║
-╚══════════════════════════════════════╝
-```
+**Ingeniero en Sistemas | Full Stack Developer**
+
+Bogotá, Colombia | Universidad El Bosque
 
 </div>
 
 ---
 
-## ⚡ REDES & CONTACTO
+## 📧 CONTACTO
 
-<div align="center">
+| Canal | Información |
+|-------|-------------|
+| **Email Personal** | [emmauelmunayar@gmail.com](mailto:emmauelmunayar@gmail.com) |
+| **Email Institucional** | [fmunayar@unbosque.edu.co](mailto:fmunayar@unbosque.edu.co) |
+| **GitHub** | [github.com/emm1223](https://github.com/emm1223) |
+| **Instagram** | [@emm_exe.sys](https://www.instagram.com/emm_exe.sys/) |
+| **LinkedIn** | [LinkedIn Profile](https://linkedin.com/in/emmanuell) |
 
-| | |
-|---|---|
-| [![Instagram](https://img.shields.io/badge/-@emm_exe.sys-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=1f1f1f)](https://www.instagram.com/emm_exe.sys/) | [![Gmail](https://img.shields.io/badge/-emmauelmunayar@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1f1f1f)](mailto:emmauelmunayar@gmail.com) |
-| [![GitHub](https://img.shields.io/badge/-emm1223-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/emm1223) | [![Correo Institucional](https://img.shields.io/badge/-fmunayar@unbosque.edu.co-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white&labelColor=1f1f1f)](mailto:fmunayar@unbosque.edu.co) |
-| [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/emmanuell) | [![Discord](https://img.shields.io/badge/-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/emmanuell) |
+---
 
-</div>
+## 👨‍💼 PERFIL
+
+Ingeniero en Sistemas con experiencia en desarrollo full stack. Especializado en crear soluciones web escalables, seguras y de alto rendimiento. Apasionado por la arquitectura de software, las buenas prácticas de desarrollo y la innovación tecnológica.
+
+**Competencias clave:**
+- Desarrollo full stack (Frontend & Backend)
+- Arquitectura de sistemas
+- Seguridad en aplicaciones web
+- Bases de datos relacionales y NoSQL
+- DevOps y automatización
+
+---
+
+## 💻 TECNOLOGÍAS
+
+### Lenguajes
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+
+### Frontend
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-13AA52?style=flat-square&logo=mongodb&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+
+### DevOps
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+
+---
+
+## 🚀 PROYECTOS
+
+### PROYECTOCARRO
+**E-commerce Platform | Enterprise Security**
+
+Plataforma de comercio electrónico con arquitectura segura, sistema de autenticación JWT, dashboard administrativo y auditoría completa.
+
+- **Stack:** Next.js, TypeScript, Tailwind CSS, Node.js, MongoDB
+- **Características:** Autenticación JWT, Admin Dashboard, Protección contra ataques de fuerza bruta, Logging de operaciones
+- **[Ver Código →](./PROYECTOCARRO)**
+
+### YELLOW
+**Web Application | Modern Design**
+
+Aplicación web con diseño contemporáneo, animaciones fluidas y experiencia de usuario optimizada.
+
+- **Stack:** HTML5, CSS3, JavaScript, Vercel
+- **Características:** Diseño responsivo, Glassmorphism, Performance optimizado
+- **[Visitar Sitio →](https://emma-tau-wheat.vercel.app)**
+
+### UEB Projects
+**Academic Projects | Java Development**
+
+Proyectos educativos implementando patrones de diseño, arquitectura MVC y principios SOLID.
+
+- **Stack:** Java, Swing, MVC Architecture
+- **Contenido:** EjercicioGUI1, EjerGUI3, Pattern Implementation
+- **[Ver Proyectos →](./UEB)**
 
 ---
 
 ## 🎓 EDUCACIÓN
 
+**Universidad El Bosque** | Bogotá, Colombia  
+Ingeniería en Sistemas
+
+---
+
+## 📊 ESTADÍSTICAS
+
 <div align="center">
 
-```
-╔═══════════════════════════════════════════════════════════╗
-║  UNIVERSIDAD EL BOSQUE - Bogotá, Colombia               ║
-║  📚 Ingeniería en Sistemas                               ║
-║  🚀 Desarrollando soluciones tecnológicas innovadoras   ║
-╚═══════════════════════════════════════════════════════════╝
-```
+[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=emm1223&theme=dark&show_icons=true&bg_color=0d1117&title_color=58a6ff&hide_border=true)](https://github.com/emm1223)
+
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=emm1223&theme=dark&bg_color=0d1117&title_color=58a6ff&hide_border=true&layout=compact)](https://github.com/emm1223)
 
 </div>
 
 ---
 
-## � TECH STACK - ARSENAL DIGITAL
+## 🎯 DISPONIBILIDAD
 
-<div align="center">
-
-### 💻 Lenguajes
-
-```
-┌─────────────────────────────────────────────────────┐
-│  JavaScript  TypeScript  Python  Java  C++  SQL   │
-└─────────────────────────────────────────────────────┘
-```
-
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-### 🚀 Frameworks & Librerías
-
-```
-┌─────────────────────────────────────────────────────┐
-│  React  Next.js  Node.js  Express  Django  FastAPI │
-└─────────────────────────────────────────────────────┘
-```
-
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-13AA52?style=for-the-badge&logo=mongodb&logoColor=white)
-
-### 🛠️ Herramientas & Plataformas
-
-```
-┌─────────────────────────────────────────────────────┐
-│  Git  GitHub  VS Code  Docker  Vercel  Firebase  │
-└─────────────────────────────────────────────────────┘
-```
-
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-
-</div>
-
----
-
-## 🎨 PROYECTOS DESTACADOS
-
-<div align="center">
-
-### 🛒 PROYECTOCARRO - E-Commerce Premium
-
-```
-═══════════════════════════════════════════════════════
-   Plataforma de compras segura y moderna
-   Next.js • TypeScript • Tailwind CSS • JWT Auth
-═══════════════════════════════════════════════════════
-```
-
-✨ **Features:**
-- 🔐 Sistema de autenticación robusto
-- 📊 Dashboard administrativo avanzado
-- 🛡️ Protección contra fuerza bruta
-- 📝 Auditoría completa de operaciones
-- 🚀 Optimizado para performance
-
-[🔗 Ver Proyecto](./PROYECTOCARRO) | [💻 Ver Código](https://github.com/emm1223/emma/tree/main/PROYECTOCARRO)
-
----
-
-### 💛 YELLOW - Digital Expression
-
-```
-═══════════════════════════════════════════════════════
-   Una experiencia digital sofisticada
-   HTML5 • CSS3 • JavaScript • Vercel
-═══════════════════════════════════════════════════════
-```
-
-✨ **Features:**
-- 🎯 Timer en tiempo real
-- 📱 Diseño completamente responsivo
-- 🎨 Glassmorphism + Animaciones fluidas
-- ⚡ Performance optimizado
-- 💫 Efectos visuales cautivadores
-
-[🔗 Ver Proyecto](./yellow) | [🌐 Sitio en Vivo](https://emma-tau-wheat.vercel.app)
-
----
-
-### 🎓 UEB - Proyectos Académicos
-
-```
-═══════════════════════════════════════════════════════
-   Aplicaciones educativas en Java
-   Java • Swing • MVC • Programación OOP
-═══════════════════════════════════════════════════════
-```
-
-✨ **Contiene:**
-- GUI1: Interfaz gráfica avanzada
-- GUI3: Aplicación con gestión de datos
-- 🎯 Implementación de patrones de diseño
-
-[🔗 Ver Proyecto](./UEB)
-
-</div>
-
----
-
-## 📊 ESTADÍSTICAS & ACTIVIDAD
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=emm1223&theme=dark&show_icons=true&bg_color=0d1117&title_color=58a6ff&icon_color=79c0ff)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=emm1223&theme=dark&bg_color=0d1117&title_color=58a6ff)
-
-</div>
-
----
-
-## 🎯 ENFOQUE ACTUAL
-
-<div align="center">
-
-```
-╔═════════════════════════════════════════════════════════╗
-║  🚀 Construyendo aplicaciones web escalables           ║
-║  🔐 Implementando seguridad de nivel enterprise        ║
-║  📚 Dominando TypeScript avanzado                      ║
-║  🌍 Contribuyendo al código abierto                    ║
-║  💡 Explorando integración de IA/ML                    ║
-╚═════════════════════════════════════════════════════════╝
-```
-
-</div>
-
----
-
-## 💬 COLABOREMOS
-
-<div align="center">
-
-### ¿Tienes un proyecto emocionante? 🚀
-
-```
-📧  emmauelmunayar@gmail.com
-🎓  fmunayar@unbosque.edu.co
-📱  @emm_exe.sys (Instagram)
-💻  emm1223 (GitHub)
-```
-
-Estoy disponible para:
-- ✅ Oportunidades freelance
-- ✅ Contribuciones a código abierto
-- ✅ Colaboraciones en proyectos
-- ✅ Mentoring y enseñanza
-- ✅ Consultoría técnica
-
-### Conecta conmigo 👇
-
-[![Instagram](https://img.shields.io/badge/-Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=1f1f1f)](https://www.instagram.com/emm_exe.sys/)
-[![Gmail](https://img.shields.io/badge/-Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1f1f1f)](mailto:emmauelmunayar@gmail.com)
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/emm1223)
-[![Universidad](https://img.shields.io/badge/-Correo%20UEB-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white&labelColor=1f1f1f)](mailto:fmunayar@unbosque.edu.co)
-
-</div>
+Abierto a colaboraciones en:
+- Desarrollo full stack
+- Arquitectura de sistemas
+- Consultoría técnica
+- Código abierto
+- Proyectos académicos
 
 ---
 
 <div align="center">
 
-### 🌟 EXTRAS
+**Para consultas, colaboraciones u oportunidades:**
 
-```
-╔═══════════════════════════════════════════════════════╗
-║  Si encontraste mis proyectos útiles,               ║
-║  regálame una ⭐ en GitHub                          ║
-║                                                      ║
-║  Eso me motiva a seguir creando cosas increíbles   ║
-╚═══════════════════════════════════════════════════════╝
-```
+[![Email](https://img.shields.io/badge/Email-emmauelmunayar@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:emmauelmunayar@gmail.com)
+[![Instagram](https://img.shields.io/badge/Instagram-@emm_exe.sys-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/emm_exe.sys/)
+[![GitHub](https://img.shields.io/badge/GitHub-emm1223-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/emm1223)
 
-![Profile Views](https://komarev.com/ghpvc/?username=emm1223&color=blueviolet&style=flat-square)
+---
 
-**Hecho con ❤️ desde Bogotá, Colombia**
+**Bogotá, Colombia | 2026**
 
 </div>
