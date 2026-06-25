@@ -1,4 +1,4 @@
-# 💕 Yellow - Página para Linda
+# 💕 Yellow
 
 Proyecto especial creado el 23 de Junio de 2026.
 
