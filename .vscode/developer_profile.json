@@ -1,0 +1,117 @@
+{
+  "profile": {
+    "name": "Emmanuel Munayar",
+    "email": "emmanuelmunayar@gmail.com",
+    "location": "Colombia",
+    "timezone": "UTC-5",
+    "language": "es"
+  },
+  "social_media": {
+    "github": {
+      "username": "emm1223",
+      "url": "https://github.com/emm1223",
+      "status": "Active",
+      "bio": "Full Stack Developer | Emprendedor | Colombia"
+    },
+    "facebook": {
+      "username": "emmanuelmunayar",
+      "url": "https://facebook.com/emmanuelmunayar",
+      "status": "Connected"
+    },
+    "instagram": {
+      "username": "@emmanuelmunayar",
+      "url": "https://instagram.com/emmanuelmunayar",
+      "status": "Connected"
+    }
+  },
+  "projects": {
+    "main_project": {
+      "name": "Yellow",
+      "description": "Portfolio y proyectos principales",
+      "path": "c:\\Proyectos\\emma\\yellow"
+    },
+    "active_projects": [
+      {
+        "name": "PROYECTOCARRO",
+        "description": "E-commerce El Carrito Rojo",
+        "tech": ["Next.js", "React", "TypeScript", "MongoDB", "Tailwind CSS"],
+        "path": "c:\\Proyectos\\emma\\PROYECTOCARRO",
+        "status": "En Desarrollo"
+      },
+      {
+        "name": "Yellow",
+        "description": "Portfolio personal",
+        "tech": ["HTML", "CSS", "JavaScript"],
+        "path": "c:\\Proyectos\\emma\\yellow",
+        "status": "Activo"
+      }
+    ]
+  },
+  "preferences": {
+    "music": {
+      "listening": true,
+      "genre": "Variado",
+      "while_coding": true
+    },
+    "work_environment": {
+      "theme": "Dark",
+      "theme_name": "Emmanuel Custom Dark Pro",
+      "language": "Español",
+      "focus_mode": true
+    },
+    "communication": {
+      "language": "Español",
+      "code_comments": "Español/Inglés",
+      "documentation": "Español",
+      "response_time": "Flexible"
+    }
+  },
+  "tech_stack": {
+    "strong": [
+      "JavaScript/TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Git/GitHub"
+    ],
+    "competent": ["HTML/CSS", "Node.js", "REST APIs", "MongoDB", "Java"],
+    "learning": ["Docker", "Testing", "DevOps", "PostgreSQL"]
+  },
+  "goals": {
+    "short_term": [
+      "Completar PROYECTOCARRO",
+      "Escalar El Carrito Rojo",
+      "Mejorar Yellow"
+    ],
+    "medium_term": [
+      "Lanzar primer producto propio",
+      "Generar ingresos pasivos",
+      "Dominar Full-Stack"
+    ],
+    "long_term": [
+      "Emprendimiento consolidado",
+      "Múltiples proyectos activos",
+      "Ser referencia en tecnología"
+    ]
+  },
+  "development_style": {
+    "approach": "Pragmático y ágil",
+    "quality_focus": "Código limpio y eficiente",
+    "testing": "Importante pero no obsesivo",
+    "documentation": "Necesaria pero concisa",
+    "collaboration": "Open a feedback"
+  },
+  "vs_code_config": {
+    "theme": "Emmanuel Custom Dark Pro",
+    "icons": "vscode-icons",
+    "font": "SF Pro Display",
+    "tab_size": 2,
+    "extensions_ai": [
+      "Codeium",
+      "GitHub Copilot",
+      "Continue.dev",
+      "SonarLint",
+      "WakaTime"
+    ]
+  }
+}

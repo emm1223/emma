@@ -3,15 +3,82 @@
 	"tasks": [
 		{
 			"label": "Dev Server",
-			"type": "shell",
-			"command": "npm",
-			"args": [
-				"run",
-				"dev"
-			],
-			"isBackground": true,
+			"type": "npm",
+			"script": "dev",
 			"problemMatcher": [],
-			"group": "build"
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			},
+			"isBackground": true,
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		},
+		{
+			"label": "Build",
+			"type": "npm",
+			"script": "build",
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		{
+			"label": "Lint",
+			"type": "npm",
+			"script": "lint",
+			"problemMatcher": [
+				"$eslint-stylish"
+			],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Format Code",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"prettier",
+				"--write",
+				"."
+			],
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Type Check",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsc",
+				"--noEmit"
+			],
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Start Production",
+			"type": "npm",
+			"script": "start",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
 		}
 	]
 }
