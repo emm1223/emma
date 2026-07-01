@@ -249,6 +249,26 @@
 
 ---
 
+## 📚 SISTEMA DE DESARROLLO PERSONALIZADO
+
+```
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           ◆ CARPETA .SYSTEM (ORGANIZADO)         ┃
+├─────────────────────────────────────────────────┤
+┃ Copilot Pro Personalizado                       ┃
+┃ Dashboard Integrado                             ┃
+┃ Sistema IA Multi-Motor                          ┃
+┃ Configuración VS Code Completa                  ┃
+┃ Guías y Documentación                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+**👉 [ACCEDER AL SISTEMA PERSONALIZADO →](./.system)**
+
+Toda tu configuración de IA y desarrollo está organizada en `.system/`
+
+---
+
 ```
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
