@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coveñas 2026 - Tú y Yo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 25%,
+          #f093fb 50%,
+          #4facfe 75%,
+          #00f2fe 100%
+        );
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        height: 100vh;
+        max-height: 800px;
+      }
+
+      /* Decoración de olas */
+      .waves {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 150px;
+        opacity: 0.3;
+      }
+
+      .wave {
+        position: absolute;
+        bottom: 0;
+        width: 200%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.51,168.19-17.12,250.45-.39C823.78,31,906.4,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,0.3)"/></svg>')
+          repeat-x;
+        background-size: 300px 100%;
+        animation: wave 15s linear infinite;
+      }
+
+      .wave:nth-child(2) {
+        bottom: 10px;
+        animation: wave 10s linear infinite reverse;
+        opacity: 0.5;
+      }
+
+      .wave:nth-child(3) {
+        bottom: 20px;
+        animation: wave 8s linear infinite;
+        opacity: 0.3;
+      }
+
+      @keyframes wave {
+        0% {
+          background-position-x: 0;
+        }
+        100% {
+          background-position-x: 600px;
+        }
+      }
+
+      /* Tarjeta Polaroid */
+      .polaroid-card {
+        position: relative;
+        width: 320px;
+        background: white;
+        border-radius: 8px;
+        box-shadow:
+          0 30px 60px rgba(0, 0, 0, 0.3),
+          0 0 0 1px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        transform: rotate(-5deg);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        animation: float 3s ease-in-out infinite;
+        margin: auto;
+        margin-top: 80px;
+      }
+
+      .polaroid-card:hover {
+        transform: rotate(-5deg) scale(1.05);
+        box-shadow:
+          0 40px 80px rgba(0, 0, 0, 0.4),
+          0 0 0 1px rgba(0, 0, 0, 0.05);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: rotate(-5deg) translateY(0px);
+        }
+        50% {
+          transform: rotate(-5deg) translateY(-10px);
+        }
+      }
+
+      /* Marco de la foto */
+      .photo-frame {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #4facfe 100%
+        );
+      }
+
+      .photo-frame img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Área de texto (estilo Polaroid) */
+      .text-area {
+        padding: 30px 20px;
+        text-align: center;
+        background: white;
+        position: relative;
+      }
+
+      .text-area::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+        border-radius: 50%;
+        opacity: 0.3;
+      }
+
+      .text-area::after {
+        content: "";
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+        width: 25px;
+        height: 25px;
+        background: linear-gradient(135deg, #87ceeb, #b0e0e6);
+        clip-path: polygon(
+          50% 0%,
+          100% 38%,
+          82% 100%,
+          50% 90%,
+          18% 100%,
+          0% 38%
+        );
+        opacity: 0.4;
+      }
+
+      .title {
+        font-family: "Brush Script MT", "Lucida Calligraphy", cursive;
+        font-size: 28px;
+        color: #ff6b9d;
+        margin-bottom: 8px;
+        font-weight: normal;
+        letter-spacing: 2px;
+        animation: fadeInDown 1s ease 0.3s both;
+      }
+
+      .location-date {
+        font-size: 13px;
+        color: #999;
+        font-family: "Courier New", monospace;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        animation: fadeInUp 1s ease 0.5s both;
+      }
+
+      .message {
+        font-family: "Trebuchet MS", sans-serif;
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+        font-style: italic;
+        animation: fadeInUp 1s ease 0.7s both;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Decoración flotante */
+      .decoration {
+        position: absolute;
+        font-size: 30px;
+        animation: float-decoration 4s ease-in-out infinite;
+      }
+
+      .decoration.heart1 {
+        top: 100px;
+        left: 20px;
+        animation-delay: 0s;
+      }
+
+      .decoration.palm1 {
+        top: 200px;
+        right: 30px;
+        font-size: 40px;
+        animation-delay: 1s;
+      }
+
+      .decoration.shell {
+        bottom: 180px;
+        left: 30px;
+        animation-delay: 2s;
+      }
+
+      .decoration.wave-emoji {
+        bottom: 100px;
+        right: 40px;
+        font-size: 35px;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes float-decoration {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+      }
+
+      /* Brillo adicional */
+      .shine {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        animation: shine 3s infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          left: -100%;
+        }
+        50% {
+          left: 100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .polaroid-card {
+          width: 280px;
+        }
+
+        .title {
+          font-size: 24px;
+        }
+
+        .message {
+          font-size: 13px;
+        }
+
+        .text-area {
+          padding: 25px 18px;
+        }
+      }
+
+      /* Efecto de entrada */
+      .container {
+        animation: slideIn 0.8s ease 0.2s both;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Fondo con partículas */
+      .particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        animation: float-particle 20s infinite;
+      }
+
+      @keyframes float-particle {
+        0% {
+          opacity: 0;
+          transform: translateY(100vh) translateX(0);
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-100vh) translateX(100px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+      <div class="decoration heart1">💕</div>
+      <div class="decoration palm1">🌴</div>
+      <div class="decoration shell">🐚</div>
+      <div class="decoration wave-emoji">🌊</div>
+
+      <div class="polaroid-card">
+        <div class="photo-frame">
+          <img src="imagenes mar/IMG_4284.JPEG" alt="Coveñas - Tú y Yo" />
+          <div class="shine"></div>
+        </div>
+        <div class="text-area">
+          <div class="title">Coveñas 2026</div>
+          <div class="location-date">— Tú y Yo —</div>
+          <div class="message">
+            En Coveñas, mon amour encontré,<br />
+            Tu sonrisa que me cautivó ayer,<br />
+            En tus ojos, el cielo azul vi,<br />
+            Eres mon trésor, mi amor para mí. 💕
+          </div>
+        </div>
+      </div>
+
+      <div class="waves">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    </div>
+
+    <script>
+      // Generar partículas flotantes
+      const particlesContainer = document.getElementById("particles");
+
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement("div");
+        particle.className = "particle";
+        particle.style.left = Math.random() * 100 + "%";
+        particle.style.animationDelay = Math.random() * 20 + "s";
+        particle.style.animationDuration = Math.random() * 10 + 15 + "s";
+        particlesContainer.appendChild(particle);
+      }
+
+      // Efecto de interactividad
+      const card = document.querySelector(".polaroid-card");
+      document.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        const rotateX = (y / rect.height) * 5;
+        const rotateY = -(x / rect.width) * 5;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+      });
+
+      document.addEventListener("mouseleave", () => {
+        card.style.transform = "rotate(-5deg) scale(1)";
+      });
+    </script>
+  </body>
+</html>
