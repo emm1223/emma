@@ -1,0 +1,54 @@
+name: smart_alarm_app
+description: Smart alarm app that requires 15 squats in front of camera to turn off.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI & State Management
+  cupertino_icons: ^1.0.2
+  provider: ^6.0.0
+  get: ^4.6.5
+
+  # Camera & ML
+  camera: ^0.10.5+5
+  google_mlkit_pose_detection: ^0.3.0
+  image: ^4.0.17
+
+  # Alarm & Background
+  android_alarm_manager_plus: ^3.0.0
+  audioplayers: ^5.2.1
+
+  # System & Permissions
+  permission_handler: ^11.3.1
+  device_info_plus: ^9.1.1
+  wakelock_plus: ^1.1.0
+
+  # Logging & Debugging
+  logger: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/sounds/alarm_tone.mp3
+    - assets/icons/
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
