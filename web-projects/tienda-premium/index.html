@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lumen Objects: objetos esenciales para una vida bien diseñada."
+    />
+    <title>LUMEN Objects | Diseño esencial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navegacion principal">
+        <div class="brand-group">
+          <a class="brand" href="#inicio" aria-label="Lumen Objects, inicio"
+            >LUMEN<span>.</span></a
+          >
+          <a class="brand-secondary" href="#inicio">OBJECTS<span>.</span></a>
+        </div>
+        <form class="search-form" id="search-form" role="search">
+          <label class="sr-only" for="search-input">Buscar productos</label>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Buscar"
+            autocomplete="off"
+          />
+          <span aria-hidden="true">⌕</span>
+        </form>
+        <div class="nav-links">
+          <a class="active" href="#destacados">Store</a>
+          <a href="#destacados">Hombres</a>
+          <a href="#destacados">Mujeres</a>
+          <a href="#destacados">Accesorios</a>
+        </div>
+        <button class="profile-button" type="button" aria-label="Abrir perfil">
+          ○
+        </button>
+        <button
+          class="cart-toggle"
+          id="cart-toggle"
+          type="button"
+          aria-label="Abrir carrito"
+          aria-controls="cart-drawer"
+          aria-expanded="false"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          >
+            <path
+              d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 8H6"
+            />
+            <circle cx="10" cy="20" r="1" />
+            <circle cx="18" cy="20" r="1" />
+          </svg>
+          <span>Carrito</span>
+          <b class="cart-badge" id="cart-count">0</b>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-content">
+          <p class="eyebrow">Lumen Objects · Coleccion 2026</p>
+          <h1>Diseño que<br /><em>permanece.</em></h1>
+          <p class="hero-copy">
+            Piezas esenciales, creadas con materiales honestos y una precisión
+            que se siente.
+          </p>
+          <a class="button button-light" href="#destacados"
+            >Descubrir la colección <span aria-hidden="true">&#8594;</span></a
+          >
+        </div>
+        <div class="hero-note">
+          <span>01</span><span>Diseño para todos los dias</span>
+        </div>
+      </section>
+
+      <section
+        class="filter-bar section-wrap"
+        aria-label="Filtros de productos"
+      >
+        <div class="filter-heading">
+          <span class="filter-count" id="filter-count">6 productos</span
+          ><span>Filtrar por</span>
+        </div>
+        <div class="filter-controls">
+          <div class="filter-control" data-filter="material">
+            <span aria-hidden="true">◌</span>
+            <button
+              class="filter-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+            >
+              <span>Material</span><b aria-hidden="true">⌄</b>
+            </button>
+            <select
+              class="filter-select-native"
+              id="material-filter"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <option value="all">Material</option>
+            </select>
+            <div
+              class="filter-menu"
+              role="listbox"
+              aria-label="Filtrar por material"
+            ></div>
+          </div>
+          <div class="filter-control" data-filter="cut">
+            <span aria-hidden="true">⌁</span>
+            <button
+              class="filter-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+            >
+              <span>Corte</span><b aria-hidden="true">⌄</b>
+            </button>
+            <select
+              class="filter-select-native"
+              id="cut-filter"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <option value="all">Corte</option>
+            </select>
+            <div
+              class="filter-menu"
+              role="listbox"
+              aria-label="Filtrar por corte"
+            ></div>
+          </div>
+          <div class="filter-control" data-filter="color">
+            <span aria-hidden="true">●</span>
+            <button
+              class="filter-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+            >
+              <span>Color</span><b aria-hidden="true">⌄</b>
+            </button>
+            <select
+              class="filter-select-native"
+              id="color-filter"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <option value="all">Color</option>
+            </select>
+            <div
+              class="filter-menu"
+              role="listbox"
+              aria-label="Filtrar por color"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="collection section-wrap" id="destacados">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selección curada</p>
+            <h2>Destacados</h2>
+          </div>
+          <p class="section-intro">
+            Piezas discretas.<br />Presencia duradera.
+          </p>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="innovation-section section-wrap" id="materiales">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Innovacion y materiales</p>
+            <h2>Diseñado para<br /><em>permanecer.</em></h2>
+          </div>
+          <p class="section-intro">
+            Detalles que se sienten. Tecnología que casi no se ve.
+          </p>
+        </div>
+        <div class="innovation-grid">
+          <article class="innovation-card innovation-card-large">
+            <div class="macro-image macro-cotton"></div>
+            <div class="innovation-copy">
+              <p class="eyebrow">01 · Material</p>
+              <h3>Algodón Oxford Sostenible</h3>
+              <p>
+                Fibra de larga duración con tacto suave y menor consumo de agua
+                durante su producción.
+              </p>
+              <button
+                class="compare-button"
+                type="button"
+                data-compare="Algodón Oxford Sostenible"
+              >
+                Comparar <span>+</span>
+              </button>
+            </div>
+          </article>
+          <article class="innovation-card">
+            <div class="macro-image macro-precision"></div>
+            <div class="innovation-copy">
+              <p class="eyebrow">02 · Construcción</p>
+              <h3>Ingeniería de Precisión</h3>
+              <p>
+                Patrones calibrados al milímetro para una caída limpia y
+                movimiento natural.
+              </p>
+              <button
+                class="compare-button"
+                type="button"
+                data-compare="Ingeniería de Precisión"
+              >
+                Comparar <span>+</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="story section-wrap" id="historia">
+        <div class="story-label">LUMEN / Manifiesto</div>
+        <div>
+          <h2>Menos, pero<br /><em>mejor.</em></h2>
+          <p>
+            Creemos en comprar menos cosas y elegirlas mejor. Cada pieza Lumen
+            combina materiales duraderos, procesos conscientes y una silueta que
+            no necesita explicarse.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">LUMEN<span>.</span></div>
+      <p>Objetos para una vida bien diseñada.</p>
+      <div class="footer-links">
+        <a href="#historia">Contacto</a><a href="#historia">Instagram</a
+        ><a href="#historia">Envios</a><a href="#historia">Privacidad</a>
+      </div>
+      <label class="currency-selector"
+        ><span>Moneda / Idioma</span
+        ><select>
+          <option>COP / ES</option>
+          <option>USD / EN</option>
+        </select></label
+      >
+      <small>&copy; 2026 Lumen Objects</small>
+    </footer>
+
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+    <aside
+      class="cart-drawer"
+      id="cart-drawer"
+      aria-labelledby="cart-title"
+      aria-hidden="true"
+    >
+      <div class="drawer-header">
+        <div>
+          <p class="eyebrow">Tu seleccion</p>
+          <h2 id="cart-title">
+            Tu Carrito (<span id="cart-item-count">0</span>)
+          </h2>
+        </div>
+        <button
+          class="icon-button"
+          id="cart-close"
+          type="button"
+          aria-label="Cerrar carrito"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="shipping-progress" aria-live="polite">
+        <div class="shipping-copy">
+          <span>Envío Gratis</span
+          ><strong id="shipping-message">a partir de $500.000 COP</strong>
+        </div>
+        <div class="progress-track">
+          <span id="shipping-progress-fill"></span>
+        </div>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <p class="empty-cart">Tu bolsa esta esperando una pieza especial.</p>
+      </div>
+      <div class="drawer-footer">
+        <div class="total-row">
+          <span>Total</span><strong id="cart-total">$0 COP</strong>
+        </div>
+        <button
+          class="button button-dark checkout-button"
+          id="checkout-button"
+          type="button"
+          disabled
+        >
+          Finalizar Compra vía WhatsApp (<span id="checkout-total">$0 COP</span
+          >) <span aria-hidden="true">&#8594;</span>
+        </button>
+        <p class="secure-note">
+          Envío gratuito en pedidos superiores a $500.000 COP
+        </p>
+      </div>
+    </aside>
+    <div
+      class="toast"
+      id="toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <div class="toast-icon" aria-hidden="true">✓</div>
+      <div class="toast-content">
+        <div class="toast-heading">
+          <strong>LUMEN</strong><time id="toast-time">Ahora</time>
+        </div>
+        <p id="toast-title">Producto agregado</p>
+        <span id="toast-message">Tu selección está en el carrito.</span>
+      </div>
+      <button
+        class="toast-close"
+        id="toast-close"
+        type="button"
+        aria-label="Cerrar notificación"
+      >
+        ×
+      </button>
+    </div>
+  </body>
+</html>

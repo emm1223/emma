@@ -1,0 +1,60 @@
+:root {
+  --black: #1d1d1f;
+  --gray: #86868b;
+  --line: #d2d2d7;
+  --blue: #0071e3;
+  --blue-soft: #e6f1ff;
+  --white: #ffffff;
+  --surface: #f5f5f7;
+  --glass: rgba(255, 255, 255, 0.68);
+  --glass-blue: rgba(224, 237, 255, 0.2);
+  --font: "Inter", sans-serif;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.82);
+  --glass-shadow:
+    0 12px 30px rgba(31, 57, 91, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #fff 0%, #f8f9fc 48%, #fff 100%);
+  color: var(--black);
+  font: 400 16px/1.5 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+body.drawer-open {
+  overflow: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
