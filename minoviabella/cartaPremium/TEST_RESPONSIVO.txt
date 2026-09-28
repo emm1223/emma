@@ -1,0 +1,87 @@
+🎯 PRUEBA RESPONSIVA RÁPIDA
+================================================================================
+
+Para verificar que tu página se vea perfecta en cualquier pantalla:
+
+1. ABRE LA PÁGINA EN EL NAVEGADOR
+   - archivo: file:///c:/emma/minoviabella/cartaPremium/index.html
+
+2. PRESIONA F12 (Developer Tools)
+
+3. HABILITA RESPONSIVE DESIGN MODE
+   - Click en el ícono de dispositivo (arriba izquierda)
+   - O presiona: Ctrl+Shift+M
+
+4. PRUEBA ESTOS TAMAÑOS:
+   ✅ 320px   (iPhone SE antiguo)
+   ✅ 375px   (iPhone normal)
+   ✅ 500px   (Tablet pequeña)
+   ✅ 768px   (iPad)
+   ✅ 1024px  (iPad Pro / Laptop)
+   ✅ 1440px  (Monitor grande)
+
+5. VERIFICA:
+   ☑ El texto es legible en todos los tamaños
+   ☑ No hay desbordamiento horizontal (no scroll sideways)
+   ☑ Los espacios se ven bien proporcionados
+   ☑ Las imágenes se adaptan
+   ☑ Los botones/links son clickeables
+   ☑ Las animaciones funcionan suavemente
+   ☑ Los colores se ven bien
+
+================================================================================
+
+CAMBIOS RESPONSIVE IMPLEMENTADOS:
+
+🔤 FUENTES
+   - Escalado automático con clamp()
+   - Siempre legible, nunca demasiado pequeño o grande
+
+📦 ESPACIOS (Padding & Margin)
+   - Se adaptan fluidamente según pantalla
+   - Nunca se ven aglomerados o muy separados
+
+🎯 GRID (Razones)
+   - 1 columna en móvil
+   - 2 columnas en tablet
+   - 4 columnas en desktop
+
+📐 BORDES
+   - Border-radius se escala según pantalla
+   - Nunca pierden proporción
+
+🎬 ANIMACIONES
+   - Funcionan en todas las pantallas
+   - Se respeta modo de movimiento reducido
+
+================================================================================
+
+PUNTOS DE QUIEBRE (Breakpoints):
+
+320px  - Móvil ultra pequeño
+375px  - Móvil normal
+500px  - Tablet pequeña
+768px  - Tablet estándar
+1024px - Desktop
+1440px - Monitor grande
+
+================================================================================
+
+COSAS QUE NO DEBERÍAN PASAR:
+
+❌ Scroll horizontal
+❌ Texto muy pequeño
+❌ Espacios aglomerados
+❌ Imágenes deformadas
+❌ Elementos que se salgan de la pantalla
+❌ Botones imposibles de clickear
+
+================================================================================
+
+¡SI ALGO SE VE MAL EN ALGÚN TAMAÑO, REPORTA EL TAMAÑO EXACTO Y QUÉ SE VE MAL!
+
+Ejemplo: "En 414px, el título se corta"
+
+Voy a arreglarlo en segundos. 💪
+
+================================================================================

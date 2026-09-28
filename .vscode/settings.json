@@ -1,0 +1,28 @@
+{
+  "editor.inlineSuggest.enabled": true,
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on",
+    "strings": "on"
+  },
+  "editor.suggestSelection": "recentlyUsed",
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.wordBasedSuggestions": "currentDocument",
+  "editor.parameterHints.enabled": true,
+  "editor.hover.enabled": "on",
+  "files.autoSave": "afterDelay",
+  "workbench.editor.enablePreview": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": true,
+    "java": true,
+    "javascript": true,
+    "typescript": true
+  },
+  "dart.flutterSdkPath": "C:\\Proyectos\\flutter",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.completion.enabled": true,
+  "java.project.importOnFirstTimeStartup": "automatic"
+}

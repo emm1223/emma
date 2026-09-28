@@ -1,0 +1,289 @@
+/* 
+  CONFIGURACIÓN RÁPIDA - CAMBIOS FÁCILES SIN TOCAR CÓDIGO
+  
+  Este archivo explica dónde encontrar y cómo cambiar cada elemento
+  sin necesidad de entender programación.
+*/
+
+================================================================================
+CAMBIOS EN COLORES (styles.css)
+================================================================================
+
+BUSCA la sección ":root {" y verás estos colores:
+
+  --primary-color: #2c2c2c;        ← Color fondo oscuro
+  --accent-gold: #d4af37;           ← Color de acentos principales
+  --accent-rose: #e8b4c4;           ← Color rosado/romántico
+  --text-dark: #1a1a1a;             ← Color texto oscuro
+  --text-light: #666;               ← Color texto gris
+
+PALETAS PRE-HECHAS:
+
+Romántica Clásica (Actual - RECOMENDADA)
+  --accent-gold: #d4af37;
+  --accent-rose: #e8b4c4;
+
+Romántica Moderna
+  --accent-gold: #ff69b4;           ← Rosa intenso
+  --accent-rose: #ff1493;           ← Rosa profundo
+
+Elegante Azul
+  --accent-gold: #4a90e2;
+  --accent-rose: #6fb1e5;
+
+Natural Verde
+  --accent-gold: #50c878;
+  --accent-rose: #98d98e;
+
+Pasión Rojo
+  --accent-gold: #e74c3c;
+  --accent-rose: #f39c12;
+
+Minimalista Blanco
+  --primary-color: #ffffff;
+  --accent-gold: #111111;
+  --accent-rose: #cccccc;
+
+
+================================================================================
+CAMBIOS DE FUENTES (styles.css)
+================================================================================
+
+En la sección @import de Google Fonts, puedes cambiar las fuentes:
+
+ACTUAL:
+  'Playfair Display' - para títulos (elegante)
+  'Lato' - para cuerpo (limpio)
+
+ALTERNATIVAS ELEGANTES:
+  Títulos:
+    - 'Cormorant Garamond' (más clásico)
+    - 'Montserrat' (moderno)
+    - 'Georgia' (romántico)
+  
+  Cuerpo:
+    - 'Open Sans' (amigable)
+    - 'Poppins' (moderno)
+    - 'Raleway' (elegante)
+
+
+================================================================================
+CAMBIOS EN ESPACIOS Y TAMAÑOS
+================================================================================
+
+En TODAS las secciones .content-section:
+  padding: 60px 20px;  ← Espacio arriba/abajo | lado/lado
+
+En TODOS los h2:
+  font-size: 2.8rem;   ← Tamaño del título
+  margin-bottom: 30px; ← Espacio después del título
+
+En todos los párrafos p:
+  font-size: 1.1rem;   ← Tamaño del texto
+  line-height: 1.8;    ← Espacio entre líneas
+
+
+================================================================================
+CAMBIOS EN ANIMACIONES
+================================================================================
+
+En script.js, busca "function initScrollAnimations":
+
+  threshold: 0.3;      ← Cuándo aparece la animación (0.3 = cuando está visible 30%)
+                       ← Más bajo = más abajo en la pantalla
+                       ← Más alto = más arriba en la pantalla
+
+En los @keyframes, puedes cambiar:
+  duration: 0.8s       ← Tiempo de la animación (0.8 segundos)
+  ease-out             ← Tipo de movimiento (ease, ease-in, ease-out, linear)
+
+
+================================================================================
+ESTRUCTURA DE CARPETAS RECOMENDADA
+================================================================================
+
+cartaPremium/
+├── index.html              ← EDITA: títulos, textos, estructura
+├── styles.css              ← EDITA: colores, tamaños, fuentes
+├── script.js               ← EDITA: si quieres música/fotos automáticas
+├── README.md               ← LEE: instrucciones completas
+├── GUIA_MENSAJES.txt       ← LEE: ayuda para escribir
+├── CONFIGURACION.txt       ← ESTE ARCHIVO
+│
+├── music/                  ← CREA: pon tu canción aquí
+│   └── cancion.mp3         ← Cualquier formato: mp3, wav, ogg
+│
+├── fotos/                  ← CREA: pon tus fotos aquí
+│   ├── foto1.jpg
+│   ├── foto2.jpg
+│   └── foto3.jpg
+│
+└── assets/                 ← OPCIONAL: otras imágenes, logos, etc.
+    └── tu-logo.png
+
+
+================================================================================
+CAMBIOS VISUALES RÁPIDOS (Sin tocar código)
+================================================================================
+
+CAMBIAR TAMAÑO DE LA FUENTE GLOBALMENTE:
+  En styles.css, busca "p { font-size: 1.1rem; }"
+  Cambia 1.1rem a:
+    - 0.9rem = más pequeño
+    - 1.0rem = pequeño
+    - 1.1rem = actual (RECOMENDADO)
+    - 1.3rem = grande
+    - 1.5rem = muy grande
+
+CAMBIAR ESPACIO ENTRE LÍNEAS:
+  En styles.css, busca "line-height: 1.8;"
+  Cambia a:
+    - 1.4 = comprimido
+    - 1.6 = cómodo
+    - 1.8 = actual (RECOMENDADO)
+    - 2.0 = muy espaciado
+
+CAMBIAR VELOCIDAD DE SCROLL:
+  En script.js, busca "scroll-behavior: smooth;"
+  (No se puede cambiar mucho, pero hay formas avanzadas)
+
+CAMBIAR BORDES Y REDONDEOS:
+  En styles.css, busca "border-radius: 20px;"
+  Cambia a:
+    - 0px = cuadrado
+    - 10px = poco redondeado
+    - 20px = actual (RECOMENDADO)
+    - 30px = muy redondeado
+
+
+================================================================================
+CAMBIOS EN EFECTOS ESPECIALES
+================================================================================
+
+OPACIDAD (transparencia):
+  Busca "opacity: 0.7;" y cambia a:
+    - 0.0 = invisible
+    - 0.5 = semi-transparente
+    - 0.7 = actual
+    - 1.0 = completamente visible
+
+SOMBRAS:
+  Busca "box-shadow:" y verás algo como:
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  Cambia el último número (0.2) a:
+    - 0.1 = sombra ligera
+    - 0.2 = actual (RECOMENDADO)
+    - 0.4 = sombra profunda
+    - 0.6 = sombra muy profunda
+
+EFECTOS DE HOVER (al pasar mouse):
+  En .reason-item:hover, cambias el efecto. ACTUAL:
+    transform: translateY(-10px);  ← Sube 10px
+  Cambia a:
+    - translateY(-5px) = movimiento ligero
+    - translateY(-15px) = movimiento más pronunciado
+    - scale(1.05) = crece un 5%
+
+
+================================================================================
+RESPONSIVE (Para que se vea bien en móvil)
+================================================================================
+
+Al final de styles.css hay @media queries. Aquí puedes cambiar tamaños 
+para que se vea bien en pantallas pequeñas.
+
+NO TOQUES esto a menos que tengas experiencia con CSS.
+
+
+================================================================================
+CHECKLIST DE CAMBIOS RECOMENDADOS
+================================================================================
+
+Antes de publicar, asegúrate de:
+
+[ ] Cambiar el título del hero (Para Ti / Tu nombre)
+[ ] Escribir tu propio mensaje principal
+[ ] Cambiar las 4 razones
+[ ] Agregar tu canción (o crear la carpeta /music)
+[ ] Crear la carpeta /fotos y poner fotos
+[ ] Cambiar los colores al estilo que te guste
+[ ] Leer TODO el README.md
+[ ] Probar en móvil (Ctrl+Shift+M en Chrome)
+[ ] Compartir el enlace en Instagram
+
+
+================================================================================
+ERRORES COMUNES Y SOLUCIONES
+================================================================================
+
+PROBLEMA: Los cambios no se ven
+SOLUCIÓN: Limpia el cache (Ctrl+Shift+R en Windows)
+
+PROBLEMA: La música no suena
+SOLUCIÓN: Asegúrate que el archivo esté en /music/ con extensión .mp3
+
+PROBLEMA: Se ve feo en móvil
+SOLUCIÓN: Abre en móvil y verifica. Si algo no funciona, 
+          reporta en la consola (F12)
+
+PROBLEMA: El enlace no funciona
+SOLUCIÓN: Si subiste a internet, espera 5 minutos a que se actualice
+
+PROBLEMA: La foto se ve pixelada
+SOLUCIÓN: Usa fotos de buena resolución (1080px mínimo)
+
+
+================================================================================
+¿QUIERES AGREGAR MÁS COSAS?
+================================================================================
+
+Posibles expansiones:
+
+1. CONTADOR REGRESIVO
+   Código en script.js para contar días juntos
+
+2. VIDEO INCRUSTADO
+   Agrega un <iframe> de YouTube
+
+3. GALERÍA CON SWIPER
+   Instala una librería de carrusel
+
+4. FORMULARIO
+   Agrega un formulario para que ella responda
+
+5. AUDIO INTERACTIVO
+   Haz que la música aparezca solo al clickear
+
+6. EFECTO CONFETI
+   Añade confeti que cae cuando termina
+
+7. MODO OSCURO
+   Toggle para cambiar entre temas
+
+Para cualquiera de estas, pide ayuda o busca tutoriales en YouTube.
+
+
+================================================================================
+LINKS ÚTILES
+================================================================================
+
+Colores HEX: https://www.color-hex.com
+Fuentes Google: https://fonts.google.com
+Generador de paletas: https://coolors.co
+Emojis: https://emojipedia.org
+Iconos: https://fontawesome.com
+Animaciones CSS: https://animate.style
+
+Para subir a internet:
+- Netlify (más fácil)
+- GitHub Pages
+- Vercel
+- Heroku
+
+
+================================================================================
+
+¿CUALQUIER DUDA? Abre la consola del navegador (F12) 
+y revisa si hay mensajes de error. 
+
+¡MUCHA SUERTE! 💝
